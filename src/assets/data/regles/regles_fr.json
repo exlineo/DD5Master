@@ -1,4 +1,5 @@
 {
+    "carac":["Force", "Dextérité", "Constitution", "Intelligence", "Sagesse", "Charisme"],
     "classes": [
         {
             "nom": "Barbare",

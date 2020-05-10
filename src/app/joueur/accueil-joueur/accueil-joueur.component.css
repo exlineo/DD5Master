@@ -1,5 +1,5 @@
 main{
-    flex-flow:column wrap;
+    flex-flow:column nowrap;
 }
 mat-toolbar{
     display:flex;

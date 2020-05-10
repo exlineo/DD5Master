@@ -3,34 +3,34 @@
         "id": 0,
         "nom": "Tauilas We'mal",
         "joueur": "David",
-        "puissance": {
-            "niveau":6,
-            "xp": 0,
-            "ca": 17,
-            "pvMax": 55,
-            "pvActu": 55,
-            "pvTmp": 55,
-            "desVie": 6,
-            "initiative": 0,
-            "vitesse": 10.5,
-            "sauvegarde": ["force", "dexterite"],
-            "inspiration": 0,
-            "bonusMaitrise": 0,
-            "competences": [],
-            "perception": 10,
-            "jdsMort": {
-                "reussites": 0,
-                "echecs": 0
-            },
-            "carac":
-                {
-                    "force": 15,
-                    "dexterite": 16,
-                    "constitution": 12,
-                    "intelligence": 8,
-                    "sagesse": 13,
-                    "charisme": 11
-                }
+        "niveau": 6,
+        "xp": 0,
+        "ca": 17,
+        "pvMax": 55,
+        "pvActu": 55,
+        "pvTmp": 55,
+        "desVie": 6,
+        "initiative": 0,
+        "vitesse": 10.5,
+        "sauvegarde": [
+            "force",
+            "dexterite"
+        ],
+        "inspiration": 0,
+        "bonusMaitrise": 0,
+        "competences": [],
+        "perception": 10,
+        "jdsMort": {
+            "reussites": 0,
+            "echecs": 0
+        },
+        "carac": {
+            "force": 15,
+            "dexterite": 16,
+            "constitution": 12,
+            "intelligence": 8,
+            "sagesse": 13,
+            "charisme": 11
         },
         "armes": [
             {
@@ -47,37 +47,53 @@
                 "bonusDeg": 6,
                 "descr": "Finesse et qualité"
             }
-
         ],
         "sorts": {
-            "nombre":[0,0,0],
-            "ddSauvegarde":0,
-            "bonusAtt":0,
-            "preparation":0,
-            "livre":[{
-                "nom": "",
-                "bonusAtt": 0,
-                "degats": 0,
-                "bonusDeg": 0,
-                "duree": 0,
-                "tps": 0,
-                "aire": "",
-                "descr": "",
-                "lien": ""
-            }]
+            "nombre": [
+                0,
+                0,
+                0
+            ],
+            "ddSauvegarde": 0,
+            "bonusAtt": 0,
+            "preparation": 0,
+            "livre": [
+                {
+                    "nom": "",
+                    "bonusAtt": 0,
+                    "degats": 0,
+                    "bonusDeg": 0,
+                    "duree": 0,
+                    "tps": 0,
+                    "aire": "",
+                    "descr": "",
+                    "lien": ""
+                }
+            ]
         },
-        "description":{
+        "description": {
             "classe": "",
-            "img":[],
-            "apparence":"",
+            "img": [],
+            "apparence": "",
             "historique": "",
             "race": "",
             "alignement": "",
-            "physique":{"age":0,"taille":"","poids":"","yeux":"","peau":"","cheveux":""},
-            "allies":""
+            "physique": {
+                "age": 0,
+                "taille": "",
+                "poids": "",
+                "yeux": "",
+                "peau": "",
+                "cheveux": ""
+            },
+            "allies": ""
         },
-        "possessions":[
-            {"nom":"","pds":"","descr":""}
+        "possessions": [
+            {
+                "nom": "",
+                "pds": "",
+                "descr": ""
+            }
         ]
     }
 ]

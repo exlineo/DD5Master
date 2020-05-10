@@ -1,4 +1,5 @@
 export interface ReglesI {
+    carac:Array<string>;
     classes:Array<ClasseI>;
     sorts:Array<SortI>;
     monstres:Array<MonstreI>;

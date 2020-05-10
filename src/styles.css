@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; font-size:15px;}
 
 main{
     width:100%;
@@ -9,4 +9,33 @@ main{
     padding:0;
     margin:0;
     display:flex;
+}
+/* MISE EN PAGE FEUILLE DE PERSO */
+article.carac{
+    display:flex;
+    flex-flow:column wrap;
+    text-align:center;
+}
+article.carac > h3{
+    margin:0;
+    text-transform: uppercase;
+}
+article.carac>div{
+    width:100px;
+    height:100px;
+    background:url('/assets/images/ui/c_score_bonus.svg') 50% no-repeat;
+    background-size: contain;
+}
+article.carac>div>span{
+    width:100%;
+    font-size:11px;
+}
+.petit{
+    font-size:11px;
+}
+.moyen{
+    font-size:14px;
+}
+.grand{
+    font-size:16px;
 }

@@ -2,7 +2,17 @@
     <mat-tab label="infos">
         <ng-template mat-tab-label><mat-icon>person</mat-icon></ng-template>
         <section>
-            Coucou
+            <article class="carac">{{ persoServ.perso['puissance']}}
+
+                <h2>{{ initServ.traductions['carac'] }}</h2>
+                <div>
+                    <h3 class="moyen">{{ initServ.traductions['force'] }}</h3>
+                    <p>{{ persoServ.perso.carac.force }}</p>
+                    <p class="petit">{{ persoServ.perso.carac.force | bonusCarac }}</p>
+                </div>
+                
+            </article>
+            <article></article>
         </section>
     </mat-tab>
     <mat-tab label="combat">

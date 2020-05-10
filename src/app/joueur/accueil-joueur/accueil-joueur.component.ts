@@ -17,6 +17,7 @@ export class AccueilJoueurComponent implements OnInit, OnDestroy {
   private _mobileQueryListener: () => void; // écouteur du menu
 
   constructor(public persoServ:PersoService, public initServ:InitService, changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
+    console.log(this.initServ.profil);
     this.persoServ.getPerso(this.initServ.profil.perso);
     this.initServ.sendMsg('Chargement des données du personnage');
     

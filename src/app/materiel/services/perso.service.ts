@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { PersoI } from '../modeles/perso-i';
+import { PersoI, Perso } from '../modeles/perso-i';
 import { MsgService } from './msg.service';
 
 @Injectable({
@@ -10,7 +10,10 @@ export class PersoService {
 
   perso:PersoI;
 
-  constructor(private http:HttpClient, private msgServ:MsgService) { }
+  constructor(private http:HttpClient, private msgServ:MsgService) {
+    this.perso = new Perso();
+    console.log("Initialisation du perso", this.perso);
+  }
   /**
    * Charger les données d'un personnage
    * @param p Nom du personnage à charger
@@ -19,6 +22,7 @@ export class PersoService {
     this.http.get<PersoI>('/assets/data/persos/'+p+'.json').subscribe(ps => {
       console.log("Perso chargé", ps);
       this.perso = ps;
+      console.log(this.perso);
       this.msgServ.message$.next("Personnage chargé, rock'n'roll");
     })
   }
