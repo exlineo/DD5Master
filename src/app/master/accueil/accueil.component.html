@@ -1,12 +1,11 @@
-<main class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+<main [class.example-is-mobile]="mobileQuery.matches">
   
-    <mat-toolbar color="secondary" class="example-toolbar">
+    <mat-toolbar color="secondary">
       <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
-      <h1 class="example-app-name">{{ title }}</h1>
+      <h1>{{ initServ.traductions['titre'] }}</h1>
     </mat-toolbar>
   
-    <mat-sidenav-container class="example-sidenav-container"
-                           [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+    <mat-sidenav-container [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
       <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
                    [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
         <mat-nav-list>

@@ -1,9 +1,18 @@
 {
+    "titre":"Donjon & Dragon 5 / Gestion de partie à distance",
     "connexion":"Merci de vous identifier",
     "id":"Identifiant",
     "mdp":"Mot de passe",
     "idph":"Merci de saisir un identifiant",
     "mdpph":"Merci de saisir un mot de passe",
     "master":"Maître de jeu",
-    "joueur":"Joueur"
+    "joueur":"Joueur",
+    "bienvenue":"Bienvenue",
+    "interactions":{
+        "valide":"Valider",
+        "annule":"Annuler",
+        "retour":"Retour en arrière",
+        "avancer":"Avancer",
+        "etape":"Etape suivante"
+    }
 }

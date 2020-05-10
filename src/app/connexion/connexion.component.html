@@ -1,16 +1,26 @@
 <main>
-    <section></section>
-    <section>
-        <form>
-            <mat-form-field>
-              <mat-label>Identifiant</mat-label>
-              <input matInput placeholder="Saisissez votre identifiant" [value]="conServ.connexion.id">
-            </mat-form-field>
-          
-            <mat-form-field>
-                <mat-label>Mot de passe</mat-label>
-                <input matInput placeholder="Saisissez votre mot de passe" [value]="conServ.connexion.mdp">
-              </mat-form-field>
-          </form>
-    </section>
+  <section></section>
+  <section>
+    <header>
+      <img src="/assets/images/logos/DD5_logo.png" />
+    </header>
+    <form #f="ngForm" (ngSubmit)="initServ.testConnexion()">
+
+      <mat-form-field>
+        <mat-label>{{ initServ.traductions['id'] }}</mat-label>
+        <input matInput name="id" required [placeholder]="initServ.traductions['idph']" [(ngModel)]="initServ.connexion.id">
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>{{ initServ.traductions['mdp'] }}</mat-label>
+        <input matInput name="mdp" [placeholder]="initServ.traductions['mdpph']" [(ngModel)]="initServ.connexion.mdp">
+      </mat-form-field>
+
+      <mat-checkbox name="statut" [(ngModel)]="initServ.connexion.statut">{{ initServ.traductions['master'] }} ?</mat-checkbox>
+      <mat-divider></mat-divider>
+      <button mat-fab [disabled]="f.invalid" [matTooltip]="initServ.traductions['interactions']['valide']">
+        <mat-icon>keyboard_arrow_right</mat-icon>
+      </button>
+    </form>
+  </section>
 </main>

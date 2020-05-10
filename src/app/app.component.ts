@@ -1,27 +1,24 @@
-import {MediaMatcher} from '@angular/cdk/layout';
-import {ChangeDetectorRef, Component, OnDestroy} from '@angular/core';
+import {Component} from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { MsgService } from './materiel/services/msg.service';
+import { InitService } from './materiel/services/init.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnDestroy {
-  title = 'DD5 Master';
-  mobileQuery: MediaQueryList;
-
-  fillerNav = Array.from({length: 50}, (_, i) => `Nav Item ${i + 1}`);
-
-  private _mobileQueryListener: () => void;
-
-  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
-    this.mobileQuery = media.matchMedia('(max-width: 600px)');
-    this._mobileQueryListener = () => changeDetectorRef.detectChanges();
-    this.mobileQuery.addListener(this._mobileQueryListener);
+export class AppComponent {
+  constructor(private msgServ:MsgService, private _snackBar:MatSnackBar) {
+    /**
+     * Gérer les messages de retour sur service principal et afficher un message
+     */
+    this.msgServ.message$.subscribe((msg)=>{
+      this._snackBar.open(msg,'',{
+        duration: 2000,
+      });
+    });
   }
 
-  ngOnDestroy(): void {
-    this.mobileQuery.removeListener(this._mobileQueryListener);
-  }
-
+ 
 }

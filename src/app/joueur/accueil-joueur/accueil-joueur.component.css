@@ -1,0 +1,10 @@
+main{
+    flex-flow:column wrap;
+}
+mat-toolbar{
+    display:flex;
+    flex-flow:row nowrap;
+}
+mat-toolbar img{
+    max-width:200px;
+}

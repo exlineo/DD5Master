@@ -8,9 +8,8 @@ import { InitService } from '../materiel/services/init.service';
 })
 export class ConnexionComponent implements OnInit {
 
-  constructor(public conServ:InitService) { }
+  constructor(public initServ:InitService) { }
 
   ngOnInit(): void {
   }
-
 }

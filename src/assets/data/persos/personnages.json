@@ -22,7 +22,7 @@
                 "reussites": 0,
                 "echecs": 0
             },
-            "carac": [
+            "carac":
                 {
                     "force": 10,
                     "dexterite": 10,
@@ -31,7 +31,6 @@
                     "sagesse": 10,
                     "charisme": 10
                 }
-            ]
         },
         "armes": [
             {

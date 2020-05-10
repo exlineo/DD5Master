@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MaterielModule } from './materiel/materiel.module';
 
 import { InitService } from './materiel/services/init.service';
+import { MsgService } from './materiel/services/msg.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { InitService } from './materiel/services/init.service';
     FormsModule,
     HttpClientModule
   ],
-  providers: [InitService],
+  providers: [InitService, MsgService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

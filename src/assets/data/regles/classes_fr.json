@@ -1,0 +1,54 @@
+[
+    {
+        "nom": "Barbare",
+        "lien": "https://www.aidedd.org/regles/classes/barbare/"
+    },
+    {
+        "nom": "Barde",
+        "lien": "https://www.aidedd.org/regles/classes/barde/"
+    },
+    {
+        "nom": "Clerc",
+        "lien": "https://www.aidedd.org/regles/classes/clerc/"
+    },
+    {
+        "nom": "Druide",
+        "lien": "https://www.aidedd.org/regles/classes/druide/"
+    },
+    {
+        "nom": "Ensorceleur",
+        "lien": "https://www.aidedd.org/regles/classes/ensorceleur/"
+    },
+    {
+        "nom": "Guerrier",
+        "lien": "https://www.aidedd.org/regles/classes/guerrier/"
+    },
+    {
+        "nom": "Magicien",
+        "lien": "https://www.aidedd.org/regles/classes/magicien/"
+    },
+    {
+        "nom": "Moine",
+        "lien": "https://www.aidedd.org/regles/classes/moins/"
+    },
+    {
+        "nom": "Paladin",
+        "lien": "https://www.aidedd.org/regles/classes/paladin/"
+    },
+    {
+        "nom": "Barbare",
+        "lien": "https://www.aidedd.org/regles/classes/barbare/"
+    },
+    {
+        "nom": "Rôdeur",
+        "lien": "https://www.aidedd.org/regles/classes/barbare/"
+    },
+    {
+        "nom": "Roublard",
+        "lien": "https://www.aidedd.org/regles/classes/barbare/"
+    },
+    {
+        "nom": "Sorcier",
+        "lien": "https://www.aidedd.org/regles/classes/barbare/"
+    }
+]
