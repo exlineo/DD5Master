@@ -1,0 +1,9 @@
+{
+    "connexion":"Merci de vous identifier",
+    "id":"Identifiant",
+    "mdp":"Mot de passe",
+    "idph":"Merci de saisir un identifiant",
+    "mdpph":"Merci de saisir un mot de passe",
+    "master":"Maître de jeu",
+    "joueur":"Joueur"
+}

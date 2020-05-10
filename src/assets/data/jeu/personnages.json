@@ -1,0 +1,76 @@
+[
+    {
+        "id": 0,
+        "nom": "",
+        "joueur": "",
+        "puissance": {
+            "niveau":0,
+            "xp": 0,
+            "ca": 10,
+            "pvMax": 0,
+            "pvActu": 0,
+            "pvTmp": 0,
+            "desVie": 1,
+            "initiative": 0,
+            "vitesse": 9,
+            "sauvegarde": [],
+            "inspiration": 0,
+            "bonusMaitrise": 0,
+            "competences": [],
+            "perception": 10,
+            "jdsMort": {
+                "reussites": 0,
+                "echecs": 0
+            },
+            "carac": [
+                {
+                    "force": 10,
+                    "dexterite": 10,
+                    "constitution": 10,
+                    "intelligence": 10,
+                    "sagesse": 10,
+                    "charisme": 10
+                }
+            ]
+        },
+        "armes": [
+            {
+                "nom": "",
+                "bonusAtt": 0,
+                "degats": 0,
+                "bonusDeg": 0,
+                "descr": ""
+            }
+        ],
+        "sorts": {
+            "nombre":[0,0,0],
+            "ddSauvegarde":0,
+            "bonusAtt":0,
+            "preparation":0,
+            "livre":[{
+                "nom": "",
+                "bonusAtt": 0,
+                "degats": 0,
+                "bonusDeg": 0,
+                "duree": 0,
+                "tps": 0,
+                "aire": "",
+                "descr": "",
+                "lien": ""
+            }]
+        },
+        "description":{
+            "classe": "",
+            "img":[],
+            "apparence":"",
+            "historique": "",
+            "race": "",
+            "alignement": "",
+            "physique":{"age":0,"taille":"","poids":"","yeux":"","peau":"","cheveux":""},
+            "allies":""
+        },
+        "possessions":[
+            {"nom":"","pds":"","descr":""}
+        ]
+    }
+]

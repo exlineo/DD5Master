@@ -1,0 +1,18 @@
+
+section{
+    height:100%;
+    flex-flow:row nowrap;
+}
+section:nth-child(1){
+    width:70%;
+}
+section:nth-child(2){
+    width:30%;
+    display:flex;
+    flex-flow:column wrap;
+}
+section:nth-child(2) form{
+    margin:auto;
+    display:flex;
+    flex-flow:column wrap;
+}

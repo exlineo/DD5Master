@@ -1,27 +1,15 @@
 # DD5Master
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.5.
+Application pour la gestion des parties de Donjon &amp; Dragon en ligne :
+- gestion des personnages,
+- des pnj et bestiaires des scénarii,
+- des ressources à afficher et partager avec les joueurs.
 
-## Development server
+## A qui s'adresse ce projet ?
+Aux maîtres de jeux désireux d'avoir une interface leur permettant de suivre leurs joueurs à distance et de diffuser des ressources en live à leurs joueurs.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Déploiement
+Vous aurez besoin d'un serveur permettant d'heberger votre application avec PHP7 installé.
+Copiez le dossier du projet où vous voulez sur votre serveur et rendez-vous à l'adresse : http://monnomdedomaine/leDossierdeLApplication/installation
+Suivez les opérations de paramétrage (globalement, il s'agit de valider l'adresse qui vous ai proposée et de créer un premier compte d'administrateur, celui du maître de jeu).
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).

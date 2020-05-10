@@ -4,17 +4,29 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ConnexionComponent } from './connexion/connexion.component';
+import { InstallComponent } from './install/install.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { MaterielModule } from './materiel/materiel.module';
+
+import { InitService } from './materiel/services/init.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ConnexionComponent,
+    InstallComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    MaterielModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [InitService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

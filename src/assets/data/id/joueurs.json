@@ -1,0 +1,34 @@
+[
+    {
+        "id":"David",
+        "mdp":"",
+        "statut":"joueur",
+        "perso":""
+    },
+    {
+        "id":"Pierre",
+        "mdp":"",
+        "statut":"joueur",
+        "perso":""
+    },{
+        "id":"Cyril",
+        "mdp":"",
+        "statut":"joueur",
+        "perso":""
+    },{
+        "id":"Philippe",
+        "mdp":"",
+        "statut":"joueur",
+        "perso":""
+    },{
+        "id":"Mickael",
+        "mdp":"",
+        "statut":"joueur",
+        "perso":""
+    },{
+        "id":"Romain",
+        "mdp":"",
+        "statut":"joueur",
+        "perso":""
+    }
+]
