@@ -1,10 +1,22 @@
-main{
-    flex-flow:column nowrap;
+main {
+    flex-flow: column nowrap;
 }
-mat-toolbar{
-    display:flex;
-    flex-flow:row nowrap;
+
+mat-toolbar {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
 }
-mat-toolbar img{
-    max-width:200px;
+
+mat-toolbar>div {
+    display: flex;
+    align-items: center;
+}
+
+mat-toolbar>div>img {
+    margin-left: 20px;
+}
+
+mat-toolbar img {
+    max-width: 200px;
 }

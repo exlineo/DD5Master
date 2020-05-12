@@ -1,0 +1,87 @@
+<div class="horizontal">
+    <!-- CARACTERISTIQUES -->
+    <section class="carac">
+        <h1>{{ initServ.traductions['carac'] }}</h1>
+        <article>
+            <div>
+                <p class="petit">{{ initServ.traductions['force'] }}</p>
+                <h1>{{ persoServ.perso.carac.force }}</h1>
+                <p class="moyen">{{ persoServ.perso.carac.force | bonusCarac }}</p>
+            </div>
+        </article>
+        <article>
+            <div>
+                <p class="petit">{{ initServ.traductions['dexterite'] }}</p>
+                <h1>{{ persoServ.perso.carac.dexterite }}</h1>
+                <p class="moyen">{{ persoServ.perso.carac.dexterite | bonusCarac }}</p>
+            </div>
+        </article>
+        <article>
+            <div>
+                <p class="petit">{{ initServ.traductions['constitution'] }}</p>
+                <h1>{{ persoServ.perso.carac.constitution }}</h1>
+                <p class="moyen">{{ persoServ.perso.carac.constitution | bonusCarac }}</p>
+            </div>
+        </article>
+        <article>
+            <div>
+                <p class="petit">{{ initServ.traductions['intelligence'] }}</p>
+                <h1>{{ persoServ.perso.carac.intelligence }}</h1>
+                <p class="moyen">{{ persoServ.perso.carac.intelligence | bonusCarac }}</p>
+            </div>
+        </article>
+        <article>
+            <div>
+                <p class="petit">{{ initServ.traductions['sagesse'] }}</p>
+                <h1>{{ persoServ.perso.carac.sagesse }}</h1>
+                <p class="moyen">{{ persoServ.perso.carac.sagesse | bonusCarac }}</p>
+            </div>
+        </article>
+        <article>
+            <div>
+                <p class="petit">{{ initServ.traductions['charisme'] }}</p>
+                <h1>{{ persoServ.perso.carac.charisme }}</h1>
+                <p class="moyen">{{ persoServ.perso.carac.charisme | bonusCarac }}</p>
+            </div>
+        </article>
+    </section>
+    <!-- COMPETENCES -->
+    <section>
+        <h1>{{ initServ.traductions['competences'] }}</h1>
+        <article class="f_g_v colonne">
+            <div>
+                <p *ngFor="let c of initServ.regles['competences']" class="espace">
+                    <mat-checkbox [checked]="persoServ.perso.competences.includes(c.id)">{{ c.nom }} ({{ c.carac | compCarac }})</mat-checkbox>
+                </p>
+            </div>
+        </article>
+    </section>
+    <section>
+        <h1>{{ initServ.traductions['jds'] }}</h1>
+        <article class="f_lm colonne">
+            <div>
+                <p *ngFor="let ca of initServ.regles['carac']" class="espace">
+                    <mat-checkbox [checked]="persoServ.perso.sauvegarde.includes(ca.id)">{{ ca.nom }}</mat-checkbox>
+                </p>
+            </div>
+        </article>
+        <h1>{{ initServ.traductions['autresMaitrises'] }}</h1>
+        <article class="f_lm">
+            <div>
+                <p *ngFor="let l of persoServ.perso.langues" class="espace">
+                    {{ l }}
+                </p>
+            </div>
+        </article>
+    </section>
+    <section>
+        <h1>{{ initServ.traductions['capacites'] }}</h1>
+        <article class="f_g_v colonne">
+            <div>
+                <ul>
+                    <li *ngFor="let cap of persoServ.perso.capacites" class="serre">{{ cap }}</li>
+                </ul>
+            </div>
+        </article>
+    </section>
+</div>

@@ -12,14 +12,16 @@ export interface PersoI {
     pvMax: number;
     pvActu: number;
     pvTmp: number;
-    desVie: number;
+    desVie?: number | string;
     initiative: number;
     vitesse: number;
-    sauvegarde: Array<string>;
-    inspiration: number;
+    sauvegarde?: Array<string>;
+    inspiration?: number;
     bonusMaitrise: number;
     competences: Array<string>;
-    perception: number;
+    capacites?:Array<string>;
+    langues?:Array<string>;
+    perception?: number;
     jdsMort?: PersoJdsMort;
     carac: PersoCaracI;
     armes: Array<PersoArmeI>;
@@ -32,21 +34,24 @@ export interface PersoPossessionI {
 }
 export interface PersoSortI {
     nombre: Array<number>;
-    ddSauvegarde: number;
+    ddSauvegarde: number | string;
     bonusAtt: number;
-    preparation: number;
+    preparation: number | string;
     livre: Array<PersoLivreI>;
 }
 export interface PersoLivreI {
+    niveau:number;
     nom: string;
-    bonusAtt: number;
-    degats: number;
-    bonusDeg: number;
-    duree: number;
-    tps: number;
-    aire: string;
-    descr: string;
-    lien: string;
+    bonusAtt?: number;
+    degats?: number | string;
+    bonusDeg?: number;
+    duree?: number | string;
+    portee?:number | string;
+    tps?: number | string;
+    aire?: string | string;
+    descr?: string;
+    lien?: string;
+    appris?:number;
 }
 export interface PersoArmeI {
     nom: string;
@@ -105,6 +110,8 @@ export class Perso implements PersoI {
     inspiration: 0;
     bonusMaitrise: 0;
     competences: [];
+    capacites:[];
+    langues:[];
     perception: 10;
     jdsMort: {
         reussites: 0,
@@ -138,6 +145,7 @@ export class Perso implements PersoI {
         preparation: 0;
         livre: [
             {
+                niveau:0,
                 nom: "",
                 bonusAtt: 0,
                 degats: 0,

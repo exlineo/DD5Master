@@ -1,0 +1,99 @@
+<div class="horizontal">
+    <!-- CARACTERISTIQUES -->
+    <section>
+        <h1>{{ initServ.traductions['action'] }}</h1>
+        <article>
+            <div class="ca cartouche_petit">
+                <p>{{ initServ.traductions['ca'] }}</p>
+                <h1>{{ persoServ.perso['ca'] }}</h1>
+            </div>
+        </article>
+        <article>
+            <div class="carre cartouche_petit">
+                <p>{{ initServ.traductions['initiative'] }}</p>
+                <h1><input matInput [placeholder]="initServ.traductions['initiative']" [value]="persoServ.perso['initiative']"></h1>
+            </div>
+        </article>
+        <article>
+            <div class="carre cartouche_petit">
+                <p>{{ initServ.traductions['vitesse'] }}</p>
+                <h1>{{ persoServ.perso['vitesse'] }}</h1>
+            </div>
+        </article>
+    </section>
+    <!-- POINTS DE VIE -->
+    <section>
+        <h1>{{ initServ.traductions['vie'] }}</h1>
+        <article>
+            <div class="carre cartouche_petit">
+                <p>{{ initServ.traductions['max'] }} : {{ persoServ.perso['pvMax'] }}</p>
+                <h1><input matInput [placeholder]="initServ.traductions['pointVieActu']" [value]="persoServ.perso['pvActu']"></h1>
+            </div>
+        </article>
+        <article>
+            <div class="carre cartouche_petit">
+                <p>{{ initServ.traductions['pointVieTmp'] }}</p>
+                <h1><input matInput [placeholder]="initServ.traductions['pointVieActu']" [value]="persoServ.perso['pvTmp']"></h1>
+            </div>
+        </article>
+        <article>
+            <div class="carre cartouche_petit">
+                <p>{{ initServ.traductions['desVie'] }}</p>
+                <h1>{{ persoServ.perso.desVie }}</h1>
+            </div>
+        </article>
+        <article>
+            <div class="carre cartouche_petit">
+                <p>{{ initServ.traductions['jdsMort'] }}</p>
+                <p>+
+                    <mat-checkbox></mat-checkbox>
+                    <mat-checkbox></mat-checkbox>
+                    <mat-checkbox></mat-checkbox>
+                </p>
+
+                <p>-
+                    <mat-checkbox></mat-checkbox>
+                    <mat-checkbox></mat-checkbox>
+                    <mat-checkbox></mat-checkbox>
+                </p>
+
+            </div>
+        </article>
+    </section>
+    <section>
+        <h1>{{ initServ.traductions['armesSorts'] }}</h1>
+        <article>
+            <div>
+                <table mat-table [dataSource]="persoServ.perso.armes" class="tabArmes">
+                    <ng-container matColumnDef="nom">
+                        <th mat-header-cell *matHeaderCellDef> {{ initServ.traductions['nom'] }} </th>
+                        <td mat-cell *matCellDef="let element"> {{element.nom}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="bonusAtt">
+                        <th mat-header-cell *matHeaderCellDef> {{ initServ.traductions['bonusAtt'] }} </th>
+                        <td mat-cell *matCellDef="let element"> {{element.bonusAtt}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="degats">
+                        <th mat-header-cell *matHeaderCellDef> {{ initServ.traductions['degats'] }} </th>
+                        <td mat-cell *matCellDef="let element"> {{element.degats}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="bonusDeg">
+                        <th mat-header-cell *matHeaderCellDef> {{ initServ.traductions['bonusDeg'] }} </th>
+                        <td mat-cell *matCellDef="let element"> {{element.bonusDeg}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="descr">
+                        <th mat-header-cell *matHeaderCellDef> {{ initServ.traductions['descr'] }} </th>
+                        <td mat-cell *matCellDef="let element"> {{element.descr}} </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="cols"></tr>
+                    <tr mat-row *matRowDef="let row; columns: cols;"></tr>
+                </table>
+            </div>
+        </article>
+    </section>
+</div>

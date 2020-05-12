@@ -1,99 +1,121 @@
-[
-    {
-        "id": 0,
-        "nom": "Tauilas We'mal",
-        "joueur": "David",
-        "niveau": 6,
-        "xp": 0,
-        "ca": 17,
-        "pvMax": 55,
-        "pvActu": 55,
-        "pvTmp": 55,
-        "desVie": 6,
-        "initiative": 0,
-        "vitesse": 10.5,
-        "sauvegarde": [
-            "force",
-            "dexterite"
-        ],
-        "inspiration": 0,
-        "bonusMaitrise": 0,
-        "competences": [],
-        "perception": 10,
-        "jdsMort": {
-            "reussites": 0,
-            "echecs": 0
+{
+    "id": 0,
+    "nom": "Tauilas We'mal",
+    "joueur": "David",
+    "niveau": 6,
+    "xp": 0,
+    "ca": 17,
+    "bouclier": 2,
+    "pvMax": 55,
+    "pvActu": 55,
+    "pvTmp": 55,
+    "desVie": "6D10",
+    "initiative": 0,
+    "vitesse": 10.5,
+    "sauvegarde": [
+        "force",
+        "dexterite"
+    ],
+    "inspiration": 0,
+    "bonusMaitrise": 0,
+    "competences": ["athletisme", "dressage", "perception", "survie"],
+    "capacites": [
+        "RACE -----------------------------------",
+        "Bonus Dex : +2",
+        "Sagesse +1",
+        "Vision dans le noir (18m)",
+        "Ascendance féerique (avantage JS charme, no sleep)",
+        "Transe (4h)",
+        "Cachette naturelle",
+        "Sens aiguisés (Perception)",
+        "Discretion",
+        "Forte intuition",
+        "Déplacement rapide",
+        "CLASSE --------------------------------",
+        "(1) Ennemis jurés (Orques, Gobelins)",
+        "(1) Explorateur né (forêt)",
+        "(2) Style de combat archerie +2 à l'attaque",
+        "(2) Incantations (voir sorts)",
+        "(3) Sens primitifs (prend 1 sort)",
+        "(3) Archétype de rôdeur (Chasseur)",
+        "(4) Amélioration de caractéristiques +1 SAG / +1 FOR",
+        "(5) Attaque supplémentaire: 2 / round",
+        "HISTORIQUE  -------------------------",
+        "* Tueur de colosse +1D8 / tour",
+        "* Tueur de géants : réaction immédiate à une attaque de G, il faut le voir et être au CAC",
+        "* Briseur de horde: au CAC une attaque bonus contre une créature différente 1 fois par tour"
+    ],
+    "langues": [],
+    "perception": 10,
+    "jdsMort": {
+        "reussites": 0,
+        "echecs": 0
+    },
+    "carac": {
+        "force": 15,
+        "dexterite": 16,
+        "constitution": 12,
+        "intelligence": 8,
+        "sagesse": 13,
+        "charisme": 11
+    },
+    "armes": [{
+            "nom": "Arc Long",
+            "bonusAtt": 8,
+            "degats": "1D8",
+            "bonusDeg": 6,
+            "descr": ""
         },
-        "carac": {
-            "force": 15,
-            "dexterite": 16,
-            "constitution": 12,
-            "intelligence": 8,
-            "sagesse": 13,
-            "charisme": 11
-        },
-        "armes": [
-            {
-                "nom": "Arc Long",
-                "bonusAtt": 8,
-                "degats": "1D8",
-                "bonusDeg": 6,
-                "descr": ""
-            },
-            {
-                "nom": "Epée longue",
-                "bonusAtt": 6,
-                "degats": "1D8",
-                "bonusDeg": 6,
-                "descr": "Finesse et qualité"
-            }
+        {
+            "nom": "Epée longue",
+            "bonusAtt": 6,
+            "degats": "1D8",
+            "bonusDeg": 6,
+            "descr": "Finesse et qualité"
+        }
+    ],
+    "sorts": {
+        "nombre": [
+            0,
+            0,
+            0
         ],
-        "sorts": {
-            "nombre": [
-                0,
-                0,
-                0
-            ],
-            "ddSauvegarde": 0,
+        "ddSauvegarde": 0,
+        "bonusAtt": 0,
+        "preparation": 0,
+        "livre": [{
+            "niveau": 0,
+            "nom": "",
             "bonusAtt": 0,
-            "preparation": 0,
-            "livre": [
-                {
-                    "nom": "",
-                    "bonusAtt": 0,
-                    "degats": 0,
-                    "bonusDeg": 0,
-                    "duree": 0,
-                    "tps": 0,
-                    "aire": "",
-                    "descr": "",
-                    "lien": ""
-                }
-            ]
+            "degats": 0,
+            "bonusDeg": 0,
+            "duree": 0,
+            "tps": 0,
+            "aire": "",
+            "descr": "",
+            "lien": ""
+        }]
+    },
+    "description": {
+        "classe": "",
+        "img": [],
+        "apparence": "",
+        "historique": "",
+        "race": "",
+        "alignement": "",
+        "physique": {
+            "age": 0,
+            "taille": "",
+            "poids": "",
+            "yeux": "",
+            "peau": "",
+            "cheveux": ""
         },
-        "description": {
-            "classe": "",
-            "img": [],
-            "apparence": "",
-            "historique": "",
-            "race": "",
-            "alignement": "",
-            "physique": {
-                "age": 0,
-                "taille": "",
-                "poids": "",
-                "yeux": "",
-                "peau": "",
-                "cheveux": ""
-            },
-            "allies": ""
-        },
-        "possessions": [
-            {
-                "nom": "",
-                "pds": "",
-                "descr": ""
-            }
-        ]
-    }
-]
+        "allies": ""
+    },
+    "possessions": [{
+        "nom": "",
+        "pds": "",
+        "descr": ""
+    }]
+}

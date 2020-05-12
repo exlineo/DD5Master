@@ -6,7 +6,11 @@ import { AccueilJoueurComponent } from './accueil-joueur/accueil-joueur.componen
 import { PersoComponent } from './perso/perso.component';
 import { MaterielModule } from '../materiel/materiel.module';
 
-import { BonusCaracPipe, BonusMaitrisePipe } from '../materiel/pipes/bonus.pipe';
+import { BonusCaracPipe, BonusMaitrisePipe, CompCaracPipe, BonusCompPipe } from '../materiel/pipes/bonus.pipe';
+import { CaracComponent } from './perso/carac/carac.component';
+import { CombatComponent } from './perso/combat/combat.component';
+import { HistoireComponent } from './perso/histoire/histoire.component';
+import { SortsComponent } from './perso/sorts/sorts.component';
 
 
 @NgModule({
@@ -14,7 +18,13 @@ import { BonusCaracPipe, BonusMaitrisePipe } from '../materiel/pipes/bonus.pipe'
     AccueilJoueurComponent,
     PersoComponent,
     BonusCaracPipe,
-    BonusMaitrisePipe],
+    BonusMaitrisePipe,
+    CompCaracPipe,
+    BonusCompPipe,
+    CaracComponent,
+    CombatComponent,
+    HistoireComponent,
+    SortsComponent],
   imports: [
     CommonModule,
     JoueurRoutingModule,

@@ -1,7 +1,97 @@
 {
-    "carac":["Force", "Dextérité", "Constitution", "Intelligence", "Sagesse", "Charisme"],
-    "classes": [
-        {
+    "carac": [{
+        "nom": "Force",
+        "id": "force"
+    }, {
+        "nom": "Dexterité",
+        "id": "dexterite"
+    }, {
+        "nom": "Constitution",
+        "id": "constitution"
+    }, {
+        "nom": "Intelligence",
+        "id": "intelligence"
+    }, {
+        "nom": "Sagesse",
+        "id": "sagesse"
+    }, {
+        "nom": "Charisme",
+        "id": "charisme"
+    }],
+    "competences": [{
+        "nom": "Acrobatie",
+        "id": "acrobatie",
+        "carac": "dexterite"
+    }, {
+        "nom": "Arcanes",
+        "id": "arcanes",
+        "carac": "intelligence"
+    }, {
+        "nom": "Athlétisme",
+        "id": "athletisme",
+        "carac": "force"
+    }, {
+        "nom": "Discrétion",
+        "id": "discretion",
+        "carac": "dexterite"
+    }, {
+        "nom": "Dressage",
+        "id": "dressage",
+        "carac": "sagesse"
+    }, {
+        "nom": "Escamotage",
+        "id": "escamotage",
+        "carac": "dexterite"
+    }, {
+        "nom": "Histoire",
+        "id": "histoire",
+        "carac": "intelligence"
+    }, {
+        "nom": "Intimidation",
+        "id": "intimidation",
+        "carac": "charisme"
+    }, {
+        "nom": "Investigation",
+        "id": "investigation",
+        "carac": "intelligence"
+    }, {
+        "nom": "Médecine",
+        "id": "medecine",
+        "carac": "sagesse"
+    }, {
+        "nom": "Nature",
+        "id": "nature",
+        "carac": "intelligence"
+    }, {
+        "nom": "Perception",
+        "id": "perception",
+        "carac": "sagesse"
+    }, {
+        "nom": "Perspicacité",
+        "id": "perspicacite",
+        "carac": "sagesse"
+    }, {
+        "nom": "Persuasion",
+        "id": "persuasion",
+        "carac": "charisme"
+    }, {
+        "nom": "Religion",
+        "id": "religion",
+        "carac": "intelligence"
+    }, {
+        "nom": "Représentation",
+        "id": "representation",
+        "carac": "charisme"
+    }, {
+        "nom": "Survie",
+        "id": "survie",
+        "carac": "sagesse"
+    }, {
+        "nom": "Tromperie",
+        "id": "tromperie",
+        "carac": "charisme"
+    }],
+    "classes": [{
             "nom": "Barbare",
             "lien": "https://www.aidedd.org/regles/classes/barbare/"
         },
@@ -54,18 +144,14 @@
             "lien": "https://www.aidedd.org/regles/classes/barbare/"
         }
     ],
-    "sorts": [
-        {
-            "nom": "Sorcier",
-            "niveau": 0,
-            "lien": "https://www.aidedd.org/regles/classes/barbare/"
-        }
-    ],
-    "monstres": [
-        {
-            "nom": "Sorcier",
-            "puissance": 0,
-            "lien": "https://www.aidedd.org/regles/classes/barbare/"
-        }
-    ]
+    "sorts": [{
+        "nom": "Sorcier",
+        "niveau": 0,
+        "lien": "https://www.aidedd.org/regles/classes/barbare/"
+    }],
+    "monstres": [{
+        "nom": "Sorcier",
+        "puissance": 0,
+        "lien": "https://www.aidedd.org/regles/classes/barbare/"
+    }]
 }

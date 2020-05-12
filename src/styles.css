@@ -1,41 +1,275 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; font-size:15px;}
+html,
+body {
+    height: 100%;
+}
 
-main{
-    width:100%;
-    height:100%;
-    padding:0;
-    margin:0;
-    display:flex;
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-size: 15px;
+    background-color: #303030;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
 }
+
+main {
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'MedievalSharp', cursive !important;
+}
+
+section {
+    padding: 10px;
+}
+
+section>article>div {
+    margin: auto;
+}
+
+
 /* MISE EN PAGE FEUILLE DE PERSO */
-article.carac{
-    display:flex;
-    flex-flow:column wrap;
-    text-align:center;
+
+section.carac {
+    display: flex;
+    flex-flow: column wrap;
+    text-align: center;
+    margin: 10px;
+    /* margin: auto; */
 }
-article.carac > h3{
-    margin:0;
+
+section.carac>article {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+section.carac>article>div:nth-child(1) {
+    margin: 0;
     text-transform: uppercase;
+    flex-grow: 1;
 }
-article.carac>div{
-    width:100px;
-    height:100px;
-    background:url('/assets/images/ui/c_score_bonus.svg') 50% no-repeat;
+
+section.carac>article>div:nth-child(2) {
+    font-weight: bold;
+    flex-grow: 2;
+}
+
+section.carac>article>div:nth-child(3) {
+    font-weight: bold;
+    flex-grow: 1;
+}
+
+section.carac article>div {
+    width: 100px;
+    height: 100px;
+    background: url('/assets/images/ui/c_score_bonus.svg') 50% no-repeat;
+    background-size: contain;
+    display: flex;
+    flex-flow: column nowrap;
+    text-align: center;
+    padding: 5px;
+    margin: auto;
+}
+
+div>section {
+    margin: 0 auto;
+}
+
+* {
+    /* box-sizing: border-box; */
+}
+
+.vertical {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-around;
+    align-items: stretch;
+}
+
+.horizontal {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: stretch;
+}
+
+
+/* Classes spécialisées */
+
+.tabArmes {
+    width: 100%;
+}
+
+.tabArmes td {
+    text-align: center;
+}
+
+.tabArmes tr>td:nth-child(1),
+.tabArmes tr>td:nth-child(5) {
+    text-align: left;
+}
+
+.petit {
+    font-size: 9px;
+}
+
+.moyen {
+    font-size: 14px;
+}
+
+.grand {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.colonne {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.ligne {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.espace {
+    margin: 5px;
+}
+
+.serre {
+    margin: 0;
+    padding: 0;
+}
+
+.margeauto {
+    margin: auto;
+}
+
+.f_g_v {
+    background: url("/assets/images/ui/f_g.svg") 50% no-repeat;
+    background-size: 100%;
+    padding: 20px 30px;
+    height: 725px;
+    width: 250px;
+    overflow-y: auto;
+}
+
+.f_g_v ul {
+    padding: 0;
+}
+
+.f_g_v li {
+    list-style: none;
+}
+
+.f_tg_h {
+    background: url("/assets/images/ui/f_gg_v.svg") 50% no-repeat;
+    background-size: 100%;
+    height: 350px;
+    width: 600px;
+}
+
+.f_m {
+    background: url("/assets/images/ui/f_m_bas.svg") 50% no-repeat;
+    background-size: cover;
+    height: 250px;
+    width: 250px;
+}
+
+.f_lm {
+    background: url("/assets/images/ui/f_m_v.svg") 50% no-repeat;
+    background-size: cover;
+    height: 350px;
+    width: 250px;
+}
+
+.f_m_h {
+    background: url("assets/images/ui/f_m_bas.svg") 50% no-repeat;
+    background-size: cover;
+    height: 150px;
+    width: 150px;
+}
+
+.f_m_b {
+    background: url("/assets/images/ui/f_m_bas.svg") 50% no-repeat;
+    background-size: cover;
+    height: 150px;
+    width: 150px;
+}
+
+.f_p {
+    background: url("/assets/images/ui/f_m_bas.svg") 50% no-repeat;
+    background-size: cover;
+    height: 100px;
+    width: 100px;
+}
+
+.ca {
+    background: url('/assets/images/ui/ca.svg') 50% no-repeat;
     background-size: contain;
 }
-article.carac>div>span{
-    width:100%;
-    font-size:11px;
+
+.carre {
+    background: url('/assets/images/ui/c_carre.svg') 50% no-repeat;
+    background-size: contain;
 }
-.petit{
-    font-size:11px;
+
+.cartouche_petit {
+    width: 100px;
+    height: 100px;
+    padding: 20px 10px;
+    margin: 10px;
+    text-align: center;
 }
-.moyen{
-    font-size:14px;
+
+.cartouche_moyen {
+    width: 200px;
+    height: 200px;
+    padding: 20px 10px;
+    margin: 10px;
+    text-align: center;
 }
-.grand{
-    font-size:16px;
+
+.cartouche_allonge_h {
+    width: 350px;
+    height: 100px;
+    padding: 20px 10px;
+    margin: 10px;
+    text-align: center;
+}
+
+.cartouche_allonge_v {
+    width: 100px;
+    height: 250px;
+    padding: 20px 10px;
+    margin: 10px;
+    text-align: center;
+}
+
+
+/* Génériques */
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #c2185b;
 }

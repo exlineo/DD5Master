@@ -1,0 +1,98 @@
+<div>
+    <section>
+        <h1>{{ initServ.traductions['sorts'] }}</h1>
+        <div>
+            <article>
+                <div class="carre cartouche_petit">
+                    <h3>{{ initServ.traductions['preparation'] }}</h3>
+                    <h1>{{ persoServ.perso.sorts.preparation }}</h1>
+                </div>
+            </article>
+            <article>
+                <div class="carre cartouche_petit">
+                    <h3>{{ initServ.traductions['ddSauvegardeSorts'] }}</h3>
+                    <h1>{{ persoServ.perso.sorts.ddSauvegarde }}</h1>
+                </div>
+            </article>
+            <article>
+                <div class="carre cartouche_petit">
+                    <h3>{{ initServ.traductions['bonusAttSort'] }}</h3>
+                    <h1>{{ persoServ.perso.sorts.bonusAtt }}</h1>
+                </div>
+            </article>
+            <article>
+                <div class="">
+                    <h2>Sorts par niveau</h2>
+                    <p *ngFor="let niv of persoServ.perso.sorts.nombre; let i=index">
+                        {{ initServ.traductions['niveau'] + ' ' + i}} {{ niv }}
+                    </p>
+                </div>
+            </article>
+        </div>
+    </section>
+    <section>
+        <h1>{{ initServ.traductions['livreSorts'] }}</h1>
+        <article>
+            <table mat-table [dataSource]="persoServ.perso.sorts.livre" matSort class="tabArmes">
+                <ng-container matColumnDef="select">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                        <!-- <mat-checkbox (change)="$event ? masterToggle() : null" [checked]="selection.hasValue() && isAllSelected()" [indeterminate]="selection.hasValue() && !isAllSelected()"> </mat-checkbox>-->
+                        {{ initServ.traductions['appris'] }}
+                    </th>
+                    <td mat-cell *matCellDef="let row">
+                        <mat-checkbox (click)="$event.stopPropagation()" (change)="$event ? selection.toggle(row) : null" [checked]="selection.isSelected(row)">
+                        </mat-checkbox>
+                    </td>
+                </ng-container>
+
+                <ng-container matColumnDef="niveau">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ initServ.traductions['niveau'] }} </th>
+                    <td mat-cell *matCellDef="let element"> {{element.niveau}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="nom">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ initServ.traductions['nom'] }} </th>
+                    <td mat-cell *matCellDef="let element"> {{element.nom}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="bonusAtt">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ initServ.traductions['bonusAtt'] }} </th>
+                    <td mat-cell *matCellDef="let element"> {{element.bonusAtt}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="degats">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ initServ.traductions['degats'] }} </th>
+                    <td mat-cell *matCellDef="let element"> {{element.degats}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="bonusDeg">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ initServ.traductions['bonusDeg'] }} </th>
+                    <td mat-cell *matCellDef="let element"> {{element.bonusDeg}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="duree">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ initServ.traductions['duree'] }} </th>
+                    <td mat-cell *matCellDef="let element"> {{element.descr}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="tpsInc">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ initServ.traductions['tpsInc'] }} </th>
+                    <td mat-cell *matCellDef="let element"> {{element.descr}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="aire">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ initServ.traductions['aire'] }} </th>
+                    <td mat-cell *matCellDef="let element"> {{element.descr}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="descr">
+                    <th mat-header-cell *matHeaderCellDef> {{ initServ.traductions['descr'] }} </th>
+                    <td mat-cell *matCellDef="let element"> {{element.descr}} </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="cols"></tr>
+                <tr mat-row *matRowDef="let row; columns: cols;"></tr>
+            </table>
+        </article>
+    </section>
+</div>
