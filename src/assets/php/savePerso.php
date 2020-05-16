@@ -4,22 +4,23 @@
  */
 $data = file_get_contents("php://input");
 
-// $invalid_characters = array("$", "%", "#", "<", ">", "|");
+// $invalid_characters = array("$", "..", "#", "<", ">", "|");
 // $str = str_replace($invalid_characters, "", $str);
 
-echo $data;
 
 /**
  * C'est du PHP, il faut afficher les erreurs
  */
 ini_set('track_errors', 1);
 
+var_dump($data);
+
 /**
  * Ouverture du fichier fromages.json
  * @param {string} 1 - L'adresse du fichier (attention, vérifiez vos droits www-data sur votre serveur (chown -R www-data:www-data ./modele))
  * @param {string} w - le fichier est ouvert en écriture seulement
  */
-$fJson = fopen('../datas/nouvelles.json', 'w');
+$fJson = fopen('../datas/persos/test.json', 'w');
 if ( !$fJson ) {
   echo 'fopen raté. Raison : ', $php_errormsg;
 }

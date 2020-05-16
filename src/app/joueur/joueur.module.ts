@@ -15,7 +15,15 @@ import { CombatComponent } from './perso/combat/combat.component';
 import { HistoireComponent } from './perso/histoire/histoire.component';
 import { SortsComponent } from './perso/sorts/sorts.component';
 
+import { EditCaracComponent } from './edit-joueur/carac/edit-carac.component';
+import { EditCombatComponent } from './edit-joueur/combat/edit-combat.component';
+import { EditHistoireComponent } from './edit-joueur/histoire/edit-histoire.component';
+import { EditSortsComponent } from './edit-joueur/sorts/edit-sorts.component';
+
 import { environment } from '../../environments/environment';
+import { ModaleComponent } from './modale/modale.component';
+import { EditJoueurComponent } from './edit-joueur/edit-joueur.component';
+import { ParamsJoueurComponent } from './params-joueur/params-joueur.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +36,14 @@ import { environment } from '../../environments/environment';
     CaracComponent,
     CombatComponent,
     HistoireComponent,
-    SortsComponent],
+    SortsComponent,
+    EditCaracComponent,
+    EditCombatComponent,
+    EditHistoireComponent,
+    EditSortsComponent,
+    ModaleComponent,
+    EditJoueurComponent,
+    ParamsJoueurComponent],
   imports: [
     CommonModule,
     JoueurRoutingModule,

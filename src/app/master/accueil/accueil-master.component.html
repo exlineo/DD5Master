@@ -4,17 +4,34 @@
         <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
         <h1>{{ initServ.traductions['titre'] }}</h1>
         <div>
+            <mat-icon>contacts</mat-icon>
             <mat-form-field>
-                <mat-select>
-                    <mat-option *ngFor="let p of masterServ.persos" [value]="p">
-                        {{p}}
-                    </mat-option>
+                <mat-select name="persos">
+                    <mat-optgroup [label]="initServ.traductions['optionPerso']">
+                        <mat-option *ngFor="let p of masterServ.persos" [value]="p">
+                            {{p}}
+                        </mat-option>
+                    </mat-optgroup>
                 </mat-select>
             </mat-form-field>
-            <button mat-icon-button><mat-icon>group_add</mat-icon></button>
+            <mat-icon>settings</mat-icon>
+            <mat-form-field>
+                <mat-select (selectionChange)="optionRoute()" [(ngModel)]="r">
+                    <mat-optgroup [label]="initServ.traductions['optionMenu']">
+                        <mat-option value="/master">
+                            {{ initServ.traductions['optionPersos']}}
+                        </mat-option>
+                        <mat-option value="/master/creer">
+                            {{ initServ.traductions['optionCreerPerso']}}
+                        </mat-option>
+                        <mat-option value="/master/params">
+                            {{ initServ.traductions['optionParams']}}
+                        </mat-option>
+                    </mat-optgroup>
+                </mat-select>
+            </mat-form-field>
             <button mat-icon-button><mat-icon>save</mat-icon></button>
             <button mat-icon-button><mat-icon>edit</mat-icon></button>
-            <button mat-icon-button><mat-icon>build</mat-icon></button>
             <a href="https://www.aidedd.org/regles/" target="_blank"><img src="/assets/images/logos/DD5_logo_h_b.png" /></a>
         </div>
     </mat-toolbar>
@@ -24,15 +41,19 @@
             <mat-nav-list>
                 <section>
                     <article>
-                        <button mat-icon-button (click)="send = !send"><mat-icon>message</mat-icon></button>
+                        <button mat-icon-button (click)="send = !send"><h3><mat-icon>message</mat-icon> {{ initServ.traductions['wsDialogue'] }}</h3></button>
                         <form *ngIf="send" #f="ngForm" (ngSubmit)="envoiRessourceWS()">
-                            <h2>{{ initServ.traductions['wsDialogue'] }}</h2>
                             <mat-form-field>
                                 <mat-label>{{ initServ.traductions['wsMessage'] }}</mat-label>
-                                <input matInput name="msg" [(ngModel)]="envoiWS.msg" required>
+                                <input matInput name="msg" required [(ngModel)]="envoiWS.msg">
+                            </mat-form-field>
+                            <mat-form-field>
+                                <mat-label>{{ initServ.traductions['wsLien'] }}</mat-label>
+                                <input matInput name="lien" [(ngModel)]="envoiWS.lien">
                             </mat-form-field>
                             <mat-radio-group name="type" [(ngModel)]="envoiWS.type" required>
                                 <mat-radio-button value="message" checked>{{ initServ.traductions['wsOptionMsg'] }}</mat-radio-button>
+                                <mat-radio-button value="lien" checked>{{ initServ.traductions['wsOptionLien'] }}</mat-radio-button>
                                 <mat-radio-button value="image">{{ initServ.traductions['wsOptionImg'] }}</mat-radio-button>
                                 <mat-radio-button value="audio">{{ initServ.traductions['wsOptionAudio'] }}</mat-radio-button>
                                 <mat-radio-button value="video">{{ initServ.traductions['wsOptionVideo'] }}</mat-radio-button>

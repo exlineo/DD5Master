@@ -1,26 +1,26 @@
 <main>
-  <section></section>
-  <section>
-    <header>
-      <img src="/assets/images/logos/DD5_logo.png" />
-    </header>
-    <form #f="ngForm" (ngSubmit)="initServ.testConnexion()">
+    <section></section>
+    <section>
+        <header>
+            <img src="/assets/images/logos/DD5_logo.png" />
+        </header>
+        <form #f="ngForm" (ngSubmit)="initServ.testConnexion()">
 
-      <mat-form-field>
-        <mat-label>{{ initServ.traductions['id'] }}</mat-label>
-        <input matInput name="id" required [placeholder]="initServ.traductions['idph']" [(ngModel)]="initServ.connexion.id">
-      </mat-form-field>
+            <mat-form-field>
+                <mat-label>{{ initServ.traductions['id'] }}</mat-label>
+                <input matInput name="id" required [placeholder]="initServ.traductions['idph']" [(ngModel)]="initServ.connexion.id">
+            </mat-form-field>
 
-      <mat-form-field>
-        <mat-label>{{ initServ.traductions['mdp'] }}</mat-label>
-        <input matInput name="mdp" [placeholder]="initServ.traductions['mdpph']" [(ngModel)]="initServ.connexion.mdp">
-      </mat-form-field>
+            <mat-form-field>
+                <mat-label>{{ initServ.traductions['mdp'] }}</mat-label>
+                <input matInput name="mdp" type="password" [placeholder]="initServ.traductions[ 'mdpph']" [(ngModel)]="initServ.connexion.mdp">
+            </mat-form-field>
 
-      <mat-checkbox name="statut" [(ngModel)]="initServ.connexion.statut">{{ initServ.traductions['master'] }} ?</mat-checkbox>
-      <mat-divider></mat-divider>
-      <button mat-fab [disabled]="f.invalid" [matTooltip]="initServ.traductions['interactions']['valide']">
+            <mat-checkbox name="statut " [(ngModel)]="initServ.connexion.statut">{{ initServ.traductions['master'] }} ?</mat-checkbox>
+            <mat-divider></mat-divider>
+            <button mat-fab [disabled]="f.invalid " [matTooltip]="initServ.traductions[ 'interactions'][ 'valide']">
         <mat-icon>keyboard_arrow_right</mat-icon>
       </button>
-    </form>
-  </section>
+        </form>
+    </section>
 </main>

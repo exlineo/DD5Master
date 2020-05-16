@@ -1,25 +1,26 @@
 import { Component, OnInit } from '@angular/core';
-import { PersoService } from 'src/app/materiel/services/perso.service';
-import { InitService } from 'src/app/materiel/services/init.service';
 
-import { SelectionModel } from '@angular/cdk/collections';
-import { MatTableDataSource } from '@angular/material/table';
+import { InitService } from 'src/app/materiel/services/init.service';
+import { PersoService } from 'src/app/materiel/services/perso.service';
+
+import {SelectionModel} from '@angular/cdk/collections';
+import {MatTableDataSource} from '@angular/material/table';
 import { PersoLivreI } from 'src/app/materiel/modeles/perso-i';
 
 @Component({
-  selector: 'app-sorts',
-  templateUrl: './sorts.component.html',
-  styleUrls: ['./sorts.component.css']
+  selector: 'app-edit-sorts',
+  templateUrl: './edit-sorts.component.html',
+  styleUrls: ['./edit-sorts.component.css']
 })
-export class SortsComponent implements OnInit {
-  cols: Array<string>;
-  selection: SelectionModel<PersoLivreI> = new SelectionModel<PersoLivreI>(true, []);
-  dataSource: MatTableDataSource<PersoLivreI>;
+export class EditSortsComponent implements OnInit {
 
-  constructor(public persoServ: PersoService, public initServ: InitService) { }
+  cols:Array<string>;
+  selection:SelectionModel<PersoLivreI> = new SelectionModel<PersoLivreI>(true, []);
+  dataSource:MatTableDataSource<PersoLivreI>;
+
+  constructor(public initServ:InitService, public persoServ:PersoService) { }
 
   ngOnInit(): void {
-    // this.dataSource = new MatTableDataSource<PersoLivreI>(this.persoServ.perso.sorts.livre);
     this.cols = ['select', 'niveau', 'nom', 'bonusAtt', 'degats', 'bonusDeg', 'duree', 'tpsInc', 'aire', 'descr'];
   }
   /** Whether the number of selected elements matches the total number of rows. */
@@ -44,4 +45,5 @@ export class SortsComponent implements OnInit {
     // return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${row.position + 1}`;
     return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${row.appris}`;
   }
+
 }

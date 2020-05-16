@@ -13,11 +13,13 @@ import { FormsModule } from '@angular/forms';
 
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 import { environment } from '.././../environments/environment';
+import { ParamsComponent } from './params/params.component';
+import { CreerPersoComponent } from './creer-perso/creer-perso.component';
 
 const config: SocketIoConfig = { url: environment.WS, options: {} };
 
 @NgModule({
-  declarations: [MasterAccueilComponent, MasterPersosComponent],
+  declarations: [MasterAccueilComponent, MasterPersosComponent, ParamsComponent, CreerPersoComponent],
   providers:[MasterService],
   imports: [
     CommonModule,

@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
+
 import { ProfilI } from '../modeles/profilI';
 import { ReglesI } from '../modeles/regles-i';
-import { BehaviorSubject } from 'rxjs';
-import { Router } from '@angular/router';
+import { WsSendI } from '../modeles/ws-i';
+
 import { MsgService } from './msg.service';
 
 @Injectable({
@@ -16,6 +18,7 @@ export class InitService {
   traductions:Array<any>; // Liste des traductions
   profil:ProfilI; // Profil du joueur
   regles:ReglesI; // Les règles du jeu
+  listeMsg:Array<WsSendI>;
 
   constructor(private http:HttpClient, private router:Router, public msgServ:MsgService) {
     /**
@@ -26,6 +29,9 @@ export class InitService {
       mdp:'',
       statut:false
     };
+    // Initialisation la liste des messages reçus par les joueurs
+    localStorage.getItem('listeMsg') ? this.listeMsg = JSON.parse(localStorage.getItem('listeMsg')) : this.listeMsg = [];
+
     this.getTraductions();
   }
   /**
@@ -59,14 +65,27 @@ export class InitService {
 
     })
   }
+  /** 
+   * Connecter un utilisateur si son ID existe en localStorage
+   */
+  testConnexionLocal(){
+    // Récupérer le profil si il est enregistré
+    if(localStorage.getItem("id")){
+      this.profil = JSON.parse(localStorage.getItem("id"));
+    }
+
+    if(this.profil.statut == 'master'){
+      this.connexion.statut = true;
+    }
+    this.testConnexion();
+  }
   /**
    * Vérifier les identifiants
    */
   testConnexion(){
     this.msgServ.message$.next('Tentative de connexion...');
-
+    
     this.connexion.statut ? this.getID('master') : this.getID('joueurs');
-    console.log("Tentative de connexion");
   }
   /**
    * Télécharger le fichier d'identifiants (sera corrigé dans une phase ultérieure pour sécuriser)
@@ -77,7 +96,10 @@ export class InitService {
       if(i.find(p => p.id == this.connexion.id && p.mdp == this.connexion.mdp)){
         this.profil = i.find(p => p.id == this.connexion.id && p.mdp == this.connexion.mdp);
         this.msgServ.message$.next('Bienvenue '+this.profil.id);
-        this.connexion.statut ? this.router.navigateByUrl('master') : this.router.navigateByUrl('joueur');;
+        this.connexion.statut ? this.router.navigateByUrl('master') : this.router.navigateByUrl('joueur');
+        
+        // Stocker les identifiants
+        localStorage.setItem("id", JSON.stringify(this.profil));
       }else{
         this.msgServ.message$.next('Aie, erreur dans la connexion... essaies encore');
       }
@@ -89,5 +111,13 @@ export class InitService {
    */
   sendMsg(msg:string){
     this.msgServ.message$.next(msg);
+  }
+  /**
+   * Liste des messages reçus en WebSocket
+   * @param msg Message à sauvegarder
+   */
+  setListeMsg(msg:WsSendI){
+    this.listeMsg.push(msg);
+    localStorage.setItem("listeMsg", JSON.stringify(this.listeMsg));
   }
 }

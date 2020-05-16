@@ -11,5 +11,6 @@ export class ConnexionComponent implements OnInit {
   constructor(public initServ:InitService) { }
 
   ngOnInit(): void {
+    this.initServ.testConnexionLocal();
   }
 }

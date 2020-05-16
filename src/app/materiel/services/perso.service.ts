@@ -25,4 +25,13 @@ export class PersoService {
       this.msgServ.message$.next("Personnage chargé, rock'n'roll");
     })
   }
+  /**
+   * Sauvegarder l'évolution du personnage
+   */
+  savePerso(){
+    this.http.post('assets/php/savePerso.php', this.perso).subscribe(retour => {
+      console.log(retour);
+      this.msgServ.message$.next(JSON.stringify(retour));
+    })
+  }
 }
