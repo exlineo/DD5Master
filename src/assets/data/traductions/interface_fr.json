@@ -75,6 +75,8 @@
     "interactions": {
         "valide": "Valider",
         "annule": "Annuler",
+        "suppr": "Supprimer",
+        "ajout": "Ajouter",
         "retour": "Retour en arrière",
         "avancer": "Avancer",
         "etape": "Etape suivante"
@@ -112,5 +114,7 @@
     "wsOptionVideo": "video",
     "wsOptionImg": "image",
     "wsRecuMaster": "Ressources reçues du maître",
-    "wsRecuJoueur": "Ressources reçues d'un joueur"
+    "wsRecuJoueur": "Ressources reçues d'un joueur",
+    "ajoutCapacite": "Ajouter une capacité",
+    "ajoutLangue": "Ajouter une langue"
 }

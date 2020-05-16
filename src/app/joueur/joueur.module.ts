@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import { JoueurRoutingModule } from './joueur-routing.module';
 import { AccueilJoueurComponent } from './accueil-joueur/accueil-joueur.component';
@@ -47,6 +48,7 @@ import { ParamsJoueurComponent } from './params-joueur/params-joueur.component';
   imports: [
     CommonModule,
     JoueurRoutingModule,
+    FormsModule,
     MaterielModule,
     SocketIoModule.forRoot(config)
   ]
