@@ -1,0 +1,148 @@
+{
+    "id": 0,
+    "nom": "Daidalos",
+    "joueur": "Cyril",
+    "niveau": 6,
+    "xp": 0,
+    "ca": 19,
+    "bouclier": 2,
+    "pvMax": 55,
+    "pvActu": 55,
+    "pvTmp": 55,
+    "desVie": "6D10",
+    "initiative": 0,
+    "vitesse": 9,
+    "sauvegarde": ["force", "constitution"],
+    "inspiration": 0,
+    "bonusMaitrise": 3,
+    "competences": ["athletisme", "intimidation"],
+    "capacites": ["RACE --------------------------------------",
+        "Vision dans le noir (18m)",
+        "Résistance infernale (feu)",
+        "Ascendance infernale (thaumaturgie, représailles infernales, ténèbres)",
+        "CLASSE -----------------------------------",
+        "Style combat: défense +1CA si armure",
+        "Second souffle 1D10 +Lvl Pvie",
+        "Sursaut +1 action ",
+        "Attaque supplémentaire",
+        "Archétype martial Champion:",
+        "Critique sur 19 ou 20",
+        "Défense, si armure, +1 en CA"
+    ],
+    "langues": ["commun", "infernal"],
+    "perception": 11,
+    "jdsMort": {
+        "reussites": 0,
+        "echecs": 0
+    },
+    "carac": {
+        "force": 18,
+        "dexterite": 14,
+        "constitution": 15,
+        "intelligence": 12,
+        "sagesse": 8,
+        "charisme": 12
+    },
+    "armes": [{
+        "nom": "Epée longue",
+        "bonusAtt": "7",
+        "degats": "1D8",
+        "bonusDeg": "7",
+        "descr": ""
+    }, {
+        "nom": "Epée courte",
+        "bonusAtt": "7",
+        "degats": "1D6",
+        "bonusDeg": "3",
+        "descr": ""
+    }],
+    "sorts": {
+        "nombre": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "ddSauvegarde": 0,
+        "bonusAtt": 0,
+        "preparation": 0,
+        "livre": [{
+            "niveau": 0,
+            "nom": "Thaumaturgie",
+            "ecole": "Transmutation",
+            "bonusAtt": 0,
+            "degats": 0,
+            "bonusDeg": 0,
+            "duree": "Jusqu'à 1 minute",
+            "portee": "9 mètres",
+            "tps": "1 action",
+            "aire": "",
+            "descr": "",
+            "composantes": "V",
+            "lien": "https://www.aidedd.org/dnd/sorts.php?vf=thaumaturgie"
+        }, {
+            "niveau": 2,
+            "nom": "Représailles infernales",
+            "ecole": "Evocation",
+            "bonusAtt": 0,
+            "degats": "3D10",
+            "bonusDeg": 0,
+            "duree": "Concentration, jusqu'à 10 minutes",
+            "portee": "18 mètres",
+            "tps": "1 réaction, que vous prenez après avoir subi des dégâts par une créature située à 18 mètres maximum de vous et que vous pouvez voir.",
+            "aire": "",
+            "descr": "Sauvegarde sur la dextérité",
+            "composantes": "V, M (des poils de chauve-souris et une goutte de goudron ou un morceau de charbon)",
+            "lien": "https://www.aidedd.org/dnd/sorts.php?vf=represailles-infernales"
+        }, {
+            "niveau": 2,
+            "nom": "Ténèbres",
+            "ecole": "Evocation",
+            "bonusAtt": 0,
+            "degats": 0,
+            "bonusDeg": 0,
+            "duree": "Concentration, jusqu'à 10 minutes",
+            "portee": "18 mètres",
+            "tps": "1 action",
+            "aire": "",
+            "descr": "",
+            "composantes": "V, M (des poils de chauve-souris et une goutte de goudron ou un morceau de charbon)",
+            "lien": "https://www.aidedd.org/dnd/sorts.php?vf=tenebres"
+        }]
+    },
+    "description": {
+        "classe": "",
+        "img": ["/assets/images/persos/champion_tieffelin.jpg"],
+        "apparence": "Une forme démoniaque qui choque lorsqu'elle n'est pas masquée. A part la queue, les cornes et la peau rouge, tout à l'air normal et plutôt beau gosse.",
+        "historique": "",
+        "race": "Tieffelin",
+        "alignement": "CN",
+        "physique": {
+            "age": "17",
+            "taille": "1m85",
+            "poids": "90kgs",
+            "yeux": "Jaunes",
+            "peau": "Rougeâtre",
+            "cheveux": "Noirs"
+        },
+        "allies": ""
+    },
+    "possessions": [{
+        "nom": "Bouclier",
+        "pds": "",
+        "quantite": "1",
+        "descr": "CA+2, touche les créatures magiques"
+    }, {
+        "nom": "Cuirrasse",
+        "pds": "",
+        "quantite": "1",
+        "descr": "CA 14, touche les créatures magiques"
+    }],
+    "tresors": [{
+        "nom": "",
+        "magie": "",
+        "quantite": "",
+        "description": ""
+    }]
+}

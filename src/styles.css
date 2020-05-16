@@ -30,6 +30,17 @@ h4 {
     font-family: 'MedievalSharp', cursive !important;
 }
 
+a {
+    color: rgba(255, 255, 255, .6);
+    font-weight: bold;
+    transition: all .4s ease;
+}
+
+a:hover {
+    color: rgba(255, 255, 255, .6);
+    font-weight: bold;
+}
+
 section {
     padding: 10px;
 }
@@ -141,6 +152,7 @@ div>section {
 .ligne {
     display: flex;
     flex-flow: row nowrap;
+    margin: 0 20px;
 }
 
 .espace {
@@ -178,34 +190,36 @@ div>section {
     background-size: 100%;
     height: 350px;
     width: 600px;
-}
-
-.f_m {
-    background: url("/assets/images/ui/f_m_bas.svg") 50% no-repeat;
-    background-size: cover;
-    height: 250px;
-    width: 250px;
+    overflow-y: auto;
 }
 
 .f_lm {
     background: url("/assets/images/ui/f_m_v.svg") 50% no-repeat;
     background-size: cover;
-    height: 350px;
-    width: 250px;
+    overflow-y: auto;
+}
+
+.f_m_haut {
+    background: url("assets/images/ui/f_m_haut.svg") 50% no-repeat;
+    background-size: cover;
+    overflow-y: auto;
+}
+
+.f_m_bas {
+    background: url("/assets/images/ui/f_m_bas.svg") 50% no-repeat;
+    background-size: cover;
+    overflow-y: auto;
+}
+
+.f_m_v {
+    background: url("/assets/images/ui/f_m_v.svg") 50% no-repeat;
+    background-size: cover;
+    overflow-y: auto;
 }
 
 .f_m_h {
-    background: url("assets/images/ui/f_m_bas.svg") 50% no-repeat;
+    background: url("/assets/images/ui/f_m_h.svg") 50% no-repeat;
     background-size: cover;
-    height: 150px;
-    width: 150px;
-}
-
-.f_m_b {
-    background: url("/assets/images/ui/f_m_bas.svg") 50% no-repeat;
-    background-size: cover;
-    height: 150px;
-    width: 150px;
 }
 
 .f_p {
@@ -228,33 +242,41 @@ div>section {
 .cartouche_petit {
     width: 100px;
     height: 100px;
-    padding: 20px 10px;
-    margin: 10px;
     text-align: center;
 }
 
 .cartouche_moyen {
     width: 200px;
     height: 200px;
-    padding: 20px 10px;
-    margin: 10px;
     text-align: center;
+}
+
+.cartouche_large {
+    width: 300px;
+    height: 350px;
 }
 
 .cartouche_allonge_h {
-    width: 350px;
-    height: 100px;
-    padding: 20px 10px;
-    margin: 10px;
-    text-align: center;
+    width: 450px;
+    height: 200px;
 }
 
 .cartouche_allonge_v {
-    width: 100px;
+    width: 150px;
     height: 250px;
+}
+
+[class^="cartouche"] {
     padding: 20px 10px;
     margin: 10px;
-    text-align: center;
+    display: flex;
+}
+
+[class^="cartouche"]>div {
+    /* width: 100%;
+    height: 100%; */
+    margin: auto;
+    overflow-y: auto;
 }
 
 

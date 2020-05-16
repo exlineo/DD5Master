@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AccueilComponent } from './accueil/accueil.component';
+import { MasterAccueilComponent } from './accueil/accueil-master.component';
+import { MasterPersosComponent } from './persos/persos-master.component';
 
 
 const routes: Routes = [
-  { path:'', component:AccueilComponent, children:[
-      
+  { path:'', component:MasterAccueilComponent, children:[
+      { path:'', component:MasterPersosComponent}
   ]}
 ];
 

@@ -8,13 +8,17 @@ mat-toolbar {
     justify-content: space-between;
 }
 
+mat-nav-list>section {
+    min-width: 20vw;
+}
+
 mat-toolbar>div {
     display: flex;
     align-items: center;
 }
 
-mat-toolbar>div>img {
-    margin-left: 20px;
+mat-toolbar>div>* {
+    margin-left: 15px;
 }
 
 mat-toolbar img {

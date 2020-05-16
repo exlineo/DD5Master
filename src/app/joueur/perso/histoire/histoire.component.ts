@@ -9,9 +9,18 @@ import { InitService } from 'src/app/materiel/services/init.service';
 })
 export class HistoireComponent implements OnInit {
 
+  colsPoss:Array<string>;
+  colsTresors:Array<string>;
+
   constructor(public persoServ:PersoService, public initServ:InitService) {}
 
   ngOnInit(): void {
+    this.colsPoss = ["nom", "pds", "quantite", "descr"];
+    this.colsTresors = ["nom", "magie", "quantite", "descr"];
+  }
+
+  modale(l:string){
+    console.log(l);
   }
 
 }

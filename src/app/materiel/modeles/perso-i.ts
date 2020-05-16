@@ -28,9 +28,13 @@ export interface PersoI {
     sorts: PersoSortI;
     description:PersoDescrI;
     possessions: Array<PersoPossessionI>;
+    tresors: Array<PersoTresorI>;
 }
 export interface PersoPossessionI {
-    nom: string; pds: string; descr: string
+    nom: string; pds?: string; quantite?:number | string; descr?: string;
+}
+export interface PersoTresorI {
+    nom: string; magie: string; quantite?:number | string; descr?: string;
 }
 export interface PersoSortI {
     nombre: Array<number>;
@@ -42,6 +46,7 @@ export interface PersoSortI {
 export interface PersoLivreI {
     niveau:number;
     nom: string;
+    ecole?:string;
     bonusAtt?: number;
     degats?: number | string;
     bonusDeg?: number;
@@ -51,7 +56,8 @@ export interface PersoLivreI {
     aire?: string | string;
     descr?: string;
     lien?: string;
-    appris?:number;
+    composantes?:string;
+    appris?:boolean;
 }
 export interface PersoArmeI {
     nom: string;
@@ -79,12 +85,12 @@ export interface PersoDescrI {
     allies: string
 }
 export interface PersoPhysique {
-    age: number;
-    taille: string;
-    poids: string;
-    yeux: string;
-    peau: string;
-    cheveux: string
+    age?: number | string;
+    taille?: string;
+    poids?: string;
+    yeux?: string;
+    peau?: string;
+    cheveux?: string
 };
 export interface PersoJdsMort{
     reussites:number;
@@ -147,6 +153,7 @@ export class Perso implements PersoI {
             {
                 niveau:0,
                 nom: "",
+                ecole:","
                 bonusAtt: 0,
                 degats: 0,
                 bonusDeg: 0,
@@ -154,6 +161,7 @@ export class Perso implements PersoI {
                 tps: 0,
                 aire: "",
                 descr: "",
+                composantes:"",
                 lien: ""
             }
         ]
@@ -166,7 +174,7 @@ export class Perso implements PersoI {
         race: "";
         alignement: "";
         physique: {
-            age: 0;
+            age: "0";
             taille: "";
             poids: "";
             yeux: "";
@@ -179,6 +187,13 @@ export class Perso implements PersoI {
         {
             nom: "",
             pds: "",
+            descr: ""
+        }
+    ];
+    tresors: [
+        {
+            nom: "",
+            magie: "",
             descr: ""
         }
     ]

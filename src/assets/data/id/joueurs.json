@@ -4,7 +4,7 @@
         "nom": "David",
         "email": "",
         "statut": "joueur",
-        "perso": "tauilas_we-mal"
+        "persos": ["tauilas_we-mal"]
     },
     {
         "id": "Pierre",
@@ -12,34 +12,34 @@
         "nom": "Pierre",
         "email": "",
         "statut": "joueur",
-        "perso": ""
+        "persos": []
     }, {
         "id": "Cyril",
         "mdp": "",
         "nom": "Cyril",
         "email": "",
         "statut": "joueur",
-        "perso": ""
+        "persos": ["daidalos"]
     }, {
         "id": "Philippe",
         "mdp": "",
         "nom": "Philippe",
         "email": "",
         "statut": "joueur",
-        "perso": ""
+        "persos": []
     }, {
         "id": "Mickael",
         "mdp": "",
         "nom": "Mickaël",
         "email": "",
         "statut": "joueur",
-        "perso": ""
+        "persos": []
     }, {
         "id": "Romain",
         "mdp": "",
         "nom": "Romain",
         "email": "",
         "statut": "joueur",
-        "perso": ""
+        "persos": []
     }
 ]

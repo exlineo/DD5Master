@@ -1,0 +1,33 @@
+main {
+    flex-flow: column nowrap;
+}
+
+mat-toolbar {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+mat-nav-list>section {
+    min-width: 20vw;
+}
+
+mat-toolbar>div {
+    display: flex;
+    align-items: center;
+}
+
+mat-toolbar>div>* {
+    margin-left: 15px;
+}
+
+mat-toolbar img {
+    max-width: 200px;
+}
+
+mat-nav-list>section,
+mat-nav-list>section>article,
+form {
+    display: flex;
+    flex-flow: column nowrap;
+}

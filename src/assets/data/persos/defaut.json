@@ -1,91 +1,99 @@
-    {
-        "id": 0,
-        "nom": "",
-        "joueur": "",
-        "cree":"",
-        "maj":"",
-        "puissance": {
-            "niveau": 0,
-            "xp": 0,
-            "ca": 10,
-            "pvMax": 0,
-            "pvActu": 0,
-            "pvTmp": 0,
-            "desVie": 1,
-            "initiative": 0,
-            "vitesse": 9,
-            "sauvegarde": [],
-            "inspiration": 0,
-            "bonusMaitrise": 0,
-            "competences": [],
-            "perception": 10,
-            "jdsMort": {
-                "reussites": 0,
-                "echecs": 0
-            },
-            "carac": {
-                "force": 10,
-                "dexterite": 10,
-                "constitution": 10,
-                "intelligence": 10,
-                "sagesse": 10,
-                "charisme": 10
-            }
-        },
-        "armes": [
-            {
-                "nom": "",
-                "bonusAtt": 0,
-                "degats": 0,
-                "bonusDeg": 0,
-                "descr": ""
-            }
+{
+    "id": 0,
+    "nom": "0",
+    "joueur": "0",
+    "niveau": 0,
+    "xp": 0,
+    "ca": 0,
+    "bouclier": 0,
+    "pvMax": 0,
+    "pvActu": 0,
+    "pvTmp": 0,
+    "desVie": "",
+    "initiative": 0,
+    "vitesse": 9,
+    "sauvegarde": [],
+    "inspiration": 0,
+    "bonusMaitrise": 0,
+    "competences": [],
+    "capacites": [
+        ""
+    ],
+    "langues": [],
+    "perception": 10,
+    "jdsMort": {
+        "reussites": 0,
+        "echecs": 0
+    },
+    "carac": {
+        "force": 11,
+        "dexterite": 11,
+        "constitution": 11,
+        "intelligence": 11,
+        "sagesse": 11,
+        "charisme": 11
+    },
+    "armes": [{
+        "nom": "0",
+        "bonusAtt": 0,
+        "degats": "0",
+        "bonusDeg": 0,
+        "descr": ""
+    }],
+    "sorts": {
+        "nombre": [
+            0,
+            0,
+            0,
+            0,
+            0
         ],
-        "sorts": {
-            "nombre": [
-                0,
-                0,
-                0
-            ],
-            "ddSauvegarde": 0,
+        "ddSauvegarde": 0,
+        "bonusAtt": 0,
+        "preparation": 0,
+        "livre": [{
+            "niveau": 0,
+            "nom": "",
+            "ecole": "",
             "bonusAtt": 0,
-            "preparation": 0,
-            "livre": [
-                {
-                    "nom": "",
-                    "bonusAtt": 0,
-                    "degats": 0,
-                    "bonusDeg": 0,
-                    "duree": 0,
-                    "tps": 0,
-                    "aire": "",
-                    "descr": "",
-                    "lien": ""
-                }
-            ]
+            "degats": 0,
+            "bonusDeg": 0,
+            "duree": "",
+            "portee": "",
+            "tps": "",
+            "aire": "",
+            "descr": "",
+            "composantes": "",
+            "lien": ""
+        }]
+    },
+    "description": {
+        "classe": "",
+        "img": [""],
+        "apparence": "",
+        "historique": "",
+        "race": "",
+        "alignement": "",
+        "physique": {
+            "age": "",
+            "taille": "",
+            "poids": "",
+            "yeux": "",
+            "peau": "",
+            "cheveux": ""
         },
-        "description": {
-            "classe": "",
-            "img": [],
-            "apparence": "",
-            "historique": "",
-            "race": "",
-            "alignement": "",
-            "physique": {
-                "age": 0,
-                "taille": "",
-                "poids": "",
-                "yeux": "",
-                "peau": "",
-                "cheveux": ""
-            },
-            "allies": ""
-        },
-        "possessions": [
-            {
-                "nom": "",
-                "pds": "",
-                "descr": ""
-            }
-        ]
-    }
+        "allies": ""
+    },
+    "possessions": [{
+        "nom": "",
+        "pds": "",
+        "quantite": "",
+        "descr": ""
+    }],
+    "tresors": [{
+        "nom": "",
+        "magie": "",
+        "quantite": "",
+        "description": ""
+    }]
+}

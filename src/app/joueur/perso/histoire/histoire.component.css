@@ -1,0 +1,11 @@
+section {
+    flex-grow: 1;
+}
+
+img {
+    max-width: 300px;
+}
+
+section:last-child {
+    flex-grow: 2;
+}

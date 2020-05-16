@@ -12,10 +12,7 @@
     "desVie": "6D10",
     "initiative": 0,
     "vitesse": 10.5,
-    "sauvegarde": [
-        "force",
-        "dexterite"
-    ],
+    "sauvegarde": ["force", "dexterite"],
     "inspiration": 0,
     "bonusMaitrise": 0,
     "competences": ["athletisme", "dressage", "perception", "survie"],
@@ -76,6 +73,8 @@
     ],
     "sorts": {
         "nombre": [
+            4,
+            2,
             0,
             0,
             0
@@ -84,38 +83,123 @@
         "bonusAtt": 0,
         "preparation": 0,
         "livre": [{
-            "niveau": 0,
-            "nom": "",
-            "bonusAtt": 0,
-            "degats": 0,
-            "bonusDeg": 0,
-            "duree": 0,
-            "tps": 0,
-            "aire": "",
-            "descr": "",
-            "lien": ""
-        }]
+                "niveau": 1,
+                "nom": "Baies nourricières",
+                "bonusAtt": 0,
+                "degats": 0,
+                "bonusDeg": 0,
+                "duree": 0,
+                "portee": "Contact",
+                "tps": 0,
+                "aire": "",
+                "descr": "",
+                "composantes": "V,S,M (une branche de gui)",
+                "lien": ""
+            },
+            {
+                "niveau": 1,
+                "nom": "Collet",
+                "ecole": "Abjuration",
+                "bonusAtt": 0,
+                "degats": 0,
+                "bonusDeg": 0,
+                "duree": "8 heures",
+                "portee": "Contact",
+                "tps": "1 minute",
+                "aire": "",
+                "descr": "",
+                "composantes": "S,M (7,50 m de corde, que le sort consomme)",
+                "lien": ""
+            },
+            {
+                "niveau": 1,
+                "nom": "Communication avec les animaux",
+                "ecole": "Divination (rituel)",
+                "bonusAtt": 0,
+                "degats": 0,
+                "bonusDeg": 0,
+                "duree": "10 minutes",
+                "portee": "Contact",
+                "tps": "1 action",
+                "aire": "",
+                "descr": "",
+                "composantes": "V,S",
+                "lien": ""
+            },
+            {
+                "niveau": 1,
+                "nom": "Saut",
+                "ecole": "Transmutation",
+                "bonusAtt": 0,
+                "degats": 0,
+                "bonusDeg": 0,
+                "duree": "1 minute",
+                "portee": "Contact",
+                "tps": "1 action",
+                "aire": "",
+                "descr": "",
+                "composantes": "V,S,M (la patte postérieure d'une sauterelle)",
+                "lien": ""
+            },
+            {
+                "niveau": 2,
+                "nom": "Messager animal",
+                "ecole": "Enchantement (rituel)",
+                "bonusAtt": 0,
+                "degats": 0,
+                "bonusDeg": 0,
+                "duree": "24 heures",
+                "portee": "9 mètres",
+                "tps": "1 action",
+                "aire": "",
+                "descr": "",
+                "composantes": "V,S,M (morceau de nourriture)",
+                "lien": ""
+            },
+            {
+                "niveau": 2,
+                "nom": "Sens animal",
+                "ecole": "Divination (rituel)",
+                "bonusAtt": 0,
+                "degats": 0,
+                "bonusDeg": 0,
+                "duree": "Concentration, jusqu'à 1 heure",
+                "portee": "Contact",
+                "tps": "1 action",
+                "aire": "",
+                "descr": "",
+                "composantes": "V,S,M (morceau de nourriture)",
+                "lien": ""
+            }
+        ]
     },
     "description": {
-        "classe": "",
-        "img": [],
-        "apparence": "",
-        "historique": "",
-        "race": "",
-        "alignement": "",
+        "classe": "Rodeur",
+        "img": ["assets/images/persos/rodeur_elf.jpg"],
+        "apparence": "Un elf des bois qui pourrait passer pour un humain si on n'y prenait pas garde. Une grande cicactrice larde le torse de Tauilas.",
+        "historique": "Une vibration étrange émeut la nature. Quelque chose de pas naturel est entrain de se produire. Ta communauté va être touchée. Il faut mener l'enquête.",
+        "race": "Elf des bois",
+        "alignement": "CB",
         "physique": {
-            "age": 0,
-            "taille": "",
-            "poids": "",
-            "yeux": "",
-            "peau": "",
-            "cheveux": ""
+            "age": "86 ans",
+            "taille": "1m80",
+            "poids": "65kgs",
+            "yeux": "Verts",
+            "peau": "Brun olive",
+            "cheveux": "Vert foncé"
         },
         "allies": ""
     },
     "possessions": [{
-        "nom": "",
+        "nom": "Carquois magique",
         "pds": "",
+        "quantite": "",
         "descr": ""
+    }],
+    "tresors": [{
+        "nom": "",
+        "magie": "",
+        "quantite": "",
+        "description": ""
     }]
 }

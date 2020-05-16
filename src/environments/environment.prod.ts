@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  WS:'ws://vps550598.ovh.net:666'
 };

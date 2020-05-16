@@ -1,1 +1,83 @@
-<p>histoire works!</p>
+<div class="horizontal">
+    <section *ngIf="persoServ.perso.description.img.length > 0">
+        <article *ngFor="let i of persoServ.perso.description.img">
+            <a [href]="i" target="_blank"><img [src]="i" (click)="modale(i)" /></a>
+        </article>
+    </section>
+    <section>
+        <h1>{{ persoServ.perso.nom }}, {{ persoServ.perso.description.race }}, {{ persoServ.perso.description.classe }} ({{ persoServ.perso.description.alignement }})</h1>
+        <h2>{{ persoServ.perso.description.physique.age }}, {{ persoServ.perso.description.physique.taille }}, {{ persoServ.perso.description.physique.poids }}</h2>
+        <h3>{{ initServ.traductions['yeux'] }} : {{ persoServ.perso.description.physique.yeux }}, {{ initServ.traductions['peau'] }} : {{ persoServ.perso.description.physique.peau }}, {{ initServ.traductions['cheveux'] }} : {{ persoServ.perso.description.physique.cheveux
+            }}
+        </h3>
+
+        <h1>{{ initServ.traductions['apparence'] }}</h1>
+        <article class="cartouche_allonge_h f_m_h">
+            <div class="">
+                {{ persoServ.perso.description.apparence }}
+            </div>
+        </article>
+        <h1>{{ initServ.traductions['histoire'] }}</h1>
+        <article class="cartouche_allonge_h f_m_h">
+            <div class="">
+                {{ persoServ.perso.description.historique }}
+            </div>
+        </article>
+    </section>
+    <section>
+        <article>
+            <h1>{{ initServ.traductions['possessions'] }}</h1>
+            <table mat-table [dataSource]="persoServ.perso.armes" class="tabArmes">
+                <ng-container matColumnDef="nom">
+                    <th mat-header-cell *matHeaderCellDef> {{ initServ.traductions['nom'] }} </th>
+                    <td mat-cell *matCellDef="let element"> {{element.nom}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="pds">
+                    <th mat-header-cell *matHeaderCellDef> {{ initServ.traductions['bonusAtt'] }} </th>
+                    <td mat-cell *matCellDef="let element"> {{element.pds}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="quantite">
+                    <th mat-header-cell *matHeaderCellDef> {{ initServ.traductions['degats'] }} </th>
+                    <td mat-cell *matCellDef="let element"> {{element.quantite}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="descr">
+                    <th mat-header-cell *matHeaderCellDef> {{ initServ.traductions['degats'] }} </th>
+                    <td mat-cell *matCellDef="let element"> {{element.descr}} </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="colsPoss"></tr>
+                <tr mat-row *matRowDef="let row; columns: colsPoss;"></tr>
+            </table>
+        </article>
+        <article>
+            <h1>{{ initServ.traductions['tresors'] }}</h1>
+            <table mat-table [dataSource]="persoServ.perso.armes" class="tabArmes">
+                <ng-container matColumnDef="nom">
+                    <th mat-header-cell *matHeaderCellDef> {{ initServ.traductions['nom'] }} </th>
+                    <td mat-cell *matCellDef="let element"> {{element.nom}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="magie">
+                    <th mat-header-cell *matHeaderCellDef> {{ initServ.traductions['magie'] }} </th>
+                    <td mat-cell *matCellDef="let element"> {{element.magie}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="quantite">
+                    <th mat-header-cell *matHeaderCellDef> {{ initServ.traductions['quantite'] }} </th>
+                    <td mat-cell *matCellDef="let element"> {{element.quantite}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="descr">
+                    <th mat-header-cell *matHeaderCellDef> {{ initServ.traductions['description'] }} </th>
+                    <td mat-cell *matCellDef="let element"> {{element.descr}} </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="colsTresors"></tr>
+                <tr mat-row *matRowDef="let row; columns: colsTresors;"></tr>
+            </table>
+        </article>
+    </section>
+</div>

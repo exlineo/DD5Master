@@ -1,17 +1,31 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { AccueilComponent } from './accueil/accueil.component';
 import { MaterielModule } from '../materiel/materiel.module';
 import { MasterRoutingModule } from './master-routing.module';
 
+import { MasterAccueilComponent } from './accueil/accueil-master.component';
+import { MasterPersosComponent } from './persos/persos-master.component';
+
+import { MasterService } from './services/master.service';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+
+import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+import { environment } from '.././../environments/environment';
+
+const config: SocketIoConfig = { url: environment.WS, options: {} };
 
 @NgModule({
-  declarations: [AccueilComponent],
+  declarations: [MasterAccueilComponent, MasterPersosComponent],
+  providers:[MasterService],
   imports: [
     CommonModule,
     MaterielModule,
-    MasterRoutingModule
+    MasterRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    SocketIoModule.forRoot(config)
   ]
 })
 export class MasterModule { }

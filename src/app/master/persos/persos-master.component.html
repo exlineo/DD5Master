@@ -1,0 +1,102 @@
+<div class="horizontal">
+    <section *ngFor="let perso of masterServ.listePersos; let i=index">
+        <article>
+            <img [src]="perso.description.img[0]" *ngIf="perso.description.img.length > 0" />
+            <img src="/assets/images/bg/embleme_lion.jpg" *ngIf="perso.description.img.length == 0" />
+            <h2>{{ perso.nom }}</h2>
+        </article>
+        <article>
+            <div class="ca cartouche_petit">
+                <p>{{ initServ.traductions['ca'] }}</p>
+                <h1>{{ perso['ca'] }}</h1>
+            </div>
+            <div class="carre cartouche_petit">
+                <p>{{ initServ.traductions['max'] }} : {{ perso['pvMax'] }}</p>
+                <h1><input matInput [placeholder]="initServ.traductions['pointVieActu']" [value]="perso['pvActu']"></h1>
+            </div>
+            <div class="carre cartouche_petit">
+                <p>{{ initServ.traductions['pointVieTmp'] }}</p>
+                <h1><input matInput [placeholder]="initServ.traductions['pointVieTmp']" [value]="perso['pvTmp']"></h1>
+            </div>
+        </article>
+        <article>
+            <h3>{{ initServ.traductions['armesSorts'] }}</h3>
+            <mat-accordion>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            <h4>{{ initServ.traductions['armes'] }}</h4>
+                        </mat-panel-title>
+                        <mat-panel-description>
+                            ----------
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+
+                    <table mat-table [dataSource]="perso.armes" class="tabArmes">
+                        <ng-container matColumnDef="nom">
+                            <th mat-header-cell *matHeaderCellDef> {{ initServ.traductions['nom'] }} </th>
+                            <td mat-cell *matCellDef="let element"> {{element.nom}} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="bonusAtt">
+                            <th mat-header-cell *matHeaderCellDef> {{ initServ.traductions['bonusAtt'] }} </th>
+                            <td mat-cell *matCellDef="let element"> {{element.bonusAtt}} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="degats">
+                            <th mat-header-cell *matHeaderCellDef> {{ initServ.traductions['degats'] }} </th>
+                            <td mat-cell *matCellDef="let element"> {{element.degats}} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="bonusDeg">
+                            <th mat-header-cell *matHeaderCellDef> {{ initServ.traductions['bonusDeg'] }} </th>
+                            <td mat-cell *matCellDef="let element"> {{element.bonusDeg}} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="descr">
+                            <th mat-header-cell *matHeaderCellDef> {{ initServ.traductions['descr'] }} </th>
+                            <td mat-cell *matCellDef="let element"> {{element.descr}} </td>
+                        </ng-container>
+
+                        <tr mat-header-row *matHeaderRowDef="colsArmes"></tr>
+                        <tr mat-row *matRowDef="let row; columns: colsArmes;"></tr>
+                    </table>
+                </mat-expansion-panel>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            <h4>{{ initServ.traductions['sorts'] }}</h4>
+                        </mat-panel-title>
+                        <mat-panel-description>
+                            -------------
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+
+                    <table mat-table [dataSource]="perso.sorts.livre" matSort class="tabArmes">
+                        <ng-container matColumnDef="niveau">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ initServ.traductions['niveau'] }} </th>
+                            <td mat-cell *matCellDef="let element"> {{element.niveau}}</td>
+                        </ng-container>
+                        <ng-container matColumnDef="nom">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ initServ.traductions['nom'] }} </th>
+                            <td mat-cell *matCellDef="let element"> <a [href]="element.lien" target="_blank">{{element.nom}}</a> </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="duree">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ initServ.traductions['duree'] }} </th>
+                            <td mat-cell *matCellDef="let element"> {{element.duree}} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="tpsInc">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ initServ.traductions['tpsInc'] }} </th>
+                            <td mat-cell *matCellDef="let element"> {{element.tps}} </td>
+                        </ng-container>
+
+                        <tr mat-header-row *matHeaderRowDef="colsSorts"></tr>
+                        <tr mat-row *matRowDef="let row; columns: colsSorts;"></tr>
+                    </table>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </article>
+    </section>
+</div>

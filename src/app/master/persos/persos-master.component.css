@@ -1,0 +1,15 @@
+section {
+    margin: 20px;
+    border: thick double rgba(255, 255, 255, .6);
+    padding: 10px
+}
+
+section,
+article img {
+    max-width: 400px;
+}
+
+article:nth-child(2) {
+    display: flex;
+    flex-flow: row nowrap;
+}

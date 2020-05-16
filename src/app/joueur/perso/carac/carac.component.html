@@ -58,16 +58,16 @@
     </section>
     <section>
         <h1>{{ initServ.traductions['jds'] }}</h1>
-        <article class="f_lm colonne">
-            <div>
+        <article class="cartouche_allonge_v f_lm colonne">
+            <div class="">
                 <p *ngFor="let ca of initServ.regles['carac']" class="espace">
                     <mat-checkbox [checked]="persoServ.perso.sauvegarde.includes(ca.id)">{{ ca.nom }}</mat-checkbox>
                 </p>
             </div>
         </article>
         <h1>{{ initServ.traductions['autresMaitrises'] }}</h1>
-        <article class="f_lm">
-            <div>
+        <article class="cartouche_allonge_v f_lm">
+            <div class="">
                 <p *ngFor="let l of persoServ.perso.langues" class="espace">
                     {{ l }}
                 </p>

@@ -1,32 +1,32 @@
-<div>
+<div class="vertical">
     <section>
         <h1>{{ initServ.traductions['sorts'] }}</h1>
         <div>
-            <article>
-                <div class="carre cartouche_petit">
-                    <h3>{{ initServ.traductions['preparation'] }}</h3>
+            <article class="cartouche_moyen">
+                <div class="f_m">
+                    <p>{{ initServ.traductions['preparation'] }}</p>
                     <h1>{{ persoServ.perso.sorts.preparation }}</h1>
                 </div>
             </article>
-            <article>
-                <div class="carre cartouche_petit">
-                    <h3>{{ initServ.traductions['ddSauvegardeSorts'] }}</h3>
+            <article class="cartouche_moyen">
+                <div class="f_m">
+                    <p>{{ initServ.traductions['ddSauvegardeSorts'] }}</p>
                     <h1>{{ persoServ.perso.sorts.ddSauvegarde }}</h1>
                 </div>
             </article>
-            <article>
-                <div class="carre cartouche_petit">
-                    <h3>{{ initServ.traductions['bonusAttSort'] }}</h3>
+            <article class="cartouche_moyen">
+                <div class="f_m">
+                    <p>{{ initServ.traductions['bonusAttSort'] }}</p>
                     <h1>{{ persoServ.perso.sorts.bonusAtt }}</h1>
                 </div>
             </article>
             <article>
-                <div class="">
-                    <h2>Sorts par niveau</h2>
-                    <p *ngFor="let niv of persoServ.perso.sorts.nombre; let i=index">
-                        {{ initServ.traductions['niveau'] + ' ' + i}} {{ niv }}
-                    </p>
-                </div>
+                <h2>Sorts par niveau</h2>
+                <ul class="ligne">
+                    <li *ngFor="let niv of persoServ.perso.sorts.nombre; let i=index">
+                        {{ initServ.traductions['niveau'] + ' ' + i}} : {{ niv }}
+                    </li>
+                </ul>
             </article>
         </div>
     </section>
@@ -52,7 +52,7 @@
 
                 <ng-container matColumnDef="nom">
                     <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ initServ.traductions['nom'] }} </th>
-                    <td mat-cell *matCellDef="let element"> {{element.nom}} </td>
+                    <td mat-cell *matCellDef="let element"> <a [href]="element.lien" traget="_blank">{{element.nom}}</a></td>
                 </ng-container>
 
                 <ng-container matColumnDef="bonusAtt">
@@ -72,17 +72,17 @@
 
                 <ng-container matColumnDef="duree">
                     <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ initServ.traductions['duree'] }} </th>
-                    <td mat-cell *matCellDef="let element"> {{element.descr}} </td>
+                    <td mat-cell *matCellDef="let element"> {{element.duree}} </td>
                 </ng-container>
 
                 <ng-container matColumnDef="tpsInc">
                     <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ initServ.traductions['tpsInc'] }} </th>
-                    <td mat-cell *matCellDef="let element"> {{element.descr}} </td>
+                    <td mat-cell *matCellDef="let element"> {{element.tps}} </td>
                 </ng-container>
 
                 <ng-container matColumnDef="aire">
                     <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ initServ.traductions['aire'] }} </th>
-                    <td mat-cell *matCellDef="let element"> {{element.descr}} </td>
+                    <td mat-cell *matCellDef="let element"> {{element.aire}} </td>
                 </ng-container>
 
                 <ng-container matColumnDef="descr">

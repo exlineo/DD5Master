@@ -20,7 +20,6 @@ export class PersoService {
    */
   getPerso(p:string='defaut'){
     this.http.get<PersoI>('/assets/data/persos/'+p+'.json').subscribe(ps => {
-      
       this.perso = ps;
       console.log("Perso chargé", this.perso, this.perso.carac);
       this.msgServ.message$.next("Personnage chargé, rock'n'roll");
