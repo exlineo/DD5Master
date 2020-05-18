@@ -4,7 +4,8 @@
         <h1>{{ initServ.traductions['bienvenue'] }} {{ persoServ.perso.nom }} ({{ initServ.profil['nom'] }})</h1>
         <div>
             <mat-form-field>
-                <mat-select>
+                <mat-select (selectionChange)="selectPerso()" [(ngModel)]="persoChoisi">
+                    <mat-option value="null">{{ initServ.traductions['choixPerso'] }}</mat-option>
                     <mat-option *ngFor="let p of initServ.profil.persos" [value]="p">
                         {{p}}
                     </mat-option>

@@ -1,98 +1,102 @@
 <div class="vertical">
-    <section>
-        <h1>{{ initServ.traductions['sorts'] }}</h1>
-        <div>
-            <article class="cartouche_moyen">
-                <div class="f_m">
-                    <p>{{ initServ.traductions['preparation'] }}</p>
-                    <h1>{{ persoServ.perso.sorts.preparation }}</h1>
-                </div>
-            </article>
-            <article class="cartouche_moyen">
-                <div class="f_m">
-                    <p>{{ initServ.traductions['ddSauvegardeSorts'] }}</p>
-                    <h1>{{ persoServ.perso.sorts.ddSauvegarde }}</h1>
-                </div>
-            </article>
-            <article class="cartouche_moyen">
-                <div class="f_m">
-                    <p>{{ initServ.traductions['bonusAttSort'] }}</p>
-                    <h1>{{ persoServ.perso.sorts.bonusAtt }}</h1>
-                </div>
-            </article>
-            <article>
-                <h2>Sorts par niveau</h2>
-                <ul class="ligne">
-                    <li *ngFor="let niv of persoServ.perso.sorts.nombre; let i=index">
-                        {{ initServ.traductions['niveau'] + ' ' + i}} : {{ niv }}
-                    </li>
-                </ul>
-            </article>
-        </div>
+    <!-- CARACTERISTIQUES -->
+    <h1>{{ initServ.traductions['sorts'] }}</h1>
+    <section class="horizontal">
+        <article class="cartouche_moyen">
+            <div class="f_m">
+                <p>{{ initServ.traductions['preparation'] }}</p>
+                <h1><input matInput name="editSortPrep" [(ngModel)]="persoServ.perso.sorts.preparation"></h1>
+            </div>
+        </article>
+        <article class="cartouche_moyen">
+            <div class="f_m">
+                <p>{{ initServ.traductions['ddSauvegardeSorts'] }}</p>
+                <h1><input matInput name="editSortDD" [(ngModel)]="persoServ.perso.sorts.ddSauvegarde"></h1>
+            </div>
+        </article>
+        <article class="cartouche_moyen">
+            <div class="f_m">
+                <p>{{ initServ.traductions['bonusAttSort'] }}</p>
+                <h1><input matInput name="editSortAtt" [(ngModel)]="persoServ.perso.sorts.bonusAtt"></h1>
+            </div>
+        </article>
     </section>
     <section>
-        <h1>{{ initServ.traductions['livreSorts'] }}</h1>
+        <h2>Sorts par niveau</h2>
         <article>
-            <table mat-table [dataSource]="persoServ.perso.sorts.livre" matSort class="tabArmes">
-                <ng-container matColumnDef="select">
-                    <th mat-header-cell *matHeaderCellDef mat-sort-header>
-                        <!-- <mat-checkbox (change)="$event ? masterToggle() : null" [checked]="selection.hasValue() && isAllSelected()" [indeterminate]="selection.hasValue() && !isAllSelected()"> </mat-checkbox>-->
-                        {{ initServ.traductions['appris'] }}
-                    </th>
-                    <td mat-cell *matCellDef="let row">
-                        <mat-checkbox (click)="$event.stopPropagation()" (change)="$event ? selection.toggle(row) : null" [checked]="selection.isSelected(row)">
-                        </mat-checkbox>
-                    </td>
-                </ng-container>
+            <button mat-mini-fab color="primary" (click)="ajoutNiveauSort()">
+                <mat-icon>playlist_add</mat-icon>
+            </button>
 
-                <ng-container matColumnDef="niveau">
-                    <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ initServ.traductions['niveau'] }} </th>
-                    <td mat-cell *matCellDef="let element"> {{element.niveau}} </td>
-                </ng-container>
-
-                <ng-container matColumnDef="nom">
-                    <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ initServ.traductions['nom'] }} </th>
-                    <td mat-cell *matCellDef="let element"> <a [href]="element.lien" traget="_blank">{{element.nom}}</a></td>
-                </ng-container>
-
-                <ng-container matColumnDef="bonusAtt">
-                    <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ initServ.traductions['bonusAtt'] }} </th>
-                    <td mat-cell *matCellDef="let element"> {{element.bonusAtt}} </td>
-                </ng-container>
-
-                <ng-container matColumnDef="degats">
-                    <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ initServ.traductions['degats'] }} </th>
-                    <td mat-cell *matCellDef="let element"> {{element.degats}} </td>
-                </ng-container>
-
-                <ng-container matColumnDef="bonusDeg">
-                    <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ initServ.traductions['bonusDeg'] }} </th>
-                    <td mat-cell *matCellDef="let element"> {{element.bonusDeg}} </td>
-                </ng-container>
-
-                <ng-container matColumnDef="duree">
-                    <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ initServ.traductions['duree'] }} </th>
-                    <td mat-cell *matCellDef="let element"> {{element.duree}} </td>
-                </ng-container>
-
-                <ng-container matColumnDef="tpsInc">
-                    <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ initServ.traductions['tpsInc'] }} </th>
-                    <td mat-cell *matCellDef="let element"> {{element.tps}} </td>
-                </ng-container>
-
-                <ng-container matColumnDef="aire">
-                    <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ initServ.traductions['aire'] }} </th>
-                    <td mat-cell *matCellDef="let element"> {{element.aire}} </td>
-                </ng-container>
-
-                <ng-container matColumnDef="descr">
-                    <th mat-header-cell *matHeaderCellDef> {{ initServ.traductions['descr'] }} </th>
-                    <td mat-cell *matCellDef="let element"> {{element.descr}} </td>
-                </ng-container>
-
-                <tr mat-header-row *matHeaderRowDef="cols"></tr>
-                <tr mat-row *matRowDef="let row; columns: cols;"></tr>
-            </table>
+            <ul class="ligne">
+                <li *ngFor="let niv of persoServ.perso.sorts.nombre; let i=index">
+                    {{ initServ.traductions['niveau'] + ' ' + i}} :
+                    <h1><input matInput [name]="'n'+i" [(ngModel)]="persoServ.perso.sorts.nombre[i]"></h1>
+                </li>
+            </ul>
+        </article>
+    </section>
+    <h1>{{ initServ.traductions['sorts'] }}</h1>
+    <section>
+        <button mat-fab color="primary" (click)="ajoutSort()">
+            <mat-icon>playlist_add</mat-icon>
+          </button>
+        <article>
+            <p>{{ initServ.traductions['niveau'] }} </p>
+            <p>{{ initServ.traductions['nom'] }} </p>
+            <p>{{ initServ.traductions['bonusAttSort'] }}</p>
+            <p>{{ initServ.traductions['degats'] }}</p>
+            <p>{{ initServ.traductions['bonusDeg'] }}</p>
+            <p>{{ initServ.traductions['duree'] }}</p>
+            <p>{{ initServ.traductions['portee'] }}</p>
+            <p>{{ initServ.traductions['tpsInc'] }}</p>
+            <p>{{ initServ.traductions['composants'] }}</p>
+            <p>{{ initServ.traductions['aire'] }}</p>
+            <p>{{ initServ.traductions['descr'] }}</p>
+            <p>{{ initServ.traductions['lien'] }}</p>
+        </article>
+        <article *ngFor="let l of persoServ.perso.sorts.livre; let i=index">
+            <p>
+                <input matInput name="editSortNiv" [(ngModel)]="l.niveau">
+            </p>
+            <p>
+                <input matInput name="editSortNom" [(ngModel)]="l.nom">
+            </p>
+            <p>
+                <input matInput name="editSortAtt" [(ngModel)]="l.bonusAtt">
+            </p>
+            <p>
+                <input matInput name="editSortDeg" [(ngModel)]="l.degats">
+            </p>
+            <p>
+                <input matInput name="editSortBonusDeg" [(ngModel)]="l.bonusDeg">
+            </p>
+            <p>
+                <input matInput name="editSortDuree" [(ngModel)]="l.duree">
+            </p>
+            <p>
+                <input matInput name="editSortPortee" [(ngModel)]="l.portee">
+            </p>
+            <p>
+                <input matInput name="editSortTps" [(ngModel)]="l.tps">
+            </p>
+            <p>
+                <input matInput name="editSortComp" [(ngModel)]="l.composantes">
+            </p>
+            <p>
+                <input matInput name="editSortAire" [(ngModel)]="l.aire">
+            </p>
+            <p>
+                <input matInput name="editSortDescr" [(ngModel)]="l.descr">
+            </p>
+            <p>
+                <input matInput name="editSortLien" [(ngModel)]="l.lien">
+            </p>
+            <p>
+                <button mat-icon-button color="primary" (click)="supprSort(i)" [matTooltip]="initServ.traductions['interactions']['suppr']">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </p>
         </article>
     </section>
 </div>

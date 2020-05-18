@@ -25,6 +25,7 @@ import { environment } from '../../environments/environment';
 import { ModaleComponent } from './modale/modale.component';
 import { EditJoueurComponent } from './edit-joueur/edit-joueur.component';
 import { ParamsJoueurComponent } from './params-joueur/params-joueur.component';
+import { PersoService } from './services/perso.service';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { ParamsJoueurComponent } from './params-joueur/params-joueur.component';
     ModaleComponent,
     EditJoueurComponent,
     ParamsJoueurComponent],
+  providers:[PersoService],
   imports: [
     CommonModule,
     JoueurRoutingModule,

@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
 import { InitService } from 'src/app/materiel/services/init.service';
-import { PersoService } from 'src/app/materiel/services/perso.service';
+import { PersoService } from 'src/app/joueur/services/perso.service';
 
 import {SelectionModel} from '@angular/cdk/collections';
 import {MatTableDataSource} from '@angular/material/table';
-import { PersoLivreI } from 'src/app/materiel/modeles/perso-i';
+
+import { PersoLivreI, PersoLivre } from 'src/app/materiel/modeles/perso-i';
 
 @Component({
   selector: 'app-edit-sorts',
@@ -46,4 +47,24 @@ export class EditSortsComponent implements OnInit {
     return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${row.appris}`;
   }
 
+  /**
+   * Ajouter une arme vide à la liste des armes disponibles
+   */
+  ajoutSort(){
+    let a:PersoLivreI = new PersoLivre();
+    this.persoServ.perso.sorts.livre.push(a);
+  }
+  /**
+   * Ajouter un niveau de sorts
+   */
+  ajoutNiveauSort(){
+    this.persoServ.perso.sorts.nombre.push(0);
+  }
+  /**
+   * Supprimer une arme dans la liste
+   * @param i Index de l'arme à supprimer
+   */
+  supprSort(i:number){
+    this.persoServ.perso.sorts.livre.splice(i, 1);
+  }
 }

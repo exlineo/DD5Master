@@ -1,83 +1,91 @@
-<div class="horizontal">
+<div class="vertical">
     <section *ngIf="persoServ.perso.description.img.length > 0">
         <article *ngFor="let i of persoServ.perso.description.img">
             <a [href]="i" target="_blank"><img [src]="i" (click)="modale(i)" /></a>
         </article>
     </section>
     <section>
-        <h1>{{ persoServ.perso.nom }}, {{ persoServ.perso.description.race }}, {{ persoServ.perso.description.classe }} ({{ persoServ.perso.description.alignement }})</h1>
-        <h2>{{ persoServ.perso.description.physique.age }}, {{ persoServ.perso.description.physique.taille }}, {{ persoServ.perso.description.physique.poids }}</h2>
-        <h3>{{ initServ.traductions['yeux'] }} : {{ persoServ.perso.description.physique.yeux }}, {{ initServ.traductions['peau'] }} : {{ persoServ.perso.description.physique.peau }}, {{ initServ.traductions['cheveux'] }} : {{ persoServ.perso.description.physique.cheveux
-            }}
+        <h1><input matInput name="editNom" [(ngModel)]="persoServ.perso.nom">, <input matInput name="editRace" [(ngModel)]="persoServ.perso.description.race">, <input matInput name="editClasse" [(ngModel)]="persoServ.perso.description.classe"> (<input matInput
+                name="editAlignement" [(ngModel)]="persoServ.perso.description.alignement">)</h1>
+        <h2>{{ initServ.traductions['age']+' : ' }} <input matInput name="editAge" [(ngModel)]="persoServ.perso.description.physique.age"> {{ initServ.traductions['taille']+' : ' }}<input matInput name="editTaille" [(ngModel)]="persoServ.perso.description.physique.taille">            {{ initServ.traductions['poids']+' : ' }} <input matInput name="editPds" [(ngModel)]="persoServ.perso.description.physique.poids"></h2>
+        <h3>{{ initServ.traductions['yeux']+' : ' }} <input matInput name="editYeux" [(ngModel)]="persoServ.perso.description.physique.yeux"> {{ initServ.traductions['peau']+' : ' }} : <input matInput name="editPeau" [(ngModel)]="persoServ.perso.description.physique.peau">            {{ initServ.traductions['cheveux']+' : ' }} <input matInput name="editChe" [(ngModel)]="persoServ.perso.description.physique.cheveux">
         </h3>
-
+    </section>
+    <section>
         <h1>{{ initServ.traductions['apparence'] }}</h1>
         <article class="cartouche_allonge_h f_m_h">
             <div class="">
-                {{ persoServ.perso.description.apparence }}
+                <textarea matInput name="editApp" [(ngModel)]="persoServ.perso.description.apparence"></textarea>
             </div>
         </article>
         <h1>{{ initServ.traductions['histoire'] }}</h1>
         <article class="cartouche_allonge_h f_m_h">
             <div class="">
-                {{ persoServ.perso.description.historique }}
+                <textarea matInput name="editHist" [(ngModel)]="persoServ.perso.description.historique"></textarea>
             </div>
         </article>
     </section>
+
     <section>
+        <h1>{{ initServ.traductions['possessions'] }}</h1>
+        <button mat-fab color="primary" (click)="ajoutPoss()">
+            <mat-icon>playlist_add</mat-icon>
+        </button>
         <article>
-            <h1>{{ initServ.traductions['possessions'] }}</h1>
-            <table mat-table [dataSource]="persoServ.perso.armes" class="tabArmes">
-                <ng-container matColumnDef="nom">
-                    <th mat-header-cell *matHeaderCellDef> {{ initServ.traductions['nom'] }} </th>
-                    <td mat-cell *matCellDef="let element"> {{element.nom}} </td>
-                </ng-container>
-
-                <ng-container matColumnDef="pds">
-                    <th mat-header-cell *matHeaderCellDef> {{ initServ.traductions['bonusAtt'] }} </th>
-                    <td mat-cell *matCellDef="let element"> {{element.pds}} </td>
-                </ng-container>
-
-                <ng-container matColumnDef="quantite">
-                    <th mat-header-cell *matHeaderCellDef> {{ initServ.traductions['degats'] }} </th>
-                    <td mat-cell *matCellDef="let element"> {{element.quantite}} </td>
-                </ng-container>
-
-                <ng-container matColumnDef="descr">
-                    <th mat-header-cell *matHeaderCellDef> {{ initServ.traductions['degats'] }} </th>
-                    <td mat-cell *matCellDef="let element"> {{element.descr}} </td>
-                </ng-container>
-
-                <tr mat-header-row *matHeaderRowDef="colsPoss"></tr>
-                <tr mat-row *matRowDef="let row; columns: colsPoss;"></tr>
-            </table>
+            <p>{{ initServ.traductions['nom'] }} </p>
+            <p>{{ initServ.traductions['pds'] }}</p>
+            <p>{{ initServ.traductions['quantite'] }}</p>
+            <p>{{ initServ.traductions['descr'] }}</p>
         </article>
+        <article *ngFor="let p of persoServ.perso.possessions; let i=index">
+            <p>
+                <input matInput name="editPoNom" [(ngModel)]="p.nom">
+            </p>
+            <p>
+                <input matInput name="editPoPds" [(ngModel)]="p.pds">
+            </p>
+            <p>
+                <input matInput name="editPoDeg" [(ngModel)]="p.quantite">
+            </p>
+            <p>
+                <input matInput name="editPoDescr" [(ngModel)]="p.descr">
+            </p>
+            <p>
+                <button mat-icon-button color="primary" (click)="supprPoss(i)" [matTooltip]="initServ.traductions['interactions']['suppr']">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </p>
+        </article>
+    </section>
+    <section>
+        <h1>{{ initServ.traductions['tresors'] }}</h1>
+        <button mat-fab color="primary" (click)="ajoutTresor()">
+                <mat-icon>playlist_add</mat-icon>
+              </button>
         <article>
-            <h1>{{ initServ.traductions['tresors'] }}</h1>
-            <table mat-table [dataSource]="persoServ.perso.armes" class="tabArmes">
-                <ng-container matColumnDef="nom">
-                    <th mat-header-cell *matHeaderCellDef> {{ initServ.traductions['nom'] }} </th>
-                    <td mat-cell *matCellDef="let element"> {{element.nom}} </td>
-                </ng-container>
-
-                <ng-container matColumnDef="magie">
-                    <th mat-header-cell *matHeaderCellDef> {{ initServ.traductions['magie'] }} </th>
-                    <td mat-cell *matCellDef="let element"> {{element.magie}} </td>
-                </ng-container>
-
-                <ng-container matColumnDef="quantite">
-                    <th mat-header-cell *matHeaderCellDef> {{ initServ.traductions['quantite'] }} </th>
-                    <td mat-cell *matCellDef="let element"> {{element.quantite}} </td>
-                </ng-container>
-
-                <ng-container matColumnDef="descr">
-                    <th mat-header-cell *matHeaderCellDef> {{ initServ.traductions['description'] }} </th>
-                    <td mat-cell *matCellDef="let element"> {{element.descr}} </td>
-                </ng-container>
-
-                <tr mat-header-row *matHeaderRowDef="colsTresors"></tr>
-                <tr mat-row *matRowDef="let row; columns: colsTresors;"></tr>
-            </table>
+            <p>{{ initServ.traductions['nom'] }} </p>
+            <p>{{ initServ.traductions['magie'] }}</p>
+            <p>{{ initServ.traductions['quantite'] }}</p>
+            <p>{{ initServ.traductions['descr'] }}</p>
+        </article>
+        <article *ngFor="let t of persoServ.perso.tresors; let i=index">
+            <p>
+                <input matInput name="editTrNom" [(ngModel)]="t.nom">
+            </p>
+            <p>
+                <input matInput name="editTrMagie" [(ngModel)]="t.magie">
+            </p>
+            <p>
+                <input matInput name="editTrDeg" [(ngModel)]="t.quantite">
+            </p>
+            <p>
+                <input matInput name="editTrDescr" [(ngModel)]="t.descr">
+            </p>
+            <p>
+                <button mat-icon-button color="primary" (click)="supprTresor(i)" [matTooltip]="initServ.traductions['interactions']['suppr']">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+            </p>
         </article>
     </section>
 </div>

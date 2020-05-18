@@ -1,10 +1,20 @@
 [{
+        "id": "Personne",
+        "mdp": "",
+        "nom": "Personne",
+        "email": "",
+        "statut": "joueur",
+        "persos": []
+    },
+    {
         "id": "David",
         "mdp": "",
         "nom": "David",
         "email": "",
         "statut": "joueur",
-        "persos": ["tauilas_we-mal"]
+        "persos": [
+            "tauilas_we-mal"
+        ]
     },
     {
         "id": "Pierre",
@@ -13,28 +23,34 @@
         "email": "",
         "statut": "joueur",
         "persos": []
-    }, {
+    },
+    {
         "id": "Cyril",
         "mdp": "",
         "nom": "Cyril",
         "email": "",
         "statut": "joueur",
-        "persos": ["daidalos"]
-    }, {
+        "persos": [
+            "daidalos"
+        ]
+    },
+    {
         "id": "Philippe",
         "mdp": "",
         "nom": "Philippe",
         "email": "",
         "statut": "joueur",
         "persos": []
-    }, {
+    },
+    {
         "id": "Mickael",
         "mdp": "",
         "nom": "Mickaël",
         "email": "",
         "statut": "joueur",
         "persos": []
-    }, {
+    },
+    {
         "id": "Romain",
         "mdp": "",
         "nom": "Romain",

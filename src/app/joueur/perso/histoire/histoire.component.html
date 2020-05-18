@@ -27,7 +27,7 @@
     <section>
         <article>
             <h1>{{ initServ.traductions['possessions'] }}</h1>
-            <table mat-table [dataSource]="persoServ.perso.armes" class="tabArmes">
+            <table mat-table [dataSource]="persoServ.perso.possessions" class="tabArmes">
                 <ng-container matColumnDef="nom">
                     <th mat-header-cell *matHeaderCellDef> {{ initServ.traductions['nom'] }} </th>
                     <td mat-cell *matCellDef="let element"> {{element.nom}} </td>
@@ -44,7 +44,7 @@
                 </ng-container>
 
                 <ng-container matColumnDef="descr">
-                    <th mat-header-cell *matHeaderCellDef> {{ initServ.traductions['degats'] }} </th>
+                    <th mat-header-cell *matHeaderCellDef> {{ initServ.traductions['descr'] }} </th>
                     <td mat-cell *matCellDef="let element"> {{element.descr}} </td>
                 </ng-container>
 
@@ -54,7 +54,7 @@
         </article>
         <article>
             <h1>{{ initServ.traductions['tresors'] }}</h1>
-            <table mat-table [dataSource]="persoServ.perso.armes" class="tabArmes">
+            <table mat-table [dataSource]="persoServ.perso.tresors" class="tabArmes">
                 <ng-container matColumnDef="nom">
                     <th mat-header-cell *matHeaderCellDef> {{ initServ.traductions['nom'] }} </th>
                     <td mat-cell *matCellDef="let element"> {{element.nom}} </td>
@@ -71,7 +71,7 @@
                 </ng-container>
 
                 <ng-container matColumnDef="descr">
-                    <th mat-header-cell *matHeaderCellDef> {{ initServ.traductions['description'] }} </th>
+                    <th mat-header-cell *matHeaderCellDef> {{ initServ.traductions['descr'] }} </th>
                     <td mat-cell *matCellDef="let element"> {{element.descr}} </td>
                 </ng-container>
 

@@ -13,11 +13,11 @@ import { ProfilI } from 'src/app/materiel/modeles/profilI';
 })
 export class MasterService {
 
-  joueurs:Array<ProfilI>; // Liste des joueurs
-  persos:Array<string>; // Liste des personnages
-  listePersos:Array<PersoI>;
+  joueurs: Array<ProfilI>; // Liste des joueurs
+  persos: Array<string>; // Liste des personnages
+  listePersos: Array<PersoI>;
 
-  constructor(private http:HttpClient, private socket: Socket) {
+  constructor(private http: HttpClient, private socket: Socket) {
     this.joueurs = [];
     this.persos = [];
     this.listePersos = []
@@ -26,20 +26,24 @@ export class MasterService {
     this.socket.on('connection', so => {
       console.log(so, so.id);
     });
-    this.socket.on('connect', (id)=>{
+    this.socket.on('connect', (id) => {
       console.log(id);
-  });
+    });
     this.socket.on('masterConnecte', data => {
       console.log(data);
     });
-    this.socket.on('disconnect', dis=>{
+    this.socket.on('persoRecu', data => {
+      this.majPerso(data);
+      console.log(data);
+    });
+    this.socket.on('disconnect', dis => {
       console.log(dis);
     });
   }
   /**
    * Récupérer la liste des joueurs et... des persos
    */
-  getPersos(){
+  getPersos() {
     this.http.get<Array<ProfilI>>('/assets/data/id/joueurs.json').subscribe(j => {
       this.joueurs = j;
       // Récupérer la liste des persos
@@ -49,43 +53,44 @@ export class MasterService {
       // Récupérer les persos à partir de leur liste
       this.getChaquePerso();
     });
-    
+
   }
   /**
    * Charger tous les personnages l'un à la suite des autres
    * @param perso Le nom du personnage à charger
    */
-  getChaquePerso(){
+  getChaquePerso() {
     let loads = [];
     this.persos.forEach(p => {
-      loads.push(this.http.get('/assets/data/persos/'+p+'.json'));
+      loads.push(this.http.get('/assets/data/persos/' + p + '.json'));
     });
     // Joindre toutes les souscriptions des persos
     forkJoin<PersoI>(loads).subscribe(liste => {
       this.listePersos = liste;
     });
-
   }
   /**
    * Socket.io
    */
-  idWSMaster(m:string){
-    this.socket.emit('master', { msg:m });
+  idWSMaster(m: string) {
+    this.socket.emit('master', { msg: m });
   }
   /**
    * Socket.io
    */
-  sendRessource(m:WsSendI){
+  sendRessource(m: WsSendI) {
     this.socket.emit('master', m);
   }
   /**
-   * Récupérer un message envoyé du serveur
+   * Gérer les données reçues en direct d'un perso
+   * @param infos Infos reçues du serveur (id, stat, val)
    */
-  public getMessages = () => {
-    return Observable.create((observer) => {
-            this.socket.on('masterConnecte', (message) => {
-                observer.next(message);
-            });
+  majPerso(infos:any){
+    console.log("recu du serveur");
+    this.listePersos.forEach((el)=>{
+      if(el.id == infos.id){
+        el[infos.stat] = infos.val;
+      }
     });
   }
 }

@@ -15,11 +15,18 @@ import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 import { environment } from '.././../environments/environment';
 import { ParamsComponent } from './params/params.component';
 import { CreerPersoComponent } from './creer-perso/creer-perso.component';
+import { AccentsPipe } from '../materiel/pipes/accents.pipe';
 
 const config: SocketIoConfig = { url: environment.WS, options: {} };
 
 @NgModule({
-  declarations: [MasterAccueilComponent, MasterPersosComponent, ParamsComponent, CreerPersoComponent],
+  declarations: [
+    MasterAccueilComponent,
+    MasterPersosComponent,
+    ParamsComponent,
+    CreerPersoComponent,
+    AccentsPipe
+  ],
   providers:[MasterService],
   imports: [
     CommonModule,

@@ -1,1 +1,43 @@
-<p>creer-perso works!</p>
+<section>
+    <h1>{{ initServ.traductions['creeInit'] }}</h1>
+    <blockquote>{{ initServ.traductions['creeDescr'] }}</blockquote>
+    <article>
+        <form #f="ngForm" (ngSubmit)="creePerso()" class="vertical">
+            <mat-form-field>
+                <mat-label>{{ initServ.traductions['creeNom']}}</mat-label>
+                <input matInput name="nom" [(ngModel)]="perso.nom" required>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>{{ initServ.traductions['creeRace']}}</mat-label>
+                <mat-select name="race" [(ngModel)]="perso.description.race">
+                    <mat-option *ngFor="let race of initServ.regles.races" [value]="race.nom">
+                        {{ race.nom }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>{{ initServ.traductions['creeClasses']}}</mat-label>
+                <mat-select name="classe" [(ngModel)]="perso.description.classe">
+                    <mat-option *ngFor="let cla of initServ.regles.classes" [value]="cla.nom">
+                        {{ cla.nom }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>{{ initServ.traductions['creeAlignement']}}</mat-label>
+                <mat-select name="aligne" [(ngModel)]="perso.description.alignement">
+                    <mat-option *ngFor="let al of initServ.regles.alignements" [value]="al.acronyme">
+                        {{ al.nom }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <button mat-fab [disabled]="f.invalid " [matTooltip]="initServ.traductions[ 'interactions'][ 'valide']">
+                <mat-icon>keyboard_arrow_right</mat-icon>
+            </button>
+        </form>
+    </article>
+</section>

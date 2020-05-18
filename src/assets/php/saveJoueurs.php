@@ -19,7 +19,7 @@ ini_set('track_errors', 1);
  * @param {string} 1 - L'adresse du fichier (attention, vérifiez vos droits www-data sur votre serveur (chown -R www-data:www-data ./modele))
  * @param {string} w - le fichier est ouvert en écriture seulement
  */
-$fJson = fopen('../datas/nouvelles.json', 'w');
+$fJson = fopen('../data/id/joueurs.json', 'w');
 if ( !$fJson ) {
   echo 'fopen raté. Raison : ', $php_errormsg;
 }

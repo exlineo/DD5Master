@@ -2,10 +2,11 @@ import { MediaMatcher } from '@angular/cdk/layout';
 import { ChangeDetectorRef, Component, OnInit, OnDestroy } from '@angular/core';
 
 import { InitService } from '../../materiel/services/init.service';
-import { PersoService } from '../../materiel/services/perso.service';
+import { PersoService } from '../services/perso.service';
 
 import { Socket } from 'ngx-socket-io';
 import { WsSendI, WsSend } from 'src/app/materiel/modeles/ws-i';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-accueil-joueur',
@@ -17,11 +18,12 @@ export class AccueilJoueurComponent implements OnInit, OnDestroy {
   mobileQuery: MediaQueryList;
   private _mobileQueryListener: () => void; // écouteur du menu
 
+  persoChoisi:string;
   modale:boolean;
   srcAudio:string;
   srcVideo:string;
 
-  constructor(public persoServ: PersoService, public initServ: InitService, changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private socket: Socket) {
+  constructor(public persoServ: PersoService, public initServ: InitService, changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private socket: Socket, private route:Router) {
     
     this.persoServ.getPerso(this.initServ.profil.persos[0]);
     this.initServ.sendMsg('Chargement des données du personnage');
@@ -88,5 +90,15 @@ export class AccueilJoueurComponent implements OnInit, OnDestroy {
         console.log("Le maître s'intéresse à toi");
     }
     
+  }
+  /**
+   * Chargement d'un personnage et retour à la route du personnage
+   */
+  selectPerso(){
+    if(this.persoServ.perso.id != this.persoChoisi && this.persoChoisi != "null"){
+      this.persoServ.getPerso(this.persoChoisi);
+    }
+    // Aller à la page du perso
+    this.route.navigateByUrl('/joueur');
   }
 }

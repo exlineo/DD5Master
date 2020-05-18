@@ -1,7 +1,7 @@
 import { ProfilI } from './profilI'
 
 export interface PersoI {
-    id: number;
+    id: string;
     nom: string;
     joueur: string;
     cree?: string;
@@ -11,17 +11,17 @@ export interface PersoI {
     ca: number;
     pvMax: number;
     pvActu: number;
-    pvTmp: number;
-    desVie?: number | string;
-    initiative: number;
-    vitesse: number;
+    pvTmp?: number;
+    desVie?: string;
+    initiative?: number;
+    vitesse?: number;
+    perception?: number;
     sauvegarde?: Array<string>;
     inspiration?: number;
     bonusMaitrise: number;
     competences: Array<string>;
     capacites?:Array<string>;
     langues?:Array<string>;
-    perception?: number;
     jdsMort?: PersoJdsMort;
     carac: PersoCaracI;
     armes: Array<PersoArmeI>;
@@ -97,33 +97,62 @@ export interface PersoJdsMort{
     echecs:number;
 }
 
+export class PersoPossession implements PersoPossessionI {
+    nom=""; pds=""; quantite=""; descr="";
+};
+export class PersoTresor implements PersoTresorI {
+    nom=""; magie=""; quantite=""; descr="";
+};
+export class PersoArme implements PersoArmeI {
+    nom = "";
+    bonusAtt = 0;
+    degats = "";
+    bonusDeg = 0;
+    descr =  "";
+}
+export class PersoLivre implements PersoLivreI {
+    niveau=0;
+    nom= "";
+    ecole="";
+    bonusAtt= 0;
+    degats= "";
+    bonusDeg=0;
+    duree="";
+    portee="";
+    tps= "";
+    aire= "";
+    descr= "";
+    lien= "";
+    composantes="";
+    appris=false;
+}
 export class Perso implements PersoI {
-    id: 0;
-    nom: "Personne";
-    joueur: "Aucun";
-    cree: "";
-    maj: "";
-    niveau: 0;
-    xp: 0;
-    ca: 10;
-    pvMax: 0;
-    pvActu: 0;
-    pvTmp: 0;
-    desVie: 1;
-    initiative: 0;
-    vitesse: 9;
-    sauvegarde: [];
-    inspiration: 0;
-    bonusMaitrise: 0;
-    competences: [];
-    capacites:[];
-    langues:[];
-    perception: 10;
-    jdsMort: {
+    id="";
+    nom= "Personne";
+    joueur= "Aucun";
+    cree= "";
+    maj= "";
+    niveau= 0;
+    xp= 0;
+    ca= 10;
+    pvMax= 0;
+    pvActu= 0;
+    pvTmp= 0;
+    desVie = "";
+    initiative= 0;
+    vitesse= 9;
+    sauvegarde= [];
+    inspiration= 0;
+    bonusMaitrise= 0;
+    competences= [];
+    capacites=[];
+    langues=[];
+    perception= 10;
+    jdsMort= {
         reussites: 0,
         echecs: 0
     };
-    carac: {
+    carac= {
         force: 10,
         dexterite: 10,
         constitution: 10,
@@ -131,7 +160,7 @@ export class Perso implements PersoI {
         sagesse: 10,
         charisme: 10
     };
-    armes: [
+    armes= [
         {
             nom: "",
             bonusAtt: 0,
@@ -140,20 +169,20 @@ export class Perso implements PersoI {
             descr: ""
         }
     ];
-    sorts: {
+    sorts = {
         nombre: [
             0,
             0,
             0
-        ];
-        ddSauvegarde: 0;
-        bonusAtt: 0;
-        preparation: 0;
+        ],
+        ddSauvegarde: 0,
+        bonusAtt: 0,
+        preparation: 0,
         livre: [
             {
                 niveau:0,
                 nom: "",
-                ecole:","
+                ecole:"",
                 bonusAtt: 0,
                 degats: 0,
                 bonusDeg: 0,
@@ -166,31 +195,31 @@ export class Perso implements PersoI {
             }
         ]
     };
-    description: {
-        classe: "";
-        img: [];
-        apparence: "";
-        historique: "";
-        race: "";
-        alignement: "";
+    description= {
+        classe: "",
+        img: [],
+        apparence: "",
+        historique: "",
+        race: "",
+        alignement: "",
         physique: {
-            age: "0";
-            taille: "";
-            poids: "";
-            yeux: "";
-            peau: "";
+            age: "0",
+            taille: "",
+            poids: "",
+            yeux: "",
+            peau: "",
             cheveux: ""
-        };
+        },
         allies: ""
     };
-    possessions: [
+    possessions= [
         {
             nom: "",
             pds: "",
             descr: ""
         }
     ];
-    tresors: [
+    tresors= [
         {
             nom: "",
             magie: "",

@@ -6,7 +6,10 @@
         <div>
             <mat-icon>contacts</mat-icon>
             <mat-form-field>
-                <mat-select name="persos">
+                <mat-select (change)="optionPersos($event.target.value)" name="persos">
+                    <mat-option value="rechargePersos">
+                        {{ initServ.traductions['rechargePersos']}}
+                    </mat-option>
                     <mat-optgroup [label]="initServ.traductions['optionPerso']">
                         <mat-option *ngFor="let p of masterServ.persos" [value]="p">
                             {{p}}

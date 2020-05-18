@@ -58,7 +58,18 @@ export class MasterAccueilComponent implements OnInit, OnDestroy {
     console.log(this.r);
     this.route.navigateByUrl(this.r);
   }
+  /**
+   * Des options de gestion des personnages
+   * @param option L'option reçue de la liste déroulante
+   */
+  optionPersos(option:string){
+    switch(option){
+      case "rechargePersos":
+        this.masterServ.getChaquePerso();
+      break;
+    }
 
+  }
   affichePerso(){
     console.log(this.r);
     // this.route.navigateByUrl('this.r');

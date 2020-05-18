@@ -84,7 +84,7 @@ section.carac>article>div:nth-child(3) {
 section.carac article>div {
     width: 100px;
     height: 100px;
-    background: url('/assets/images/ui/c_score_bonus.svg') 50% no-repeat;
+    background: url('assets/images/ui/c_score_bonus.svg') 50% no-repeat;
     background-size: contain;
     display: flex;
     flex-flow: column nowrap;
@@ -169,7 +169,7 @@ div>section {
 }
 
 .f_g_v {
-    background: url("/assets/images/ui/f_g.svg") 50% no-repeat;
+    background: url("assets/images/ui/f_g.svg") 50% no-repeat;
     background-size: 100%;
     padding: 20px 30px;
     height: 725px;
@@ -186,7 +186,7 @@ div>section {
 }
 
 .f_tg_h {
-    background: url("/assets/images/ui/f_gg_v.svg") 50% no-repeat;
+    background: url("assets/images/ui/f_gg_v.svg") 50% no-repeat;
     background-size: 100%;
     height: 350px;
     width: 600px;
@@ -194,7 +194,7 @@ div>section {
 }
 
 .f_lm {
-    background: url("/assets/images/ui/f_m_v.svg") 50% no-repeat;
+    background: url("assets/images/ui/f_m_v.svg") 50% no-repeat;
     background-size: cover;
     overflow-y: auto;
 }
@@ -206,36 +206,36 @@ div>section {
 }
 
 .f_m_bas {
-    background: url("/assets/images/ui/f_m_bas.svg") 50% no-repeat;
+    background: url("assets/images/ui/f_m_bas.svg") 50% no-repeat;
     background-size: cover;
     overflow-y: auto;
 }
 
 .f_m_v {
-    background: url("/assets/images/ui/f_m_v.svg") 50% no-repeat;
+    background: url("assets/images/ui/f_m_v.svg") 50% no-repeat;
     background-size: cover;
     overflow-y: auto;
 }
 
 .f_m_h {
-    background: url("/assets/images/ui/f_m_h.svg") 50% no-repeat;
+    background: url("assets/images/ui/f_m_h.svg") 50% no-repeat;
     background-size: cover;
 }
 
 .f_p {
-    background: url("/assets/images/ui/f_m_bas.svg") 50% no-repeat;
+    background: url("assets/images/ui/f_m_bas.svg") 50% no-repeat;
     background-size: cover;
     height: 100px;
     width: 100px;
 }
 
 .ca {
-    background: url('/assets/images/ui/ca.svg') 50% no-repeat;
+    background: url('assets/images/ui/ca.svg') 50% no-repeat;
     background-size: contain;
 }
 
 .carre {
-    background: url('/assets/images/ui/c_carre.svg') 50% no-repeat;
+    background: url('assets/images/ui/c_carre.svg') 50% no-repeat;
     background-size: contain;
 }
 

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { InitService } from 'src/app/materiel/services/init.service';
-import { PersoService } from 'src/app/materiel/services/perso.service';
+import { PersoService } from 'src/app/joueur/services/perso.service';
 
 @Component({
   selector: 'app-edit-joueur',

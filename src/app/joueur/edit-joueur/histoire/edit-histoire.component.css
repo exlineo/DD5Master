@@ -1,0 +1,27 @@
+section {
+    flex-flow: row nowrap;
+}
+
+img {
+    max-width: 350px;
+}
+
+h1,
+h2,
+h3 {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+h1 input,
+h2 input,
+h3 input {
+    width: auto;
+}
+
+section:nth-child(4) article,
+section:nth-child(5) article {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+}

@@ -1,0 +1,15 @@
+section:nth-child(1),
+section article {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    border-bottom: 1px solid rgba(255, 255, 255, .5);
+}
+
+section:nth-child(3) p {
+    display: flex;
+}
+
+section:nth-child(3) p>input {
+    margin: auto;
+}

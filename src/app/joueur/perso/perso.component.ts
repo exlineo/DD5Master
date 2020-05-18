@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PersoService } from 'src/app/materiel/services/perso.service';
+import { PersoService } from 'src/app/joueur/services/perso.service';
 import { InitService } from 'src/app/materiel/services/init.service';
 
 @Component({

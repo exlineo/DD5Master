@@ -5,13 +5,13 @@
         <article>
             <div class="ca cartouche_petit">
                 <p>{{ initServ.traductions['ca'] }}</p>
-                <h1>{{ persoServ.perso['ca'] }}</h1>
+                <h1><input matInput name="wsCa" [(ngModel)]="persoServ.perso.ca" (change)="persoServ.WSEnvoiPerso('ca')"></h1>
             </div>
         </article>
         <article>
             <div class="carre cartouche_petit">
                 <p>{{ initServ.traductions['initiative'] }}</p>
-                <h1><input matInput [placeholder]="initServ.traductions['initiative']" [value]="persoServ.perso['initiative']"></h1>
+                <h1><input matInput name="wsInit" [(ngModel)]="persoServ.perso.initiative" (change)="persoServ.WSEnvoiPerso('initiative')"></h1>
             </div>
         </article>
         <article>
@@ -26,14 +26,14 @@
         <h1>{{ initServ.traductions['vie'] }}</h1>
         <article>
             <div class="carre cartouche_petit">
-                <p>{{ initServ.traductions['max'] }} : {{ persoServ.perso['pvMax'] }}</p>
-                <h1><input matInput [placeholder]="initServ.traductions['pointVieActu']" [value]="persoServ.perso['pvActu']"></h1>
+                <p>{{ initServ.traductions['max'] }} : {{ persoServ.perso.pvMax }}</p>
+                <h1><input matInput name="wsPv" [(ngModel)]="persoServ.perso.pvActu" (change)="persoServ.WSEnvoiPerso('pvActu')"></h1>
             </div>
         </article>
         <article>
             <div class="carre cartouche_petit">
                 <p>{{ initServ.traductions['pointVieTmp'] }}</p>
-                <h1><input matInput [placeholder]="initServ.traductions['pointVieTmp']" [value]="persoServ.perso['pvTmp']"></h1>
+                <h1><input matInput name="wsPvTmp" [(ngModel)]="persoServ.perso.pvTmp" (change)="persoServ.WSEnvoiPerso('pvTmp')"></h1>
             </div>
         </article>
         <article>
@@ -50,7 +50,6 @@
                     <mat-checkbox></mat-checkbox>
                     <mat-checkbox></mat-checkbox>
                 </p>
-
                 <p>-
                     <mat-checkbox></mat-checkbox>
                     <mat-checkbox></mat-checkbox>

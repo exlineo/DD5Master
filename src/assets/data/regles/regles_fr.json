@@ -1,95 +1,162 @@
 {
     "carac": [{
-        "nom": "Force",
-        "id": "force"
-    }, {
-        "nom": "Dexterité",
-        "id": "dexterite"
-    }, {
-        "nom": "Constitution",
-        "id": "constitution"
-    }, {
-        "nom": "Intelligence",
-        "id": "intelligence"
-    }, {
-        "nom": "Sagesse",
-        "id": "sagesse"
-    }, {
-        "nom": "Charisme",
-        "id": "charisme"
-    }],
+            "nom": "Force",
+            "id": "force"
+        },
+        {
+            "nom": "Dexterité",
+            "id": "dexterite"
+        },
+        {
+            "nom": "Constitution",
+            "id": "constitution"
+        },
+        {
+            "nom": "Intelligence",
+            "id": "intelligence"
+        },
+        {
+            "nom": "Sagesse",
+            "id": "sagesse"
+        },
+        {
+            "nom": "Charisme",
+            "id": "charisme"
+        }
+    ],
     "competences": [{
-        "nom": "Acrobatie",
-        "id": "acrobatie",
-        "carac": "dexterite"
+            "nom": "Acrobatie",
+            "id": "acrobatie",
+            "carac": "dexterite"
+        },
+        {
+            "nom": "Arcanes",
+            "id": "arcanes",
+            "carac": "intelligence"
+        },
+        {
+            "nom": "Athlétisme",
+            "id": "athletisme",
+            "carac": "force"
+        },
+        {
+            "nom": "Discrétion",
+            "id": "discretion",
+            "carac": "dexterite"
+        },
+        {
+            "nom": "Dressage",
+            "id": "dressage",
+            "carac": "sagesse"
+        },
+        {
+            "nom": "Escamotage",
+            "id": "escamotage",
+            "carac": "dexterite"
+        },
+        {
+            "nom": "Histoire",
+            "id": "histoire",
+            "carac": "intelligence"
+        },
+        {
+            "nom": "Intimidation",
+            "id": "intimidation",
+            "carac": "charisme"
+        },
+        {
+            "nom": "Investigation",
+            "id": "investigation",
+            "carac": "intelligence"
+        },
+        {
+            "nom": "Médecine",
+            "id": "medecine",
+            "carac": "sagesse"
+        },
+        {
+            "nom": "Nature",
+            "id": "nature",
+            "carac": "intelligence"
+        },
+        {
+            "nom": "Perception",
+            "id": "perception",
+            "carac": "sagesse"
+        },
+        {
+            "nom": "Perspicacité",
+            "id": "perspicacite",
+            "carac": "sagesse"
+        },
+        {
+            "nom": "Persuasion",
+            "id": "persuasion",
+            "carac": "charisme"
+        },
+        {
+            "nom": "Religion",
+            "id": "religion",
+            "carac": "intelligence"
+        },
+        {
+            "nom": "Représentation",
+            "id": "representation",
+            "carac": "charisme"
+        },
+        {
+            "nom": "Survie",
+            "id": "survie",
+            "carac": "sagesse"
+        },
+        {
+            "nom": "Tromperie",
+            "id": "tromperie",
+            "carac": "charisme"
+        }
+    ],
+    "races": [{
+        "nom": "Elfe",
+        "lien": "https://www.aidedd.org/regles/races/elfe/"
     }, {
-        "nom": "Arcanes",
-        "id": "arcanes",
-        "carac": "intelligence"
+        "nom": "Halfelin",
+        "lien": "https://www.aidedd.org/regles/races/halfelin/"
     }, {
-        "nom": "Athlétisme",
-        "id": "athletisme",
-        "carac": "force"
+        "nom": "Humain",
+        "lien": "https://www.aidedd.org/regles/races/humain/"
     }, {
-        "nom": "Discrétion",
-        "id": "discretion",
-        "carac": "dexterite"
+        "nom": "Nain",
+        "lien": "https://www.aidedd.org/regles/races/nain/"
     }, {
-        "nom": "Dressage",
-        "id": "dressage",
-        "carac": "sagesse"
+        "nom": "Demi-elfe",
+        "lien": "https://www.aidedd.org/regles/races/demi-elfe/"
     }, {
-        "nom": "Escamotage",
-        "id": "escamotage",
-        "carac": "dexterite"
+        "nom": "Demi-orque",
+        "lien": "https://www.aidedd.org/regles/races/demi-orque/"
     }, {
-        "nom": "Histoire",
-        "id": "histoire",
-        "carac": "intelligence"
+        "nom": "Drakéide",
+        "lien": "https://www.aidedd.org/regles/races/drakeide/"
     }, {
-        "nom": "Intimidation",
-        "id": "intimidation",
-        "carac": "charisme"
+        "nom": "Gnome",
+        "lien": "https://www.aidedd.org/regles/races/gnome/"
     }, {
-        "nom": "Investigation",
-        "id": "investigation",
-        "carac": "intelligence"
+        "nom": "Elfe",
+        "lien": "https://www.aidedd.org/regles/races/elfe/"
     }, {
-        "nom": "Médecine",
-        "id": "medecine",
-        "carac": "sagesse"
+        "nom": "Tieffelin",
+        "lien": "https://www.aidedd.org/regles/races/tieffelin/"
     }, {
-        "nom": "Nature",
-        "id": "nature",
-        "carac": "intelligence"
+        "nom": "Aarakocra",
+        "lien": "https://www.aidedd.org/regles/races/aarakocra/"
     }, {
-        "nom": "Perception",
-        "id": "perception",
-        "carac": "sagesse"
+        "nom": "Génasi",
+        "lien": "https://www.aidedd.org/regles/races/genasis/"
     }, {
-        "nom": "Perspicacité",
-        "id": "perspicacite",
-        "carac": "sagesse"
+        "nom": "Gnome des profondeurs",
+        "lien": "https://www.aidedd.org/regles/races/gnome-des-profondeurs/"
     }, {
-        "nom": "Persuasion",
-        "id": "persuasion",
-        "carac": "charisme"
-    }, {
-        "nom": "Religion",
-        "id": "religion",
-        "carac": "intelligence"
-    }, {
-        "nom": "Représentation",
-        "id": "representation",
-        "carac": "charisme"
-    }, {
-        "nom": "Survie",
-        "id": "survie",
-        "carac": "sagesse"
-    }, {
-        "nom": "Tromperie",
-        "id": "tromperie",
-        "carac": "charisme"
+        "nom": "Goliath",
+        "lien": "https://www.aidedd.org/regles/races/goliath/"
     }],
     "classes": [{
             "nom": "Barbare",
@@ -153,5 +220,16 @@
         "nom": "Sorcier",
         "puissance": 0,
         "lien": "https://www.aidedd.org/regles/classes/barbare/"
-    }]
+    }],
+    "alignements": [
+        { "nom": "Loyal bon", "acronyme": "LB" },
+        { "nom": "Loyal neutre", "acronyme": "LN" },
+        { "nom": "Loyal mauvais", "acronyme": "LM" },
+        { "nom": "Neutre bon", "acronyme": "NB" },
+        { "nom": "Neutre", "acronyme": "N" },
+        { "nom": "Neutre mauvais", "acronyme": "NM" },
+        { "nom": "Chaotique bon", "acronyme": "CB" },
+        { "nom": "Chaotique neutre", "acronyme": "CN" },
+        { "nom": "Chaotique mauvais", "acronyme": "CM" }
+    ]
 }

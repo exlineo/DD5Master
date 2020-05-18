@@ -10,7 +10,7 @@ const routes: Routes = [
   { path:'installation', component:InstallComponent },
   { path: 'master', loadChildren: () => import('./master/master.module').then(m => m.MasterModule) },
   { path: 'joueur', loadChildren: () => import('./joueur/joueur.module').then(m => m.JoueurModule) },
-  { path:'**', component:Erreur404Component}
+  { path:'**', component:ConnexionComponent}
 ];
 
 @NgModule({

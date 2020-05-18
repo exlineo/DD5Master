@@ -12,7 +12,6 @@ import { MaterielModule } from './materiel/materiel.module';
 
 import { InitService } from './materiel/services/init.service';
 import { MsgService } from './materiel/services/msg.service';
-import { PersoService } from './materiel/services/perso.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +27,7 @@ import { PersoService } from './materiel/services/perso.service';
     FormsModule,
     HttpClientModule
   ],
-  providers: [InitService, MsgService, PersoService],
+  providers: [InitService, MsgService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

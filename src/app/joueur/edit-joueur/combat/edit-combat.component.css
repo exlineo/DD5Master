@@ -1,0 +1,22 @@
+section:nth-child(1) {
+    flex-grow: 1;
+}
+
+section:nth-child(2) {
+    flex-grow: 3;
+}
+
+section:nth-child(2) article {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    border-bottom: 1px solid rgba(255, 255, 255, .5);
+}
+
+section:nth-child(2) p {
+    display: flex;
+}
+
+section:nth-child(2) p>input {
+    margin: auto;
+}
