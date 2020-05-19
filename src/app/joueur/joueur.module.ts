@@ -45,7 +45,8 @@ import { PersoService } from './services/perso.service';
     EditSortsComponent,
     ModaleComponent,
     EditJoueurComponent,
-    ParamsJoueurComponent],
+    ParamsJoueurComponent
+  ],
   providers:[PersoService],
   imports: [
     CommonModule,

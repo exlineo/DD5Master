@@ -13,6 +13,7 @@ export class EditHistoireComponent implements OnInit {
 
   colsPoss:Array<string>;
   colsTresors:Array<string>;
+  files: any = [];
 
   constructor(public initServ:InitService, public persoServ:PersoService) { }
 
@@ -52,5 +53,15 @@ export class EditHistoireComponent implements OnInit {
    */
   supprTresor(i:number){
     this.persoServ.perso.tresors.splice(i, 1);
+  }
+
+  uploadFile(event) {
+    for (let index = 0; index < event.length; index++) {
+      const element = event[index];
+      this.files.push(element.name)
+    }  
+  }
+  deleteAttachment(index) {
+    this.files.splice(index, 1)
   }
 }

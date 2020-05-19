@@ -4,13 +4,15 @@ import { MasterAccueilComponent } from './accueil/accueil-master.component';
 import { MasterPersosComponent } from './persos/persos-master.component';
 import { CreerPersoComponent } from './creer-perso/creer-perso.component';
 import { ParamsComponent } from './params/params.component';
+import { RessourcesComponent } from './ressources/ressources.component';
 
 
 const routes: Routes = [
   { path:'', component:MasterAccueilComponent, children:[
       { path:'', component:MasterPersosComponent},
       { path:'creer', component:CreerPersoComponent},
-      { path:'params', component:ParamsComponent }
+      { path:'params', component:ParamsComponent },
+      { path:'ressources', component:RessourcesComponent}
   ]}
 ];
 
