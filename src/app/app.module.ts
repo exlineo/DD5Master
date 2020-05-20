@@ -13,13 +13,15 @@ import { MaterielModule } from './materiel/materiel.module';
 import { InitService } from './materiel/services/init.service';
 import { MsgService } from './materiel/services/msg.service';
 import { DragDropDirective } from './materiel/drag-drop.directive';
+import { DesComponent } from './des/des.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ConnexionComponent,
     InstallComponent,
-    DragDropDirective
+    DragDropDirective,
+    DesComponent
   ],
   imports: [
     BrowserModule,
