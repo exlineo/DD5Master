@@ -9,7 +9,7 @@ import { InitService } from './materiel/services/init.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(private msgServ:MsgService, private _snackBar:MatSnackBar) {
+  constructor(public initServ:InitService, private msgServ:MsgService, private _snackBar:MatSnackBar) {
     /**
      * Gérer les messages de retour sur service principal et afficher un message
      */

@@ -16,7 +16,6 @@ import { environment } from '.././../environments/environment';
 import { ParamsComponent } from './params/params.component';
 import { CreerPersoComponent } from './creer-perso/creer-perso.component';
 import { AccentsPipe } from '../materiel/pipes/accents.pipe';
-import { DragDropDirective } from '../materiel/drag-drop.directive';
 import { RessourcesComponent } from './ressources/ressources.component';
 
 const config: SocketIoConfig = { url: environment.WS, options: {} };
@@ -28,7 +27,6 @@ const config: SocketIoConfig = { url: environment.WS, options: {} };
     ParamsComponent,
     CreerPersoComponent,
     AccentsPipe,
-    DragDropDirective,
     RessourcesComponent
   ],
   providers:[MasterService],

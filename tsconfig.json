@@ -18,6 +18,9 @@
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
-    "strictInjectionParameters": true
-  }
+    "strictInjectionParameters": true,
+    "target": "es6", // Pour Threejs
+		// "moduleResolution": "node" // Pour Threejs
+  },
+	"include": [ "./src/**/*.ts" ],
 }

@@ -22,6 +22,7 @@ export class InitService {
   profil: ProfilI; // Profil du joueur
   regles: ReglesI; // Les règles du jeu
   listeMsg: Array<WsSendI>;
+  des:boolean = false;
 
   accents = [
     /[\300-\306]/g, /[\340-\346]/g, // A, a
@@ -44,6 +45,7 @@ export class InitService {
       mdp: '',
       statut: 'joueur'
     };
+
     // Initialisation la liste des messages reçus par les joueurs
     localStorage.getItem('listeMsg') ? this.listeMsg = JSON.parse(localStorage.getItem('listeMsg')) : this.listeMsg = [];
 
@@ -121,20 +123,6 @@ export class InitService {
         this.msgServ.message$.next('Aie, erreur dans la connexion... essaies encore');
       });
   }
-  // getID_save(origine:string){
-  //   this.http.get<Array<any>>("assets/data/id/"+origine+".json").subscribe(i => {
-  //     if(i.find(p => p.id == this.connexion.id && p.mdp == this.connexion.mdp)){
-  //       this.profil = i.find(p => p.id == this.connexion.id && p.mdp == this.connexion.mdp);
-  //       this.msgServ.message$.next('Bienvenue '+this.profil.id);
-  //       this.connexion.statut ? this.router.navigateByUrl('master') : this.router.navigateByUrl('joueur');
-
-  //       // Stocker les identifiants
-  //       localStorage.setItem("id", JSON.stringify(this.profil));
-  //     }else{
-  //       this.msgServ.message$.next('Aie, erreur dans la connexion... essaies encore');
-  //     }
-  //   });
-  // }
   /**
    * Envoyer un message d'information sur ce qu'il se passe
    * @param msg Message transmis

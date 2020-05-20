@@ -15,6 +15,7 @@
             <button mat-icon-button (click)="persoServ.savePerso()" [matTooltip]="initServ.traductions['savePerso']"><mat-icon>save</mat-icon></button>
             <button mat-icon-button routerLink="/joueur/edit" [matTooltip]="initServ.traductions['editPerso']"><mat-icon>edit</mat-icon></button>
             <button mat-icon-button [matTooltip]="initServ.traductions['telechargePerso']"><mat-icon>save_alt</mat-icon></button>
+            <button mat-icon-button (click)="initServ.des = !initServ.des"><mat-icon>widgets</mat-icon></button>
             <button mat-icon-button routerLink="/joueur/params" [matTooltip]="initServ.traductions['optionParams']"><mat-icon>build</mat-icon></button>
             <a href="https://www.aidedd.org/regles/" target="_blank"><img src="/assets/images/logos/DD5_logo_h_b.png" /></a>
         </div>
