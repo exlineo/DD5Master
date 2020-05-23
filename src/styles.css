@@ -115,6 +115,34 @@ div>section {
     align-items: stretch;
 }
 
+.logo {
+    font-family: 'MedievalSharp', cursive !important;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+a.logo,
+.logo a {
+    color: white;
+    text-decoration: none;
+    padding: 0 10px;
+}
+
+h1.logo {
+    font-size: 150px;
+    width: 100%;
+    line-height: 150px;
+    text-align: center;
+    color: red;
+    letter-spacing: -20px;
+}
+
+h2.logo {
+    font-size: 70;
+    letter-spacing: -5px;
+}
+
 
 /* Classes spécialisées */
 

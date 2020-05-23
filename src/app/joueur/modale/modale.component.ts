@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
+
+import { WsSendI } from 'src/app/materiel/modeles/ws-i';
 
 @Component({
   selector: 'app-modale',
@@ -7,9 +10,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ModaleComponent implements OnInit {
 
-  constructor() { }
+  @Input()
+  ws:WsSendI; // Informations à afficher dans la lightbox
+
+  @Output() ferme = new EventEmitter<boolean>();
+
+  constructor(public sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
+    console.log("Modale ouverte");
+  }
+
+  hideModale(){
+    this.ferme.emit(false);
+  }
+
+  getType(str):string{
+    return str;
   }
 
 }

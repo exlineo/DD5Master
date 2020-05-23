@@ -13,5 +13,8 @@ export interface WsRessourceI{
 export class WsSend implements WsSendI{
     msg = "";
     type = "";
+    lien="";
     date = "";
+    master = false;
+    id=""
 }

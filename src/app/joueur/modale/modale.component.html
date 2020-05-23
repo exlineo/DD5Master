@@ -1,5 +1,12 @@
 <main>
+    <span class="close" (click)="hideModale()"></span>
     <section>
-
+        <article *ngIf="ws.type == 'lien'">
+            <iframe [src]="sanitizer.bypassSecurityTrustResourceUrl(ws.lien)" #iframe *ngIf="ws.lien"></iframe>
+        </article>
+        <article *ngIf="ws.type == 'image'">
+            <img [src]="ws.lien">
+        </article>
+        <h3>{{ ws.msg }}</h3>
     </section>
 </main>

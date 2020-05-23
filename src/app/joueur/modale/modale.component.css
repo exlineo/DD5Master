@@ -1,12 +1,75 @@
 main {
     width: 100vw;
-    height: calc(100vh-56px);
+    height: calc(100vh - 100px);
     padding: 0;
     margin: 0;
     background-color: rgba(0, 0, 0, .7);
     display: flex;
+    position: absolute;
+    z-index: 80;
+    top: 0;
+    left: 0;
+}
+
+section,
+article,
+iframe {
+    margin: auto;
+    width: 100%;
+    height: 100%;
 }
 
 section {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+img {
     margin: auto;
+}
+
+h3 {
+    width: 100%;
+    background-color: rgba(0, 0, 0, .7);
+    margin-top: -100px;
+    color: white;
+    text-align: center;
+    padding: 8px;
+}
+
+
+/* CROIX FERMER */
+
+.close {
+    position: absolute;
+    right: 32px;
+    top: 32px;
+    width: 32px;
+    height: 32px;
+    opacity: 0.3;
+    transition: all .3s ease;
+    z-index: 90;
+}
+
+.close:hover {
+    opacity: 1;
+    transform: rotate(30deg) scale(1.1);
+}
+
+.close:before,
+.close:after {
+    position: absolute;
+    left: 15px;
+    content: ' ';
+    height: 33px;
+    width: 2px;
+    background-color: #FFF;
+}
+
+.close:before {
+    transform: rotate(45deg);
+}
+
+.close:after {
+    transform: rotate(-45deg);
 }

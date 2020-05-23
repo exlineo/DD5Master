@@ -20,14 +20,14 @@ export class AccueilJoueurComponent implements OnInit, OnDestroy {
 
   persoChoisi:string;
   modale:boolean;
-  srcAudio:string;
-  srcVideo:string;
+  ws:WsSendI;
 
   constructor(public persoServ: PersoService, public initServ: InitService, changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private socket: Socket, private route:Router) {
     
     this.persoServ.getPerso(this.initServ.profil.persos[0]);
     this.initServ.sendMsg('Chargement des données du personnage');
 
+    this.ws = new WsSend();
     this.modale = false;
 
     // Menu matériel
@@ -63,30 +63,30 @@ export class AccueilJoueurComponent implements OnInit, OnDestroy {
    * @param msg Message reçu du master
    */
   getWSMsg(msg:WsSendI){
+
+    this.ws = msg; // Donner une valeur au message
+
     switch(msg.type){
       case 'message':
         this.initServ.sendMsg(msg.msg);
         break;
-      case 'lien':
       case 'tube':
-      case 'image':
         if(msg.lien){
           window.open(msg.lien, '_blank');
         }
         break;
-      // case 'image':
-      //   this.modale = true;
-      //   break;
+      case 'lien':
+      case 'image':
+        if(msg.lien){
+          this.modale = true;
+          console.log("Affichage de la modale");
+        }
+        break;
       case 'audio':
-        this.srcAudio = msg.lien;
-        this.srcVideo = null;
         break;
       case 'video':
-        this.srcAudio = null;
-        this.srcVideo = msg.lien;
         break;
       default:
-        
         console.log("Le maître s'intéresse à toi");
     }
     
@@ -100,5 +100,13 @@ export class AccueilJoueurComponent implements OnInit, OnDestroy {
     }
     // Aller à la page du perso
     this.route.navigateByUrl('/joueur');
+  }
+  /**
+   * Fermer la modale lorsqu'elle est ouverte
+   * @param b Dire s'il faut fermer (bon, ça sert pas mais c'est pour l'exemple)
+   */
+  initModale(b:boolean){
+    this.modale = false;
+    this.ws = new WsSend();
   }
 }

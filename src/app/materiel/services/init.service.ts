@@ -136,6 +136,20 @@ export class InitService {
    */
   setListeMsg(msg: WsSendI) {
     this.listeMsg.push(msg);
+    this.storeListeMsg(); 
+  }
+  /**
+   * Supprimer un message dans la liste
+   * @param i Index du message à supprimer
+   */
+  supprMsg(i:number){
+    this.listeMsg.splice(i, 1);
+    this.storeListeMsg();
+  }
+  /**
+   * Stocker des donnée en local
+   */
+  storeListeMsg(){
     localStorage.setItem("listeMsg", JSON.stringify(this.listeMsg));
   }
   /**

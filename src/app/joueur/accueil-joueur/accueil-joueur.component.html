@@ -1,3 +1,4 @@
+<app-modale *ngIf="modale" [ws]="ws" (ferme)="initModale($event)" class="modale"></app-modale>
 <main [class.example-is-mobile]="mobileQuery.matches">
     <mat-toolbar color="primary">
         <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
@@ -17,7 +18,10 @@
             <button mat-icon-button [matTooltip]="initServ.traductions['telechargePerso']"><mat-icon>save_alt</mat-icon></button>
             <button mat-icon-button (click)="initServ.des = !initServ.des"><mat-icon>widgets</mat-icon></button>
             <button mat-icon-button routerLink="/joueur/params" [matTooltip]="initServ.traductions['optionParams']"><mat-icon>build</mat-icon></button>
-            <a href="https://www.aidedd.org/regles/" target="_blank"><img src="/assets/images/logos/DD5_logo_h_b.png" /></a>
+            <!-- <a href="https://www.aidedd.org/regles/" target="_blank"><img src="/assets/images/logos/DD5_logo_h_b.png" /></a> -->
+            <a href="https://www.aidedd.org/regles/" target="_blank" class="logo">
+                <h2>Donjon & Master</h2>
+            </a>
         </div>
     </mat-toolbar>
 
@@ -29,21 +33,19 @@
                         <h2>{{ initServ.traductions['wsRecuMaster'] }}</h2>
                         <ul>
                             <li *ngFor="let m of initServ.listeMsg; let i=index" (click)="getWSMsg(m)">
-                                <span>{{ m.date }}</span><span>{{ m.msg }}</span><span>({{ m.type }})</span>
+                                <button mat-icon-button color="primary" (click)="initServ.supprMsg(i)" [matTooltip]="initServ.traductions['interactions']['suppr']">
+                                    <mat-icon>delete</mat-icon>
+                                </button><span>{{ m.date }}</span><span>{{ m.msg }}</span><span>({{ m.type }})</span>
                             </li>
                         </ul>
                     </article>
                     <article>
-                        <video controls *ngIf="srcVideo">
-                            <source [src]="srcVideo"
-                                    type="video/webm">
-                        
-                            <source [src]="srcVideo"
-                                    type="video/mp4">
+                        <video controls *ngIf="ws.type=='video'">
+                            <source [src]="ws.lien"  *ngIf="ws.lien.indexOf('webm') != -1" type="video/webm">
+                            <source [src]="ws.lien" *ngIf="ws.lien.indexOf('mp4') != -1" type="video/mp4">
                         </video>
-                        <audio controls *ngIf="srcVideo">
-                            <source [src]="srcAudio"
-                                    type="audio/mp3">
+                        <audio controls *ngIf="ws.type=='audio'">
+                            <source [src]="ws.lien" type="audio/mp3">
                         </audio>
                     </article>
                 </section>
@@ -59,4 +61,3 @@
         </mat-sidenav-content>
     </mat-sidenav-container>
 </main>
-<app-modale *ngIf="modale" class="modale"></app-modale>

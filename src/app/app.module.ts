@@ -31,6 +31,7 @@ import { DesComponent } from './des/des.component';
     FormsModule,
     HttpClientModule
   ],
+  exports:[DesComponent],
   providers: [InitService, MsgService],
   bootstrap: [AppComponent]
 })
