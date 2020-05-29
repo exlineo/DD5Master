@@ -1,14 +1,13 @@
 import { Injectable } from '@angular/core';
-import { Observable, forkJoin } from 'rxjs';
+import { forkJoin } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 import { Socket } from 'ngx-socket-io';
-import { WsSendI, WsRessourceI } from '../../materiel/modeles/ws-i';
+import { MsgService } from 'src/app/materiel/services/msg.service';
 
+import { WsSendI, ScenarioI, Scenard} from '../../materiel/modeles/ws-i';
 import { PersoI, Perso } from '../../materiel/modeles/perso-i';
 import { ProfilI } from 'src/app/materiel/modeles/profilI';
-import { RessourceI, ScenarioI, Scenard } from 'src/app/materiel/modeles/ressource-i';
-import { MsgService } from 'src/app/materiel/services/msg.service';
 
 @Injectable({
   providedIn: 'root'
@@ -18,15 +17,15 @@ export class MasterService {
   joueurs: Array<ProfilI>; // Liste des joueurs
   persos: Array<string>; // Liste des personnages
   listePersos: Array<PersoI>; // Liste des persos référencés
-  listeLiens:Array<RessourceI>; // Liste des liens à partager
   listeScenars:Array<ScenarioI>; // Liste des scénarii
+  IS:number; // Index du scénario en cours
 
   constructor(private http: HttpClient, private socket: Socket, private msgServ:MsgService) {
     this.joueurs = [];
     this.persos = [];
     this.listePersos = [];
-    this.listeLiens = [];
     this.listeScenars = [];
+    this.IS = 0;
     this.getPersos();
 
     this.socket.on('connection', so => {
@@ -109,12 +108,11 @@ export class MasterService {
    * Récupérer la liste des liens partageables
    */
   getRessources(){
-    this.http.get<Array<RessourceI>>('/assets/data/master/ressources.json').subscribe(r => {
-      this.listeLiens = r;
+    this.http.get<Array<WsSendI>>('/assets/data/master/ressources.json').subscribe(r => {
       // Créer une liste de scénarii
-      this.listeLiens.forEach(s=>{
-        this.addScenard(s[0].scenard);
-      })
+      // this.listeLiens.forEach(s=>{
+      //   this.addScenard(s[0].scenard);
+      // })
     })
   }
   /**
@@ -122,8 +120,10 @@ export class MasterService {
    * @param r La ressource à ajouter
    * @param i Index du tableau ou ajouter la ressource (le scénario concerné)
    */
-  addRessource(r:RessourceI, i:number){
-    console.log(r, i);
+  addRessource(r:WsSendI){
+    r.date = Date.now();
+    this.listeScenars[this.IS].liens.push(r);
+    console.log(r);
   }
   /**
    * Ajouter une ressource à la liste
@@ -136,13 +136,14 @@ export class MasterService {
     scenard.nom = r;
     scenard.date = Date.now();
     this.listeScenars.push(scenard);
+    this.IS = this.listeScenars.length-1;
     console.log(this.listeScenars);
   }
   /**
    * Envoyer le tableau des ressources à l'enregistrement
    */
   valideRessources(){
-    this.http.post('/assets/php/saveRessources.php', this.listeLiens).subscribe(retour => {
+    this.http.post('/assets/php/saveScenards.php', this.listeScenars).subscribe(retour => {
       this.msgServ.message$.next(retour['msg']);
     })
   }

@@ -1,5 +1,4 @@
 <main [class.example-is-mobile]="mobileQuery.matches">
-
     <mat-toolbar color="primary">
         <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
         <h1>{{ initServ.traductions['titre'] }}</h1>
@@ -27,6 +26,9 @@
                         <mat-option value="/master/creer">
                             {{ initServ.traductions['optionCreerPerso']}}
                         </mat-option>
+                        <mat-option value="/master/scenarii">
+                            {{ initServ.traductions['creerScenar']}}
+                        </mat-option>
                         <mat-option value="/master/params">
                             {{ initServ.traductions['optionParams']}}
                         </mat-option>
@@ -39,7 +41,6 @@
             <a href="https://www.aidedd.org/regles/" target="_blank"><img src="/assets/images/logos/DD5_logo_h_b.png" /></a>
         </div>
     </mat-toolbar>
-
     <mat-sidenav-container [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
         <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
             <mat-nav-list>

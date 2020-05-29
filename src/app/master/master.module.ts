@@ -17,6 +17,7 @@ import { ParamsComponent } from './params/params.component';
 import { CreerPersoComponent } from './creer-perso/creer-perso.component';
 import { AccentsPipe } from '../materiel/pipes/accents.pipe';
 import { RessourcesComponent } from './ressources/ressources.component';
+import { ScenariiComponent } from './scenarii/scenarii.component';
 
 const config: SocketIoConfig = { url: environment.WS, options: {} };
 
@@ -27,7 +28,8 @@ const config: SocketIoConfig = { url: environment.WS, options: {} };
     ParamsComponent,
     CreerPersoComponent,
     AccentsPipe,
-    RessourcesComponent
+    RessourcesComponent,
+    ScenariiComponent
   ],
   providers:[MasterService],
   imports: [

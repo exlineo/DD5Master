@@ -1,59 +1,79 @@
-<div>
-    <section>
-        <article>
-            <button mat-icon-button (click)="send = !send"><h3><mat-icon>message</mat-icon> {{ initServ.traductions['wsDialogue'] }}</h3></button>
-            <form *ngIf="send" #f="ngForm" (ngSubmit)="envoiRessourceWS()">
-                <mat-form-field>
-                    <mat-label>{{ initServ.traductions['wsMessage'] }}</mat-label>
-                    <input matInput name="msg" required [(ngModel)]="envoiWS.msg">
-                </mat-form-field>
-                <mat-form-field>
-                    <mat-label>{{ initServ.traductions['wsLien'] }}</mat-label>
-                    <input matInput name="lien" [(ngModel)]="envoiWS.lien">
-                </mat-form-field>
-                <mat-radio-group name="type" [(ngModel)]="envoiWS.type" required>
-                    <mat-radio-button value="message" checked>{{ initServ.traductions['wsOptionMsg'] }}</mat-radio-button>
-                    <mat-radio-button value="lien" checked>{{ initServ.traductions['wsOptionLien'] }}</mat-radio-button>
-                    <mat-radio-button value="image">{{ initServ.traductions['wsOptionImg'] }}</mat-radio-button>
-                    <mat-radio-button value="audio">{{ initServ.traductions['wsOptionAudio'] }}</mat-radio-button>
-                    <mat-radio-button value="video">{{ initServ.traductions['wsOptionVideo'] }}</mat-radio-button>
-                    <mat-radio-button value="tube">{{ initServ.traductions['wsOptionTube'] }}</mat-radio-button>
-                </mat-radio-group>
-                <button mat-fab [disabled]="f.invalid" [matTooltip]="initServ.traductions['interactions']['valide']">
-                    <mat-icon>keyboard_arrow_right</mat-icon>
-                </button>
-            </form>
-        </article>
-    </section>
-    <section>
-        <h2>{{ initServ.traductions['creerScenar'] }}</h2>
-        <mat-form-field>
-            <mat-label>{{ initServ.traductions['scenar'] }}</mat-label>
-            <input matInput name="scenar" required #scenNom>
-        </mat-form-field>
-        <button mat-fab [disabled]="!scenNom.value" (click)="masterServ.addScenard(scenNom.value)" [matTooltip]="initServ.traductions['interactions']['ajout']">
-            <mat-icon>keyboard_arrow_right</mat-icon>
-        </button>
-        <h2>{{ initServ.traductions['scenars'] }}</h2>
-        <mat-form-field>
-            <mat-label>{{ initServ.traductions['scenars'] }}</mat-label>
-            <select matNativeControl name="scenars" required #scenar>
-                <option [value]="i" *ngFor="let s of masterServ.listeScenars; let i=index">{{ s.nom }}</option>
-            </select>
-        </mat-form-field>
-        <form *ngIf="scenar.value" (ngSubmit)="masterServ.addRessource(lien.value, scenar.value)" #lien>
-            <h2>{{ initServ.traductions['creerRessource'] }}</h2>
+<mat-accordion>
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                <h2>{{ initServ.traductions['wsEnvoi'] }}</h2>
+            </mat-panel-title>
+            <mat-panel-description>
+                ----------
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+        <!-- Envoyer des messages -->
+        <form #f="ngForm" (ngSubmit)="envoiRessourceWS()">
             <mat-form-field>
-                <mat-label>{{ initServ.traductions['nom'] }}</mat-label>
-                <input matInput name="lienNom" required>
+                <mat-label>{{ initServ.traductions['wsMessage'] }}</mat-label>
+                <input matInput name="msg" required [(ngModel)]="envoiWS.msg">
             </mat-form-field>
             <mat-form-field>
-                <mat-label>{{ initServ.traductions['lien'] }}</mat-label>
-                <input matInput name="lienLien" required>
+                <mat-label>{{ initServ.traductions['wsLien'] }}</mat-label>
+                <input matInput name="lien" [(ngModel)]="envoiWS.lien">
             </mat-form-field>
-            <button mat-fab [disabled]="!scenNom.value" (click)="masterServ.addScenard(scenNom.value)" [matTooltip]="initServ.traductions['interactions']['ajout']">
+            <mat-radio-group name="type" [(ngModel)]="envoiWS.type" required>
+                <mat-radio-button value="message" checked>{{ initServ.traductions['wsOptionMsg'] }}</mat-radio-button>
+                <mat-radio-button value="lien" checked>{{ initServ.traductions['wsOptionLien'] }}</mat-radio-button>
+                <mat-radio-button value="image">{{ initServ.traductions['wsOptionImg'] }}</mat-radio-button>
+                <mat-radio-button value="audio">{{ initServ.traductions['wsOptionAudio'] }}</mat-radio-button>
+                <mat-radio-button value="video">{{ initServ.traductions['wsOptionVideo'] }}</mat-radio-button>
+                <mat-radio-button value="tube">{{ initServ.traductions['wsOptionTube'] }}</mat-radio-button>
+            </mat-radio-group>
+            <button mat-fab [disabled]="f.invalid" [matTooltip]="initServ.traductions['interactions']['valide']">
                 <mat-icon>keyboard_arrow_right</mat-icon>
             </button>
         </form>
+    </mat-expansion-panel>
+    <!-- <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                <h2>{{ initServ.traductions['wsPartage'] }}</h2>
+            </mat-panel-title>
+            <mat-panel-description>
+                -------------
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+        
+    </mat-expansion-panel> -->
+</mat-accordion>
+<div class="horizontal">
+    <section class="ws">
+        <article>
+            <h2>{{ initServ.traductions['wsRecuMaster'] }}</h2>
+            <ul>
+                <li *ngFor="let m of initServ.listeMsg; let i=index" (click)="getWSMsg(m)">
+                    <button mat-icon-button color="primary" (click)="initServ.supprMsg(i)" [matTooltip]="initServ.traductions['interactions']['suppr']">
+                            <mat-icon>delete</mat-icon>
+                        </button><span>{{ m.date }}</span><span>{{ m.msg }}</span><span>({{ m.type }})</span>
+                </li>
+            </ul>
+        </article>
+        <article>
+            <video controls *ngIf="initServ.ws.type=='video'">
+                    <source [src]="initServ.ws.lien"  *ngIf="initServ.ws.lien.indexOf('webm') != -1" type="video/webm">
+                    <source [src]="initServ.ws.lien" *ngIf="initServ.ws.lien.indexOf('mp4') != -1" type="video/mp4">
+                </video>
+            <audio controls *ngIf="initServ.ws.type=='audio'">
+                    <source [src]="initServ.ws.lien" type="audio/mp3">
+                </audio>
+        </article>
+    </section>
+    <section class="ws">
+        <h3>{{ initServ.traductions['scenars'] }}</h3>
+        <article *ngFor="let s of masterServ.listeScenars">
+            <ul>
+                <li *ngFor="let l of s.liens" (click)="initServ.sendMsg(l)">
+                    <span>{{ l.msg }}</span><span>{{ l.type }}</span>
+                </li>
+            </ul>
+
+        </article>
     </section>
 </div>

@@ -22,7 +22,6 @@ import { EditHistoireComponent } from './edit-joueur/histoire/edit-histoire.comp
 import { EditSortsComponent } from './edit-joueur/sorts/edit-sorts.component';
 
 import { environment } from '../../environments/environment';
-import { ModaleComponent } from './modale/modale.component';
 import { EditJoueurComponent } from './edit-joueur/edit-joueur.component';
 import { ParamsJoueurComponent } from './params-joueur/params-joueur.component';
 import { PersoService } from './services/perso.service';
@@ -44,7 +43,6 @@ import { SortNivPipe } from '../materiel/pipes/sorts-msg.pipe';
     EditCombatComponent,
     EditHistoireComponent,
     EditSortsComponent,
-    ModaleComponent,
     EditJoueurComponent,
     ParamsJoueurComponent,
     SortNivPipe

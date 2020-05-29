@@ -4,11 +4,11 @@ import { Router } from '@angular/router';
 
 import { ProfilI } from '../modeles/profilI';
 import { ReglesI } from '../modeles/regles-i';
-import { WsSendI } from '../modeles/ws-i';
+import { WsSendI, WsSend } from '../modeles/ws-i';
 
 import { MsgService } from './msg.service';
 import { PersoI } from '../modeles/perso-i';
-
+import { environment } from 'src/environments/environment'
 
 
 @Injectable({
@@ -22,7 +22,8 @@ export class InitService {
   profil: ProfilI; // Profil du joueur
   regles: ReglesI; // Les règles du jeu
   listeMsg: Array<WsSendI>;
-  des:boolean = false;
+  ws:WsSendI;
+  des: boolean = false;
 
   accents = [
     /[\300-\306]/g, /[\340-\346]/g, // A, a
@@ -45,7 +46,7 @@ export class InitService {
       mdp: '',
       statut: 'joueur'
     };
-
+    this.ws = new WsSend();
     // Initialisation la liste des messages reçus par les joueurs
     localStorage.getItem('listeMsg') ? this.listeMsg = JSON.parse(localStorage.getItem('listeMsg')) : this.listeMsg = [];
 
@@ -101,31 +102,45 @@ export class InitService {
    */
   testConnexion() {
     this.msgServ.message$.next('Tentative de connexion...');
-    this.getID();
-    // this.connexion.statut ? this.getID('master') : this.getID('joueurs');
+    // Test local ou prod
+    environment.production ? this.getProfil() : this.getID();
   }
   /**
    * Télécharger le fichier d'identifiants (sera corrigé dans une phase ultérieure pour sécuriser)
    * @param origine Fichier à télécharger
    */
-  getID(origine: string=null) {
-    this.http.get<ProfilI>("assets/data/id/profil_" + this.connexion.id + '@' + this.connexion.mdp + ".json").subscribe(pro => {
-      
-      this.profil = pro;
-      this.msgServ.message$.next('Bienvenue ' + this.profil.id);
-      this.router.navigateByUrl('/' + this.profil.statut);
-      // Stocker les identifiants
-      localStorage.setItem("id", JSON.stringify(this.profil));
+  getID(origine: string = null) {
+    this.http.get<ProfilI>("/assets/data/id/profil_" + this.connexion.id + '@' + this.connexion.mdp + ".json").subscribe(pro => {
+      this.setProfil(pro);
     },
       error => {
         this.msgServ.message$.next('Aie, erreur dans la connexion... essaies encore');
       });
   }
   /**
+   * Récupérer le profil à partir de PHP pour sécuriser les accès
+   */
+  getProfil() {
+    this.http.post<ProfilI>("/assets/php/getProfil.php", this.connexion).subscribe(pro => {
+      console.log("PHP Profil", pro);
+      this.setProfil(pro);
+    },
+      error => {
+        this.msgServ.message$.next('Aie, erreur dans la connexion... essaies encore');
+      });
+  }
+  setProfil(pro:ProfilI){
+    this.profil = pro;
+    this.msgServ.message$.next('Bienvenue ' + this.profil.id);
+    this.router.navigateByUrl('/' + this.profil.statut);
+    // Stocker les identifiants
+    localStorage.setItem("id", JSON.stringify(this.profil));
+  }
+  /**
    * Envoyer un message d'information sur ce qu'il se passe
    * @param msg Message transmis
    */
-  sendMsg(msg: string) {
+  sendMsg(msg: any) {
     this.msgServ.message$.next(msg);
   }
   /**
@@ -134,20 +149,21 @@ export class InitService {
    */
   setListeMsg(msg: WsSendI) {
     this.listeMsg.push(msg);
-    this.storeListeMsg(); 
+    this.msgServ.message$.next(msg);
+    this.storeListeMsg();
   }
   /**
    * Supprimer un message dans la liste
    * @param i Index du message à supprimer
    */
-  supprMsg(i:number){
+  supprMsg(i: number) {
     this.listeMsg.splice(i, 1);
     this.storeListeMsg();
   }
   /**
    * Stocker des donnée en local
    */
-  storeListeMsg(){
+  storeListeMsg() {
     localStorage.setItem("listeMsg", JSON.stringify(this.listeMsg));
   }
   /**
@@ -157,10 +173,10 @@ export class InitService {
   creeJoueur(j: ProfilI) {
 
   }
-/**
-   * Sauvegarder l'évolution du personnage
-   */
-  creePerso(p:PersoI){
+  /**
+     * Sauvegarder l'évolution du personnage
+     */
+  creePerso(p: PersoI) {
     p.id = this.filtreNoms(p.nom);
     this.http.post('assets/php/savePerso.php', p).subscribe(retour => {
       this.msgServ.message$.next(JSON.stringify(retour));
@@ -170,7 +186,7 @@ export class InitService {
    * Enlever les accents du nom du personnage
    * @param str Chaîne de caractère à traduire
    */
-  filtreNoms(str){
+  filtreNoms(str) {
     for (var i = 0; i < this.accents.length; i++) {
       str = str.replace(this.accents[i], this.noaccent[i]);
     }

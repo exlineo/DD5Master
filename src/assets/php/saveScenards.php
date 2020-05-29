@@ -20,7 +20,7 @@ ini_set('track_errors', 1);
  * @param {string} 1 - L'adresse du fichier (attention, vérifiez vos droits www-data sur votre serveur (chown -R www-data:www-data ./modele))
  * @param {string} w - le fichier est ouvert en écriture seulement
  */
-$fJson = fopen('../data/master/ressources.json', 'w');
+$fJson = fopen('../data/master/scenards.json', 'w');
 if ( !$fJson ) {
   $msg['msg'] = "'fopen raté. Raison : ', $php_errormsg";
   

@@ -1,2 +1,4 @@
 <router-outlet></router-outlet>
+<app-modale *ngIf="modale" [ws]="ws" (ferme)="initModale($event)" class="modale"></app-modale>
+
 <!-- <app-des *ngIf="initServ.des"></app-des> -->

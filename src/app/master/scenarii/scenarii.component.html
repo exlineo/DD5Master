@@ -1,0 +1,47 @@
+<!-- GESTION Ressources -->
+<div class="horizontal">
+    <section>
+        <article>
+            <h1>{{ initServ.traductions['creerScenar'] }}</h1>
+            <form #scen="ngForm" (ngSubmit)="masterServ.addScenard(scen.value)">
+                <mat-form-field>
+                    <mat-label>{{ initServ.traductions['creerScenar'] }}</mat-label>
+                    <input matInput name="scenar" required>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>{{ initServ.traductions['descr'] }}</mat-label>
+                    <input matInput name="descr">
+                </mat-form-field>
+                <button mat-fab [disabled]="scen.invalid" [matTooltip]="initServ.traductions['interactions']['ajout']">
+                    <mat-icon>keyboard_arrow_right</mat-icon>
+                </button>
+            </form>
+        </article>
+        <article *ngIf="masterServ.listeScenars.length > 0">
+            <h3>{{ initServ.traductions['scenario'] }} : {{ masterServ.listeScenars[masterServ.IS].nom }}</h3>
+            <ul>
+                <li *ngFor="let s of masterServ.listeScenars; let i=index " (click)="masterServ.IS = i">{{ s.nom }}</li>
+            </ul>
+        </article>
+    </section>
+    <section>
+        <form (ngSubmit)="masterServ.addRessource(lien.value)" #lien="ngForm">
+            <h3>{{ initServ.traductions['creerRessource'] }}</h3>
+            <mat-form-field>
+                <mat-label>{{ initServ.traductions['wsOptionMsg'] }}</mat-label>
+                <input matInput name="lienMsg" required>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>{{ initServ.traductions['lien'] }}</mat-label>
+                <input matInput name="lienLien" required>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>{{ initServ.traductions['type'] }}</mat-label>
+                <input matInput name="lienType" required>
+            </mat-form-field>
+            <button mat-fab [matTooltip]="initServ.traductions['interactions']['ajout']">
+<mat-icon>keyboard_arrow_right</mat-icon>
+</button>
+        </form>
+    </section>
+</div>
