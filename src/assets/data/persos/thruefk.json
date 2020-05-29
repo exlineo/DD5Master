@@ -1,0 +1,128 @@
+{
+    "id": "thruefk",
+    "nom": "Thruefk",
+    "joueur": "Mickaël",
+    "niveau": 7,
+    "xp": 0,
+    "ca": 15,
+    "bouclier": 0,
+    "pvMax": 39,
+    "pvActu": 39,
+    "pvTmp": 39,
+    "desVie": "6D6",
+    "initiative": 2,
+    "vitesse": 9,
+    "sauvegarde": ["constitution", "charisme"],
+    "inspiration": 2,
+    "bonusMaitrise": 3,
+    "competences": ["arcanes", "histoire", "perspicacite", "persuasion"],
+    "capacites": [
+        "Ancêtre dragon",
+        "Résistance draconique * (dragon vert)",
+        "Source de magie (6 pts)",
+        "Métamagie (Sort jumeau, Sort puissant)",
+        "Affinité élémentaire",
+        "Chercheur"
+    ],
+    "langues": ["commun", "elfique", "draconique"],
+    "perception": 9,
+    "jdsMort": {
+        "reussites": 0,
+        "echecs": 0
+    },
+    "carac": {
+        "force": 13,
+        "dexterite": 15,
+        "constitution": 14,
+        "intelligence": 11,
+        "sagesse": 9,
+        "charisme": 18
+    },
+    "armes": [{
+        "nom": "Arbalète légère",
+        "bonusAtt": 5,
+        "degats": "0",
+        "bonusDeg": 5,
+        "descr": ""
+    }, {
+        "nom": "Epée nature",
+        "bonusAtt": 5,
+        "degats": "1D8",
+        "bonusDeg": 5,
+        "descr": "Epées +1 offerte par ta copine la dryade, finesse et maîtrise"
+    }, {
+        "nom": "Dague",
+        "bonusAtt": 4,
+        "degats": "1D4",
+        "bonusDeg": 4,
+        "descr": "Finesse, légèreté, lancer (6m/18m)"
+    }],
+    "sorts": {
+        "nombre": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "ddSauvegarde": 0,
+        "bonusAtt": 0,
+        "preparation": 0,
+        "livre": [{
+            "niveau": 0,
+            "nom": "",
+            "ecole": "",
+            "bonusAtt": 0,
+            "degats": 0,
+            "bonusDeg": 0,
+            "duree": "",
+            "portee": "",
+            "tps": "",
+            "aire": "",
+            "descr": "",
+            "composantes": "",
+            "lien": "",
+            "appris": { "nb": 0, "niv": 0 }
+        }]
+    },
+    "description": {
+        "classe": "Ensorceleur",
+        "img": [""],
+        "apparence": "Embonpoint et coquetterie vestimentaire. Toujours soigné dans le langage et l'apparence. Un regard perçant d'un bleu éclatant qui envoûte et séduit...",
+        "histoire": "Sage (Académicien discrédité), J'ai lu tous les livres des plus grandes bibliothèques du monde, ou du moins je me vante de l'avoir fait.",
+        "historique": "Sage (lignée draconique)",
+        "race": "Humain",
+        "alignement": "CN",
+        "physique": {
+            "age": "28",
+            "taille": "1m70",
+            "poids": "78kgs",
+            "yeux": "Noisettes",
+            "peau": "Blanc",
+            "cheveux": "Noirs"
+        },
+        "allies": "Dryade, peut être appelée pour un service ou des question avec un rituel de convocation (1h) dans une forêt."
+    },
+    "possessions": [{
+        "nom": "Sacoche à composantes",
+        "pds": "",
+        "quantite": "1",
+        "descr": "Ceinture en cuir"
+    }, {
+        "nom": "Sac d'aventurier",
+        "pds": "",
+        "quantite": "1",
+        "descr": "Contient torches, allume-feu, gourde, ration, matériel d'écriture"
+    }],
+    "tresors": [{
+        "nom": "Epée de dryade",
+        "magie": "+1",
+        "quantite": "1",
+        "description": "D'un blanc laiteux parcouru de veines bleutées et vertes."
+    }, {
+        "nom": "Marque de la dryade",
+        "magie": "Les animaux et créatures sylvèstres et bucoliques auront une attitude amicale a priori. Les personnes et créatures agissant contre la nature auront une propension inverse.",
+        "quantite": "1",
+        "description": "Couvre une partie du dos et du torse. Ressemble à une scarification marron sombre. Visible torse nu."
+    }]
+}

@@ -1,29 +1,19 @@
 <div class="vertical">
     <section>
-        <!-- <div (click)="fileInput.click()" appDragDrop (onFileDropped)="uploadFile($event)">
-            <input hidden type="file" #fileInput (change)="uploadFile($event.target.files)">
-        </div>
-        <article>
-            <p *ngFor="let f of files;let i=index"> {{ f }}
-                <button class="primary" (click)="deleteAttachment(i)">
-                <mat-icon>delete</mat-icon>
-              </button>
-            </p>
-        </article> -->
         <article *ngFor="let i of persoServ.perso.description.img">
             <a [href]="i" target="_blank"><img [src]="i" (click)="modale(i)" /></a>
         </article>
     </section>
     <section>
         <h1><input matInput name="editNom" [(ngModel)]="persoServ.perso.nom">/ <input matInput name="editRace" [(ngModel)]="persoServ.perso.description.race">/ <input matInput name="editClasse" [(ngModel)]="persoServ.perso.description.classe"> (<input matInput
-                name="editAlignement" [(ngModel)]="persoServ.perso.description.alignement">)</h1>
+                name="editHistorique" [(ngModel)]="persoServ.perso.description.historique">(<input matInput name="editAlignement" [(ngModel)]="persoServ.perso.description.alignement">))</h1>
         <h2>{{ initServ.traductions['age']+' : ' }} <input matInput name="editAge" [(ngModel)]="persoServ.perso.description.physique.age">/ {{ initServ.traductions['taille']+' : ' }}<input matInput name="editTaille" [(ngModel)]="persoServ.perso.description.physique.taille">/
             {{ initServ.traductions['poids']+' : ' }} <input matInput name="editPds" [(ngModel)]="persoServ.perso.description.physique.poids"></h2>
         <h3>{{ initServ.traductions['yeux']+' : ' }} <input matInput name="editYeux" [(ngModel)]="persoServ.perso.description.physique.yeux">/ {{ initServ.traductions['peau']+' : ' }}<input matInput name="editPeau" [(ngModel)]="persoServ.perso.description.physique.peau">/
             {{ initServ.traductions['cheveux']+' : ' }} <input matInput name="editChe" [(ngModel)]="persoServ.perso.description.physique.cheveux">
         </h3>
     </section>
-    <section>
+    <section class="horizontal">
         <h1>{{ initServ.traductions['apparence'] }}</h1>
         <article class="cartouche_allonge_h f_m_h">
             <div>
@@ -33,7 +23,7 @@
         <h1>{{ initServ.traductions['histoire'] }}</h1>
         <article class="cartouche_allonge_h f_m_h">
             <div>
-                <textarea matInput name="editHist" [(ngModel)]="persoServ.perso.description.historique"></textarea>
+                <textarea matInput name="editHist" [(ngModel)]="persoServ.perso.description.histoire"></textarea>
             </div>
         </article>
     </section>

@@ -1,0 +1,139 @@
+{
+    "id": "lo_kag",
+    "nom": "Lo-Kag Le mourant Ogolakanu",
+    "joueur": "Philippe",
+    "niveau": 7,
+    "xp": 0,
+    "ca": 14,
+    "bouclier": 0,
+    "pvMax": 73,
+    "pvActu": 0,
+    "pvTmp": 0,
+    "desVie": "D12",
+    "initiative": 1,
+    "vitesse": 12,
+    "sauvegarde": ["force", "constitution"],
+    "inspiration": 0,
+    "bonusMaitrise": 3,
+    "competences": ["athletisme", "nature", "survie"],
+    "capacites": [
+        "Endurance de la pierre",
+        "Puissamment bâtit",
+        "Montagnard",
+        "Défense sans armure",
+        "Rage",
+        "Sens du danger",
+        "Frénésie",
+        "Attaque supplémentaire",
+        "Déplacement rapide",
+        "Rage inébranlable",
+        "Instinct sauvage (avantage init. pas de surprise)"
+    ],
+    "langues": ["Commun", "Géant"],
+    "perception": 11,
+    "jdsMort": {
+        "reussites": 0,
+        "echecs": 0
+    },
+    "carac": {
+        "force": 18,
+        "dexterite": 13,
+        "constitution": 16,
+        "intelligence": 10,
+        "sagesse": 12,
+        "charisme": 8
+    },
+    "armes": [{
+        "nom": "Hache à 2 mains",
+        "bonusAtt": 7,
+        "degats": "1D12",
+        "bonusDeg": 7,
+        "descr": ""
+    }, {
+        "nom": "Espadon",
+        "bonusAtt": 7,
+        "degats": "2D6",
+        "bonusDeg": 7,
+        "descr": ""
+    }, {
+        "nom": "Lance",
+        "bonusAtt": 7,
+        "degats": "D6",
+        "bonusDeg": 7,
+        "descr": ""
+    }],
+    "sorts": {
+        "nombre": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "ddSauvegarde": 0,
+        "bonusAtt": 0,
+        "preparation": 0,
+        "livre": [{
+            "niveau": 0,
+            "nom": "",
+            "ecole": "",
+            "bonusAtt": 0,
+            "degats": 0,
+            "bonusDeg": 0,
+            "duree": "",
+            "portee": "",
+            "tps": "",
+            "aire": "",
+            "descr": "",
+            "composantes": "",
+            "lien": "",
+            "appris": { "nb": 0, "niv": 0 }
+        }]
+    },
+    "description": {
+        "classe": "Barbare",
+        "img": ["/assets/images/persos/goliath.jpg"],
+        "apparence": "Massif, une légère claudication,  renfrogné, moqueur, compétitif, grande gueule ou taciturne selon les moments. Des habits pratiques, fonctionnels dont l'apparence compte peu tant qu'ils sont fonctionnels. Un goût pour les fourrures et habits qui protègent. Toujours prêt, quelque soit le climat.",
+        "histoire": "Au bord de la mort, pris par la fièvre, Lo-Kag a quitté son village pour aller mourir et ne pas peser au groupe. Mais son destin fût tout autre. La mort ne vint pas. Il cherche une nouvelle voie, conscient d'être trop âgé pour retourner parmi les siens et sûr de devoir dépasser son destin pour accomplir la gloire et la puissance.",
+        "historique": "Berserker",
+        "race": "Goliath",
+        "alignement": "CN",
+        "physique": {
+            "age": "35",
+            "taille": "2m30",
+            "poids": "200kgs",
+            "yeux": "Noirs",
+            "peau": "Olivatre",
+            "cheveux": "Noirs"
+        },
+        "allies": ""
+    },
+    "argent": { "pc": 0, "pa": 0, "pe": 1400, "po": 365, "pp": 20 },
+    "possessions": [{
+        "nom": "Armure de peau",
+        "pds": "",
+        "quantite": "1",
+        "descr": ""
+    }, {
+        "nom": "Armure de peau",
+        "pds": "",
+        "quantite": "1",
+        "descr": ""
+    }, {
+        "nom": "Sac d'aventurier",
+        "pds": "",
+        "quantite": "1",
+        "descr": "Corde, briquet, huile, toile de jute, couverture, minimum de cuisine"
+    }, {
+        "nom": "Pendentif",
+        "pds": "",
+        "quantite": "1",
+        "descr": "Sort lumière éternelle (6m+6m)"
+    }],
+    "tresors": [{
+        "nom": "",
+        "magie": "",
+        "quantite": "",
+        "description": ""
+    }]
+}

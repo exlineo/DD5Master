@@ -1,0 +1,302 @@
+{
+    "courantCaC": [{
+            "arme": "Bâton",
+            "vo": "Quarterstaff",
+            "degat": "1d6 contondant",
+            "poids": "2 kg",
+            "prix": "2 pa",
+            "proprietes": "Polyvalente (1d8)"
+        },
+        {
+            "arme": "  Dague",
+            "vo": "Dagger",
+            "degat": "1d4 perforant",
+            "poids": "500 g",
+            "prix": "2 po",
+            "proprietes": "Finesse, légère, lancer (portée 6 m/18 m)"
+        },
+        {
+            "arme": "  Gourdin",
+            "vo": "Club",
+            "degat": "1d4 contondant",
+            "poids": "1 kg",
+            "prix": "1 pa",
+            "proprietes": "Légère"
+        },
+        {
+            "arme": "  Hachette",
+            "vo": "Handaxe",
+            "degat": "1d6 tranchant",
+            "poids": "1 kg",
+            "prix": "5 po",
+            "proprietes": "Légère, lancer (portée 6 m/18 m)"
+        },
+        {
+            "arme": "  Javeline",
+            "vo": "Javelin",
+            "degat": "1d6 perforant",
+            "poids": "1 kg",
+            "prix": "5 pa",
+            "proprietes": "Lancer (portée 9 m/36 m)"
+        },
+        {
+            "arme": "  Lance",
+            "vo": "Spear",
+            "degat": "1d6 perforant",
+            "poids": "1,5 kg",
+            "prix": "1 po",
+            "proprietes": "Lancer (portée 6 m/18 m), polyvalente (1d8)"
+        },
+        {
+            "arme": "  Marteau léger",
+            "vo": "Light hammer",
+            "degat": "1d4 contondant",
+            "poids": "1 kg",
+            "prix": "2 po",
+            "proprietes": "Légère, lancer (portée 6 m/18 m)"
+        },
+        {
+            "arme": "  Masse d'armes",
+            "vo": "Mace",
+            "degat": "1d6 contondant",
+            "poids": "2 kg",
+            "prix": "5 po",
+            "proprietes": "-"
+        },
+        {
+            "arme": "  Massue",
+            "vo": "Greatclub",
+            "degat": "1d8 contondant",
+            "poids": "5 kg",
+            "prix": "2 pa",
+            "proprietes": "À deux mains"
+        },
+        {
+            "arme": "  Serpe",
+            "vo": "Sickle",
+            "degat": "1d4 tranchant",
+            "poids": "1 kg",
+            "prix": "1 po",
+            "proprietes": "Légère"
+        }
+    ],
+    "courantDist": [{
+            "arme": "  Arbalète légère",
+            "vo": "Crossbow, light",
+            "degat": "1d8 perforant",
+            "poids": "2,5 kg",
+            "prix": "25 po",
+            "proprietes": "Munitions (portée 24 m/96 m), chargement, à deux mains"
+        },
+        {
+            "arme": "  Arc court",
+            "vo": "Shortbow",
+            "degat": "1d6 perforant",
+            "poids": "1 kg",
+            "prix": "25 po",
+            "proprietes": "Munitions (portée 24 m/96 m), à deux mains"
+        },
+        {
+            "arme": "  Fléchette",
+            "vo": "Dart",
+            "degat": "1d4 perforant",
+            "poids": "100 g",
+            "prix": "5 pc",
+            "proprietes": "Finesse, lancer (portée 6 m/18 m)"
+        },
+        {
+            "arme": "  Fronde",
+            "vo": "Sling",
+            "degat": "1d4 contondant",
+            "poids": "-",
+            "prix": "1 pa",
+            "proprietes": "Munitions (portée 9 m/36 m)"
+        }
+    ],
+    "guerreCaC": [{
+            "arme": "  Cimeterre",
+            "vo": "Scimitar",
+            "degat": "1d6 tranchant",
+            "poids": "1,5 kg",
+            "prix": "25 po",
+            "proprietes": "Finesse, légère"
+        },
+        {
+            "arme": "  Coutille",
+            "vo": "Glaive",
+            "degat": "1d10 tranchant",
+            "poids": "3 kg",
+            "prix": "20 po",
+            "proprietes": "Lourde, allonge, à deux mains"
+        },
+        {
+            "arme": "  Épée à deux mains",
+            "vo": "Greatsword",
+            "degat": "2d6 tranchant",
+            "poids": "3 kg",
+            "prix": "50 po",
+            "proprietes": "Lourde, à deux mains"
+        },
+        {
+            "arme": "  Épée courte",
+            "vo": "Shortsword",
+            "degat": "1d6 perforant",
+            "poids": "1 kg",
+            "prix": "10 po",
+            "proprietes": "Finesse, légère"
+        },
+        {
+            "arme": "  Épée longue",
+            "vo": "Longsword",
+            "degat": "1d8 tranchant",
+            "poids": "1,5 kg",
+            "prix": "15 po",
+            "proprietes": "Polyvalente (1d10)"
+        },
+        {
+            "arme": "  Fléau d'armes",
+            "vo": "Flail",
+            "degat": "1d8 contondant",
+            "poids": "1 kg",
+            "prix": "10 po",
+            "proprietes": "-"
+        },
+        {
+            "arme": "  Fouet",
+            "vo": "Whip",
+            "degat": "1d4 tranchant",
+            "poids": "1,5 kg",
+            "prix": "2 po",
+            "proprietes": "Finesse, allonge"
+        },
+        {
+            "arme": "  Hache à deux mains",
+            "vo": "Greataxe",
+            "degat": "1d12 tranchant",
+            "poids": "3,5 kg",
+            "prix": "30 po",
+            "proprietes": "Lourde, à deux mains"
+        },
+        {
+            "arme": "  Hache d'armes",
+            "vo": "Battleaxe",
+            "degat": "1d8 tranchant",
+            "poids": "2 kg",
+            "prix": "10 po",
+            "proprietes": "Polyvalente (1d10)"
+        },
+        {
+            "arme": "  Hallebarde",
+            "vo": "Halberd",
+            "degat": "1d10 tranchant",
+            "poids": "3 kg",
+            "prix": "20 po",
+            "proprietes": "Lourde, allonge, à deux mains"
+        },
+        {
+            "arme": "  Lance d’arçon",
+            "vo": "Lance",
+            "degat": "1d12 perforant",
+            "poids": "3 kg",
+            "prix": "10 po",
+            "proprietes": "Allonge, spécial"
+        },
+        {
+            "arme": "  Maillet",
+            "vo": "Maul",
+            "degat": "2d6 contondant",
+            "poids": "5 kg",
+            "prix": "10 po",
+            "proprietes": "Lourde, à deux mains"
+        },
+        {
+            "arme": "  Marteau de guerre",
+            "vo": "Warhammer",
+            "degat": "1d8 contondant",
+            "poids": "1 kg",
+            "prix": "15 po",
+            "proprietes": "Polyvalente (1d10)"
+        },
+        {
+            "arme": "  Morgenstern",
+            "vo": "Morningstar",
+            "degat": "1d8 perforant",
+            "poids": "2 kg",
+            "prix": "15 po",
+            "proprietes": "-"
+        },
+        {
+            "arme": "  Pic de guerre",
+            "vo": "War pick",
+            "degat": "1d8 perforant",
+            "poids": "1 kg",
+            "prix": "5 po",
+            "proprietes": "-"
+        },
+        {
+            "arme": "  Pique",
+            "vo": "Pike",
+            "degat": "1d10 perforant",
+            "poids": "9 kg",
+            "prix": "5 po",
+            "proprietes": "Lourde, allonge, à deux mains"
+        },
+        {
+            "arme": "  Rapière",
+            "vo": "Rapier",
+            "degat": "1d8 perforant",
+            "poids": "1 kg",
+            "prix": "25 po",
+            "proprietes": "Finesse"
+        },
+        {
+            "arme": "  Trident",
+            "vo": "Trident",
+            "degat": "1d6 perforant",
+            "poids": "2 kg",
+            "prix": "5 po",
+            "proprietes": "Lancer (portée 6 m/18 m), polyvalente (1d8)"
+        }
+    ],
+    "guerreDist": [{
+            "arme": "  Arbalète de poing",
+            "vo": "Crossbow, hand",
+            "degat": "1d6 perforant",
+            "poids": "1,5 kg",
+            "prix": "75 po",
+            "proprietes": "Munitions (portée 9 m/36 m), légère, chargement"
+        },
+        {
+            "arme": "  Arbalète lourde",
+            "vo": "Crossbow, heavy",
+            "degat": "1d10 perforant",
+            "poids": "9 kg",
+            "prix": "50 po",
+            "proprietes": "Munitions (portée 30 m/120 m), lourde, chargement, à deux mains"
+        },
+        {
+            "arme": "  Arc long",
+            "vo": "Longbow",
+            "degat": "1d8 perforant",
+            "poids": "1 kg",
+            "prix": "50 po",
+            "proprietes": "Munitions (portée 45 m/180 m), lourde, à deux mains"
+        },
+        {
+            "arme": "  Filet",
+            "vo": "Net",
+            "degat": " ",
+            "poids": "1,5 kg",
+            "prix": "1 po",
+            "proprietes": "Spécial, lancer (portée 1,50 m/ 4,50 m)"
+        },
+        {
+            "arme": "  Sarbacane",
+            "vo": "Blowgun",
+            "degat": "1 perforant",
+            "poids": "500 g",
+            "prix": "10 po",
+            "proprietes": "Munitions (portée 7,50 m/30 m), chargement"
+        }
+    ]
+}

@@ -1,0 +1,133 @@
+{
+    "legeres": [
+        [{
+                "armure": "Armures légères",
+                "vo": "",
+                "ca": "",
+                "force": "",
+                "discretion": "",
+                "poids": "",
+                "prix": ""
+            },
+            {
+                "armure": "  Matelassée",
+                "vo": "Padded",
+                "ca": "11 + Mod.Dex",
+                "force": "-",
+                "discretion": "Désavantage",
+                "poids": "4 kg",
+                "prix": "5 po"
+            },
+            {
+                "armure": "  Cuir",
+                "vo": "Leather",
+                "ca": "11 + Mod.Dex",
+                "force": "-",
+                "discretion": "-",
+                "poids": "5 kg",
+                "prix": "10 po"
+            },
+            {
+                "armure": "  Cuir clouté",
+                "vo": "Studded leather",
+                "ca": "12 + Mod.Dex",
+                "force": "-",
+                "discretion": "-",
+                "poids": "6,5 kg",
+                "prix": "45 po"
+            }
+        ]
+    ],
+    "intermediaires": [{
+            "armure": "  Peau",
+            "vo": "Hide",
+            "ca": "12 + Mod.Dex (max +2)",
+            "force": "-",
+            "discretion": "-",
+            "poids": "6 kg",
+            "prix": "10 po"
+        },
+        {
+            "armure": "  Chemise de mailles",
+            "vo": "Chain shirt",
+            "ca": "13 + Mod.Dex (max +2)",
+            "force": "-",
+            "discretion": "-",
+            "poids": "10 kg",
+            "prix": "50 po"
+        },
+        {
+            "armure": "  Écailles",
+            "vo": "Scale mail",
+            "ca": "14 + Mod.Dex (max +2)",
+            "force": "-",
+            "discretion": "Désavantage",
+            "poids": "22,5 kg",
+            "prix": "50 po"
+        },
+        {
+            "armure": "  Cuirasse",
+            "vo": "Breastplate",
+            "ca": "14 + Mod.Dex (max +2)",
+            "force": "-",
+            "discretion": "-",
+            "poids": "10 kg",
+            "prix": "400 po"
+        },
+        {
+            "armure": "  Demi-plate",
+            "vo": "Half plate",
+            "ca": "15 + Mod.Dex (max +2)",
+            "force": "-",
+            "discretion": "Désavantage",
+            "poids": "20 kg",
+            "prix": "750 po"
+        }
+    ],
+    "lourdes": [{
+            "armure": "  Broigne",
+            "vo": "Ring mail",
+            "ca": 14,
+            "force": "-",
+            "discretion": "Désavantage",
+            "poids": "20 kg",
+            "prix": "30 po"
+        },
+        {
+            "armure": "  Cotte de mailles",
+            "vo": "Chain mail",
+            "ca": 16,
+            "force": "For 13",
+            "discretion": "Désavantage",
+            "poids": "27,5 kg",
+            "prix": "75 po"
+        },
+        {
+            "armure": "  Clibanion",
+            "vo": "Splint",
+            "ca": 17,
+            "force": "For 15",
+            "discretion": "Désavantage",
+            "poids": "30 kg",
+            "prix": "200 po"
+        },
+        {
+            "armure": "  Harnois",
+            "vo": "Plate",
+            "ca": 18,
+            "force": "For 15",
+            "discretion": "Désavantage",
+            "poids": "32,5 kg",
+            "prix": "1500 po"
+        }
+    ],
+    "boucliers": [{
+        "armure": "  Bouclier",
+        "vo": "Shield",
+        "ca": 2,
+        "force": "-",
+        "discretion": "-",
+        "poids": "3 kg",
+        "prix": "10 po"
+    }]
+}

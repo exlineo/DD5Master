@@ -12,7 +12,6 @@ main {
 }
 
 section,
-article,
 iframe {
     margin: auto;
     width: 100%;
@@ -24,8 +23,13 @@ section {
     flex-flow: column wrap;
 }
 
-img {
+article {
     margin: auto;
+    height: calc(100vh - 200px);
+    width: 100%;
+    background-position: 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 h3 {

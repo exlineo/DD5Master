@@ -5,7 +5,6 @@ import { PersoComponent } from './perso/perso.component';
 import { EditJoueurComponent } from './edit-joueur/edit-joueur.component';
 import { ParamsJoueurComponent } from './params-joueur/params-joueur.component';
 
-
 const routes: Routes = [
   { path:'', component:AccueilJoueurComponent, children:[
       { path:'', component:PersoComponent },

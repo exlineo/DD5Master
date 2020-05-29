@@ -109,7 +109,6 @@ export class InitService {
    * @param origine Fichier à télécharger
    */
   getID(origine: string=null) {
-    console.log(this.connexion);
     this.http.get<ProfilI>("assets/data/id/profil_" + this.connexion.id + '@' + this.connexion.mdp + ".json").subscribe(pro => {
       
       this.profil = pro;
@@ -119,7 +118,6 @@ export class InitService {
       localStorage.setItem("id", JSON.stringify(this.profil));
     },
       error => {
-        console.log('oops', error);
         this.msgServ.message$.next('Aie, erreur dans la connexion... essaies encore');
       });
   }
@@ -164,9 +162,7 @@ export class InitService {
    */
   creePerso(p:PersoI){
     p.id = this.filtreNoms(p.nom);
-    console.log(p.id);
     this.http.post('assets/php/savePerso.php', p).subscribe(retour => {
-      console.log(retour);
       this.msgServ.message$.next(JSON.stringify(retour));
     })
   }

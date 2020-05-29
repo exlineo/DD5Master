@@ -2,32 +2,33 @@
     <!-- CARACTERISTIQUES -->
     <h1>{{ initServ.traductions['sorts'] }}</h1>
     <section class="horizontal">
-        <article class="cartouche_moyen">
-            <div class="f_m">
-                <p>{{ initServ.traductions['preparation'] }}</p>
-                <h1><input matInput name="editSortPrep" [(ngModel)]="persoServ.perso.sorts.preparation"></h1>
+        <div class="horizontal">
+            <article class="cartouche_carac">
+                <div class="f_m">
+                    <p>{{ initServ.traductions['preparation'] }}</p>
+                    <h1><input matInput name="editSortPrep" [(ngModel)]="persoServ.perso.sorts.preparation"></h1>
+                </div>
+            </article>
+            <article>
+                <div class="cartouche_carac">
+                    <p>{{ initServ.traductions['ddSauvegardeSorts'] }}</p>
+                    <h1><input matInput name="editSortDD" [(ngModel)]="persoServ.perso.sorts.ddSauvegarde"></h1>
+                </div>
+            </article>
+            <article>
+                <div class="cartouche_carac">
+                    <p>{{ initServ.traductions['bonusAttSort'] }}</p>
+                    <h1><input matInput name="editSortAtt" [(ngModel)]="persoServ.perso.sorts.bonusAtt"></h1>
+                </div>
+            </article>
+        </div>
+        <article class="vertical">
+            <div>
+                <h2>Sorts par niveau</h2>
+                <button mat-mini-fab color="primary" (click)="ajoutNiveauSort()">
+                    <mat-icon>playlist_add</mat-icon>
+                </button>
             </div>
-        </article>
-        <article class="cartouche_moyen">
-            <div class="f_m">
-                <p>{{ initServ.traductions['ddSauvegardeSorts'] }}</p>
-                <h1><input matInput name="editSortDD" [(ngModel)]="persoServ.perso.sorts.ddSauvegarde"></h1>
-            </div>
-        </article>
-        <article class="cartouche_moyen">
-            <div class="f_m">
-                <p>{{ initServ.traductions['bonusAttSort'] }}</p>
-                <h1><input matInput name="editSortAtt" [(ngModel)]="persoServ.perso.sorts.bonusAtt"></h1>
-            </div>
-        </article>
-    </section>
-    <section>
-        <h2>Sorts par niveau</h2>
-        <article>
-            <button mat-mini-fab color="primary" (click)="ajoutNiveauSort()">
-                <mat-icon>playlist_add</mat-icon>
-            </button>
-
             <ul class="ligne">
                 <li *ngFor="let niv of persoServ.perso.sorts.nombre; let i=index">
                     {{ initServ.traductions['niveau'] + ' ' + i}} :
@@ -36,7 +37,6 @@
             </ul>
         </article>
     </section>
-    <h1>{{ initServ.traductions['sorts'] }}</h1>
     <section>
         <button mat-fab color="primary" (click)="ajoutSort()">
             <mat-icon>playlist_add</mat-icon>

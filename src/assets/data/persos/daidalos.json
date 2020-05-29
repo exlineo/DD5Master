@@ -1,5 +1,5 @@
 {
-    "id": 0,
+    "id": "daidalos",
     "nom": "Daidalos",
     "joueur": "Cyril",
     "niveau": 6,
@@ -80,7 +80,8 @@
             "aire": "",
             "descr": "",
             "composantes": "V",
-            "lien": "https://www.aidedd.org/dnd/sorts.php?vf=thaumaturgie"
+            "lien": "https://www.aidedd.org/dnd/sorts.php?vf=thaumaturgie",
+            "appris": { "nb": 0, "niv": 0 }
         }, {
             "niveau": 2,
             "nom": "Représailles infernales",
@@ -94,7 +95,8 @@
             "aire": "",
             "descr": "Sauvegarde sur la dextérité",
             "composantes": "V, M (des poils de chauve-souris et une goutte de goudron ou un morceau de charbon)",
-            "lien": "https://www.aidedd.org/dnd/sorts.php?vf=represailles-infernales"
+            "lien": "https://www.aidedd.org/dnd/sorts.php?vf=represailles-infernales",
+            "appris": { "nb": 0, "niv": 0 }
         }, {
             "niveau": 2,
             "nom": "Ténèbres",
@@ -108,14 +110,16 @@
             "aire": "",
             "descr": "",
             "composantes": "V, M (des poils de chauve-souris et une goutte de goudron ou un morceau de charbon)",
-            "lien": "https://www.aidedd.org/dnd/sorts.php?vf=tenebres"
+            "lien": "https://www.aidedd.org/dnd/sorts.php?vf=tenebres",
+            "appris": { "nb": 0, "niv": 0 }
         }]
     },
     "description": {
         "classe": "",
         "img": ["/assets/images/persos/champion_tieffelin.jpg"],
         "apparence": "Une forme démoniaque qui choque lorsqu'elle n'est pas masquée. A part la queue, les cornes et la peau rouge, tout à l'air normal et plutôt beau gosse.",
-        "historique": "",
+        "histoire": "Avorton des rues, des campagnes et de la vie sauvage, sa jeunesse n'a été que chaos, rejet et rapines jusqu'au développement de sa stature qui lui a ouvert les portes d'un organisateur de combats. Il le voyait perdant... il s'est trompé. Le spectacle en valait la peine.",
+        "historique": "Champion",
         "race": "Tieffelin",
         "alignement": "CN",
         "physique": {

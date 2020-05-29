@@ -18,7 +18,6 @@ export class MasterPersosComponent implements OnInit {
 
   ngOnInit(): void {
     this.colsArmes = ['nom', 'bonusAtt', 'degats', 'bonusDeg', 'descr'];
-    this.colsSorts  = ['niveau', 'nom', 'duree', 'tpsInc'];
+    this.colsSorts  = ['appris','niveau', 'nom'];
   }
-
 }

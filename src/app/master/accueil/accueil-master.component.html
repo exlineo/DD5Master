@@ -43,38 +43,12 @@
     <mat-sidenav-container [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
         <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
             <mat-nav-list>
-                <section>
-                    <article>
-                        <button mat-icon-button (click)="send = !send"><h3><mat-icon>message</mat-icon> {{ initServ.traductions['wsDialogue'] }}</h3></button>
-                        <form *ngIf="send" #f="ngForm" (ngSubmit)="envoiRessourceWS()">
-                            <mat-form-field>
-                                <mat-label>{{ initServ.traductions['wsMessage'] }}</mat-label>
-                                <input matInput name="msg" required [(ngModel)]="envoiWS.msg">
-                            </mat-form-field>
-                            <mat-form-field>
-                                <mat-label>{{ initServ.traductions['wsLien'] }}</mat-label>
-                                <input matInput name="lien" [(ngModel)]="envoiWS.lien">
-                            </mat-form-field>
-                            <mat-radio-group name="type" [(ngModel)]="envoiWS.type" required>
-                                <mat-radio-button value="message" checked>{{ initServ.traductions['wsOptionMsg'] }}</mat-radio-button>
-                                <mat-radio-button value="lien" checked>{{ initServ.traductions['wsOptionLien'] }}</mat-radio-button>
-                                <mat-radio-button value="image">{{ initServ.traductions['wsOptionImg'] }}</mat-radio-button>
-                                <mat-radio-button value="audio">{{ initServ.traductions['wsOptionAudio'] }}</mat-radio-button>
-                                <mat-radio-button value="video">{{ initServ.traductions['wsOptionVideo'] }}</mat-radio-button>
-                                <mat-radio-button value="tube">{{ initServ.traductions['wsOptionTube'] }}</mat-radio-button>
-                            </mat-radio-group>
-                            <button mat-fab [disabled]="f.invalid" [matTooltip]="initServ.traductions['interactions']['valide']">
-                                <mat-icon>keyboard_arrow_right</mat-icon>
-                            </button>
-                        </form>
-                    </article>
-                </section>
+                <app-ressources></app-ressources>
             </mat-nav-list>
         </mat-sidenav>
 
         <mat-sidenav-content>
             <router-outlet></router-outlet>
-            <!-- <p *ngFor="let content of fillerContent">{{content}}</p> -->
         </mat-sidenav-content>
     </mat-sidenav-container>
 </main>

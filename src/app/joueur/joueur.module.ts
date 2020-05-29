@@ -26,6 +26,7 @@ import { ModaleComponent } from './modale/modale.component';
 import { EditJoueurComponent } from './edit-joueur/edit-joueur.component';
 import { ParamsJoueurComponent } from './params-joueur/params-joueur.component';
 import { PersoService } from './services/perso.service';
+import { SortNivPipe } from '../materiel/pipes/sorts-msg.pipe';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { PersoService } from './services/perso.service';
     EditSortsComponent,
     ModaleComponent,
     EditJoueurComponent,
-    ParamsJoueurComponent
+    ParamsJoueurComponent,
+    SortNivPipe
   ],
   providers:[PersoService],
   imports: [

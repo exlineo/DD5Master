@@ -11,8 +11,7 @@ const routes: Routes = [
   { path:'', component:MasterAccueilComponent, children:[
       { path:'', component:MasterPersosComponent},
       { path:'creer', component:CreerPersoComponent},
-      { path:'params', component:ParamsComponent },
-      { path:'ressources', component:RessourcesComponent}
+      { path:'params', component:ParamsComponent }
   ]}
 ];
 

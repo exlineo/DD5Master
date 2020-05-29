@@ -1,0 +1,66 @@
+[{
+        "contenant": "Bouteille",
+        "vo": "Bottle",
+        "capacite": "75 cl"
+    },
+    {
+        "contenant": "Coffre",
+        "vo": "Chest",
+        "capacite": "330 l / 150 kg de matériel"
+    },
+    {
+        "contenant": "Cruche ou pichet",
+        "vo": "Jug or pitcher",
+        "capacite": "3,7 l"
+    },
+    {
+        "contenant": "Fiole",
+        "vo": "Vial",
+        "capacite": "100 g"
+    },
+    {
+        "contenant": "Flasque ou chope",
+        "vo": "Flask or tankard",
+        "capacite": "50 cl"
+    },
+    {
+        "contenant": "Gourde",
+        "vo": "Waterskin",
+        "capacite": "2 l"
+    },
+    {
+        "contenant": "Panier",
+        "vo": "Basket",
+        "capacite": "50 l / 20 kg de matériel"
+    },
+    {
+        "contenant": "Pot en fer",
+        "vo": "Pot, iron",
+        "capacite": "3,7 l"
+    },
+    {
+        "contenant": "Sac",
+        "vo": "Sack",
+        "capacite": "30 l / 15 kg de matériel"
+    },
+    {
+        "contenant": "Sac à dos *",
+        "vo": "Backpack",
+        "capacite": "30 l / 15 kg de matériel"
+    },
+    {
+        "contenant": "Sacoche",
+        "vo": "Pouch",
+        "capacite": "5 l / 3 kg de matériel"
+    },
+    {
+        "contenant": "Seau",
+        "vo": "Bucket",
+        "capacite": "11 l"
+    },
+    {
+        "contenant": "Tonneau",
+        "vo": "Barrel",
+        "capacite": "150 l"
+    }
+]

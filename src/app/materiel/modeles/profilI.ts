@@ -1,7 +1,7 @@
 export interface ProfilI {
     id:string,
     mdp?:string,
-    statut:string,
+    statut?:string,
     persos?:Array<string>,
     joueurs?:Array<string>
 }

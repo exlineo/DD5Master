@@ -75,8 +75,6 @@
         "nombre": [
             4,
             2,
-            0,
-            0,
             0
         ],
         "ddSauvegarde": 0,
@@ -94,7 +92,8 @@
                 "aire": "",
                 "descr": "",
                 "composantes": "V,S,M (une branche de gui)",
-                "lien": ""
+                "lien": "",
+                "appris": { "nb": 0, "niv": 0 }
             },
             {
                 "niveau": 1,
@@ -109,7 +108,8 @@
                 "aire": "",
                 "descr": "",
                 "composantes": "S,M (7,50 m de corde, que le sort consomme)",
-                "lien": ""
+                "lien": "",
+                "appris": { "nb": 0, "niv": 0 }
             },
             {
                 "niveau": 1,
@@ -124,7 +124,8 @@
                 "aire": "",
                 "descr": "",
                 "composantes": "V,S",
-                "lien": ""
+                "lien": "",
+                "appris": { "nb": 0, "niv": 0 }
             },
             {
                 "niveau": 1,
@@ -139,7 +140,8 @@
                 "aire": "",
                 "descr": "",
                 "composantes": "V,S,M (la patte postérieure d'une sauterelle)",
-                "lien": ""
+                "lien": "",
+                "appris": { "nb": 0, "niv": 0 }
             },
             {
                 "niveau": 2,
@@ -154,7 +156,8 @@
                 "aire": "",
                 "descr": "",
                 "composantes": "V,S,M (morceau de nourriture)",
-                "lien": ""
+                "lien": "",
+                "appris": { "nb": 0, "niv": 0 }
             },
             {
                 "niveau": 2,
@@ -169,7 +172,8 @@
                 "aire": "",
                 "descr": "",
                 "composantes": "V,S,M (morceau de nourriture)",
-                "lien": ""
+                "lien": "",
+                "appris": { "nb": 0, "niv": 0 }
             }
         ]
     },
@@ -177,7 +181,8 @@
         "classe": "Rodeur",
         "img": ["assets/images/persos/rodeur_elf.jpg"],
         "apparence": "Un elf des bois qui pourrait passer pour un humain si on n'y prenait pas garde. Une grande cicactrice larde le torse de Tauilas.",
-        "historique": "Une vibration étrange émeut la nature. Quelque chose de pas naturel est entrain de se produire. Ta communauté va être touchée. Il faut mener l'enquête.",
+        "histoire": "Une vibration étrange émeut la nature. Quelque chose de pas naturel est entrain de se produire. Ta communauté va être touchée. Il faut mener l'enquête.",
+        "historique": "Chasseur",
         "race": "Elf des bois",
         "alignement": "CB",
         "physique": {

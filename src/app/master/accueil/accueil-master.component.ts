@@ -3,7 +3,6 @@ import { ChangeDetectorRef, Component, OnInit, OnDestroy, Inject } from '@angula
 
 import { InitService } from '../../materiel/services/init.service';
 import { MasterService } from '../services/master.service';
-import { WsSendI, WsSend } from 'src/app/materiel/modeles/ws-i';
 import { Router } from '@angular/router';
 
 
@@ -17,8 +16,7 @@ export class MasterAccueilComponent implements OnInit, OnDestroy {
   mobileQuery: MediaQueryList;
   private _mobileQueryListener: () => void;
 
-  send:boolean; // Ouvrir ou fermer les options pour envoyer un message au Web Socket
-  envoiWS:WsSendI;
+  
 
   r:string; // Route vers laquelle se rendre sur une sélection
   perso:string; // Le nom du personnage à éditer
@@ -30,20 +28,11 @@ export class MasterAccueilComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.send = false;
-    this.envoiWS = new WsSend();
   }
   ngOnDestroy(): void {
     this.mobileQuery.removeListener(this._mobileQueryListener);
   }
-  /**
-   * Envoyer des ressources au serveur WebSocket
-   */
-  envoiRessourceWS() {
-    let d = new Date();
-    this.envoiWS.date = d.getHours()+'h.'+d.getMinutes()+'mn.'+d.getSeconds()+'s';
-    this.masterServ.sendRessource(this.envoiWS);
-  }
+  
   /**
    * Envoyer des informations au serveur WebSocket
    */

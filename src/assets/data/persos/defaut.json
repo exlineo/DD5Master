@@ -1,5 +1,5 @@
 {
-    "id": 0,
+    "id": "",
     "nom": "0",
     "joueur": "0",
     "niveau": 0,
@@ -64,13 +64,15 @@
             "aire": "",
             "descr": "",
             "composantes": "",
-            "lien": ""
+            "lien": "",
+            "appris": { "nb": 0, "niv": 0 }
         }]
     },
     "description": {
         "classe": "",
         "img": [""],
         "apparence": "",
+        "histoire": "",
         "historique": "",
         "race": "",
         "alignement": "",

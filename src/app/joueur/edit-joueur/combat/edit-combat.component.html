@@ -1,33 +1,37 @@
-<div class="horizontal">
-    <!-- CARACTERISTIQUES -->
-    <section class="carac">
-        <h1>{{ initServ.traductions['action'] }}</h1>
-        <article>
-            <div class="ca cartouche_petit">
-                <p>{{ initServ.traductions['ca'] }}</p>
-                <h1><input matInput name="editCa" [(ngModel)]="persoServ.perso.ca"></h1>
-            </div>
-        </article>
-        <article>
-            <div class="carre cartouche_petit">
-                <p>{{ initServ.traductions['vitesse'] }}</p>
-                <h1><input matInput name="editVitesse" [(ngModel)]="persoServ.perso.vitesse"></h1>
-            </div>
-        </article>
-        <article>
-            <div class="carre cartouche_petit">
-                <p>{{ initServ.traductions['max'] }} : {{ persoServ.perso['pvMax'] }}</p>
-                <h1><input matInput name="editPvActu" [(ngModel)]="persoServ.perso.pvActu"></h1>
-            </div>
-        </article>
+<div class="vertical">
 
-        <article>
-            <div class="carre cartouche_petit">
-                <p>{{ initServ.traductions['desVie'] }}</p>
-                <h1><input matInput name="editDesVis" [(ngModel)]="persoServ.perso.desVie"></h1>
-            </div>
-        </article>
+    <!-- CARACTERISTIQUES -->
+    <section>
+        <h1>{{ initServ.traductions['action'] }}</h1>
+        <div class="horizontal">
+            <article>
+                <div class="ca cartouche_petit">
+                    <p>{{ initServ.traductions['ca'] }}</p>
+                    <h1><input matInput name="editCa" [(ngModel)]="persoServ.perso.ca"></h1>
+                </div>
+            </article>
+            <article>
+                <div class="carre cartouche_petit">
+                    <p>{{ initServ.traductions['vitesse'] }}</p>
+                    <h1><input matInput name="editVitesse" [(ngModel)]="persoServ.perso.vitesse"></h1>
+                </div>
+            </article>
+            <article>
+                <div class="carre cartouche_petit">
+                    <p>{{ initServ.traductions['max'] }} : <input matInput name="editPvMax" [(ngModel)]="persoServ.perso.pvMax"></p>
+                    <h1><input matInput name="editPvActu" [(ngModel)]="persoServ.perso.pvActu"></h1>
+                </div>
+            </article>
+
+            <article>
+                <div class="carre cartouche_petit">
+                    <p>{{ initServ.traductions['desVie'] }}</p>
+                    <h1><input matInput name="editDesVis" [(ngModel)]="persoServ.perso.desVie"></h1>
+                </div>
+            </article>
+        </div>
     </section>
+
     <section>
         <h1>{{ initServ.traductions['armesSorts'] }}</h1>
         <button mat-fab color="primary" (click)="ajoutArme()">

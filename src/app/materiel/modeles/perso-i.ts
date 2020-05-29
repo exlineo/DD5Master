@@ -25,23 +25,33 @@ export interface PersoI {
     jdsMort?: PersoJdsMort;
     carac: PersoCaracI;
     armes: Array<PersoArmeI>;
-    sorts: PersoSortI;
+    sorts?: PersoSortI;
     description:PersoDescrI;
-    possessions: Array<PersoPossessionI>;
-    tresors: Array<PersoTresorI>;
+    argent?:PersoArgentI,
+    possessions?: Array<PersoPossessionI>;
+    tresors?: Array<PersoTresorI>;
 }
 export interface PersoPossessionI {
     nom: string; pds?: string; quantite?:number | string; descr?: string;
+}
+export interface PersoArgentI {
+    pc?: number; pa?: number; pe?:number; po?:number; pp?:number;
 }
 export interface PersoTresorI {
     nom: string; magie: string; quantite?:number | string; descr?: string;
 }
 export interface PersoSortI {
     nombre: Array<number>;
+    appris?:Array<PersoSortsApprisI>;
     ddSauvegarde: number | string;
     bonusAtt: number;
     preparation: number | string;
     livre: Array<PersoLivreI>;
+}
+export interface PersoSortsApprisI{
+    niveau:number;
+    nbr:number;
+    nom:string;
 }
 export interface PersoLivreI {
     niveau:number;
@@ -57,7 +67,7 @@ export interface PersoLivreI {
     descr?: string;
     lien?: string;
     composantes?:string;
-    appris?:boolean;
+    appris?:{nb:number,niv:number};
 }
 export interface PersoArmeI {
     nom: string;
@@ -78,6 +88,7 @@ export interface PersoDescrI {
     classe: string;
     img: Array<string>;
     apparence: string;
+    histoire:string;
     historique: string;
     race: string;
     alignement: string;
@@ -124,7 +135,7 @@ export class PersoLivre implements PersoLivreI {
     descr= "";
     lien= "";
     composantes="";
-    appris=false;
+    appris={nb:0,niv:0};
 }
 export class Perso implements PersoI {
     id="";
@@ -191,7 +202,8 @@ export class Perso implements PersoI {
                 aire: "",
                 descr: "",
                 composantes:"",
-                lien: ""
+                lien: "",
+                appris:{nb:0,niv:0}
             }
         ]
     };
@@ -199,6 +211,7 @@ export class Perso implements PersoI {
         classe: "",
         img: [],
         apparence: "",
+        histoire: "",
         historique: "",
         race: "",
         alignement: "",

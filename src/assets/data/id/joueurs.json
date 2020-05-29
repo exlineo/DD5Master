@@ -8,53 +8,37 @@
     },
     {
         "id": "David",
-        "mdp": "",
         "nom": "David",
-        "email": "",
         "statut": "joueur",
-        "persos": [
-            "tauilas_we-mal"
-        ]
+        "persos": ["tauilas_we-mal"]
     },
     {
         "id": "Pierre",
-        "mdp": "",
         "nom": "Pierre",
-        "email": "",
         "statut": "joueur",
-        "persos": []
+        "persos": ["ryhelm_herege"]
     },
     {
         "id": "Cyril",
-        "mdp": "",
         "nom": "Cyril",
-        "email": "",
         "statut": "joueur",
-        "persos": [
-            "daidalos"
-        ]
+        "persos": ["daidalos"]
     },
     {
         "id": "Philippe",
-        "mdp": "",
         "nom": "Philippe",
-        "email": "",
         "statut": "joueur",
-        "persos": []
+        "persos": ["lo_kag"]
     },
     {
         "id": "Mickael",
-        "mdp": "",
         "nom": "Mickaël",
-        "email": "",
         "statut": "joueur",
-        "persos": []
+        "persos": ["thruefk"]
     },
     {
         "id": "Romain",
-        "mdp": "",
         "nom": "Romain",
-        "email": "",
         "statut": "joueur",
         "persos": []
     }

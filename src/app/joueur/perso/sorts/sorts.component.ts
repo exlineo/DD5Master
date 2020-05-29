@@ -20,7 +20,7 @@ export class SortsComponent implements OnInit {
 
   ngOnInit(): void {
     // this.dataSource = new MatTableDataSource<PersoLivreI>(this.persoServ.perso.sorts.livre);
-    this.cols = ['select', 'niveau', 'nom', 'bonusAtt', 'degats', 'bonusDeg', 'duree', 'tpsInc', 'aire', 'descr'];
+    this.cols = ['appris','apprisNiv', 'niveau', 'nom', 'bonusAtt', 'degats', 'bonusDeg', 'duree', 'tpsInc', 'aire', 'descr'];
   }
   /** Whether the number of selected elements matches the total number of rows. */
   isAllSelected() {
@@ -43,5 +43,13 @@ export class SortsComponent implements OnInit {
     }
     // return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${row.position + 1}`;
     return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${row.appris}`;
+  }
+  setSorts(){
+
+  }
+  creeArray(n:number):Array<number>{
+    let arr:Array<number> = new Array(n);
+    arr.fill(n, 0, n);
+    return arr;
   }
 }

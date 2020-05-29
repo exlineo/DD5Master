@@ -20,3 +20,7 @@ section:nth-child(2) p {
 section:nth-child(2) p>input {
     margin: auto;
 }
+
+.horizontal article {
+    margin: 10px;
+}

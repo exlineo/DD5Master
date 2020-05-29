@@ -1,0 +1,232 @@
+{
+    "montures": [{
+            "nom": "Âne ou mule",
+            "prix": "8 po",
+            "vitesse": "12 m",
+            "charge": "210 kg"
+        },
+        {
+            "nom": "Chameau",
+            "prix": "50 po",
+            "vitesse": "15 m",
+            "charge": "240 kg"
+        },
+        {
+            "nom": "Cheval de guerre",
+            "prix": "400 po",
+            "vitesse": "18 m",
+            "charge": "270 kg"
+        },
+        {
+            "nom": "Cheval de selle",
+            "prix": "75 po",
+            "vitesse": "18 m",
+            "charge": "240 kg"
+        },
+        {
+            "nom": "Cheval de trait",
+            "prix": "50 po",
+            "vitesse": "12 m",
+            "charge": "270 kg"
+        },
+        {
+            "nom": "Éléphant",
+            "prix": "200 po",
+            "vitesse": "12 m",
+            "charge": "660 kg"
+        },
+        {
+            "nom": "Molosse",
+            "prix": "25 po",
+            "vitesse": "12 m",
+            "charge": "95 kg"
+        },
+        {
+            "nom": "Poney",
+            "prix": "30 po",
+            "vitesse": "12 m",
+            "charge": "115 kg"
+        }
+    ],
+    "vehicules": [{
+            "nom": "Barde",
+            "vo": "Barding",
+            "prix": "x4",
+            "poids": "x2"
+        },
+        {
+            "nom": "Carrosse",
+            "vo": "Carriage",
+            "prix": "100 po",
+            "poids": "300 kg"
+        },
+        {
+            "nom": "Char",
+            "vo": "Chariot",
+            "prix": "250 po",
+            "poids": "50 kg"
+        },
+        {
+            "nom": "Chariot",
+            "vo": "Wagon",
+            "prix": "35 po",
+            "poids": "200 kg"
+        },
+        {
+            "nom": "Charrette",
+            "vo": "Cart",
+            "prix": "15 po",
+            "poids": "100 kg"
+        },
+        {
+            "nom": "Écurie (par jour)",
+            "vo": "Stabling",
+            "prix": "5 pa",
+            "poids": "-"
+        },
+        {
+            "nom": "Fontes",
+            "vo": "Saddlebags",
+            "prix": "4 po",
+            "poids": "4 kg"
+        },
+        {
+            "nom": "Fourrage (par jour)",
+            "vo": "Feed",
+            "prix": "5 pc",
+            "poids": "5 kg"
+        },
+        {
+            "nom": "Mors et bride",
+            "vo": "Bit and bridle",
+            "prix": "2 po",
+            "poids": "500 g"
+        },
+        {
+            "nom": "Selle",
+            "vo": " ",
+            "prix": " ",
+            "poids": " "
+        },
+        {
+            "nom": "  D'équitation",
+            "vo": "Riding",
+            "prix": "10 po",
+            "poids": "12,5 kg"
+        },
+        {
+            "nom": "  De bât",
+            "vo": "Pack",
+            "prix": "5 po",
+            "poids": "7,5 kg"
+        },
+        {
+            "nom": "  Exotique",
+            "vo": "Exotic",
+            "prix": "60 po",
+            "poids": "20 kg"
+        },
+        {
+            "nom": "  Militaire",
+            "vo": "Military",
+            "prix": "20 po",
+            "poids": "15 kg"
+        },
+        {
+            "nom": "Traîneau",
+            "vo": "Sled",
+            "prix": "20 po",
+            "poids": "150 kg"
+        }
+    ],
+    "bateaux": [{
+            "nom": "Barque",
+            "vo": "Rowboat",
+            "prix": "50 po",
+            "vitesse": "2,25 km/h"
+        },
+        {
+            "nom": "Bateau à fond plat",
+            "vo": "Keelboat",
+            "prix": "3 000 po",
+            "vitesse": "1,5 km/h"
+        },
+        {
+            "nom": "Bateau à voiles",
+            "vo": "Sailing ship",
+            "prix": "10 000 po",
+            "vitesse": "3 km/h"
+        },
+        {
+            "nom": "Drakkar",
+            "vo": "Longship",
+            "prix": "10 000 po",
+            "vitesse": "4,5 km/h"
+        },
+        {
+            "nom": "Galère",
+            "vo": "Galley",
+            "prix": "30 000 po",
+            "vitesse": "6 km/h"
+        },
+        {
+            "nom": "Navire de guerre",
+            "vo": "Warship",
+            "prix": "25 000 po",
+            "vitesse": "3,75 km/h"
+        }
+    ],
+    "marchandises": [{
+            "prix": "1 pc",
+            "bien": "500 g de blé"
+        },
+        {
+            "prix": "2 pc",
+            "bien": "500 g de farine ou 1 poulet"
+        },
+        {
+            "prix": "5 pc",
+            "bien": "500 g de sel"
+        },
+        {
+            "prix": "1 pa",
+            "bien": "500 g de fer ou 1 m² de toile"
+        },
+        {
+            "prix": "5 pa",
+            "bien": "500 g de cuivre ou 1 m² de tissu en coton"
+        },
+        {
+            "prix": "1 po",
+            "bien": "500 g de gingembre ou 1 chèvre"
+        },
+        {
+            "prix": "2 po",
+            "bien": "500 g de cannelle ou de poivre, ou 1 mouton"
+        },
+        {
+            "prix": "3 po",
+            "bien": "500 g de clous de girofle ou 1 cochon"
+        },
+        {
+            "prix": "5 po",
+            "bien": "500 g d'argent ou 1 m² de lin"
+        },
+        {
+            "prix": "10 po",
+            "bien": "1 m² de soie ou 1 vache"
+        },
+        {
+            "prix": "15 po",
+            "bien": "500 g de safran ou 1 boeuf"
+        },
+        {
+            "prix": "50 po",
+            "bien": "500 g d'or"
+        },
+        {
+            "prix": "500 po",
+            "bien": "500 g de platine"
+        }
+    ]
+}
