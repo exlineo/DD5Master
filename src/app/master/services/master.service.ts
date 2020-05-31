@@ -8,6 +8,7 @@ import { MsgService } from 'src/app/materiel/services/msg.service';
 import { WsSendI, ScenarioI, Scenard} from '../../materiel/modeles/ws-i';
 import { PersoI, Perso } from '../../materiel/modeles/perso-i';
 import { ProfilI } from 'src/app/materiel/modeles/profilI';
+import { InitService } from 'src/app/materiel/services/init.service';
 
 @Injectable({
   providedIn: 'root'
@@ -18,14 +19,13 @@ export class MasterService {
   persos: Array<string>; // Liste des personnages
   listePersos: Array<PersoI>; // Liste des persos référencés
   listeScenars:Array<ScenarioI>; // Liste des scénarii
-  IS:number; // Index du scénario en cours
+  IS:number=0; // Index du scénario en cours
 
-  constructor(private http: HttpClient, private socket: Socket, private msgServ:MsgService) {
+  constructor(private http: HttpClient, private socket: Socket, private msgServ:MsgService, private initServ:InitService) {
     this.joueurs = [];
     this.persos = [];
     this.listePersos = [];
     this.listeScenars = [];
-    this.IS = 0;
     this.getPersos();
 
     this.socket.on('connection', so => {
@@ -48,7 +48,7 @@ export class MasterService {
    * Récupérer la liste des joueurs et... des persos
    */
   getPersos() {
-    this.http.get<Array<ProfilI>>('/assets/data/id/joueurs.json').subscribe(j => {
+    this.http.get<Array<ProfilI>>('assets/data/id/joueurs.json').subscribe(j => {
       this.joueurs = j;
       // Récupérer la liste des persos
       this.joueurs.forEach(jou => {
@@ -57,8 +57,8 @@ export class MasterService {
       // Récupérer les persos à partir de leur liste
       this.getChaquePerso();
     });
-    // Charger les ressources disponibles
-    this.getRessources();
+    // Charger les scénarii disponibles
+    this.getScenards();
   }
   /**
    * Charger tous les personnages l'un à la suite des autres
@@ -67,7 +67,7 @@ export class MasterService {
   getChaquePerso() {
     let loads = [];
     this.persos.forEach(p => {
-      loads.push(this.http.get('/assets/data/persos/' + p + '.json'));
+      loads.push(this.http.get('assets/data/persos/' + p + '.json'));
     });
     // Joindre toutes les souscriptions des persos
     forkJoin<PersoI>(loads).subscribe(liste => {
@@ -107,12 +107,10 @@ export class MasterService {
   /**
    * Récupérer la liste des liens partageables
    */
-  getRessources(){
-    this.http.get<Array<WsSendI>>('/assets/data/master/ressources.json').subscribe(r => {
-      // Créer une liste de scénarii
-      // this.listeLiens.forEach(s=>{
-      //   this.addScenard(s[0].scenard);
-      // })
+  getScenards(){
+    this.http.get<Array<ScenarioI>>('assets/data/master/scenards.json').subscribe(s => {
+      this.listeScenars = s;
+      this.msgServ.message$.next(this.initServ.traductions['chargeScenars']);
     })
   }
   /**
@@ -137,13 +135,12 @@ export class MasterService {
     scenard.date = Date.now();
     this.listeScenars.push(scenard);
     this.IS = this.listeScenars.length-1;
-    console.log(this.listeScenars);
   }
   /**
    * Envoyer le tableau des ressources à l'enregistrement
    */
-  valideRessources(){
-    this.http.post('/assets/php/saveScenards.php', this.listeScenars).subscribe(retour => {
+  saveScenards(){
+    this.http.post('assets/php/saveScenards.php', this.listeScenars).subscribe(retour => {
       this.msgServ.message$.next(retour['msg']);
     })
   }

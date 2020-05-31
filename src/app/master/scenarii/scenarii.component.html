@@ -2,7 +2,8 @@
 <div class="horizontal">
     <section>
         <article>
-            <h1>{{ initServ.traductions['creerScenar'] }}</h1>
+            <h1>{{ initServ.traductions['creerScenar'] }} <button mat-icon-button (click)="masterServ.saveScenards()"><mat-icon>save</mat-icon></button>
+            </h1>
             <form #scen="ngForm" (ngSubmit)="masterServ.addScenard(scen.value)">
                 <mat-form-field>
                     <mat-label>{{ initServ.traductions['creerScenar'] }}</mat-label>
@@ -18,7 +19,7 @@
             </form>
         </article>
         <article *ngIf="masterServ.listeScenars.length > 0">
-            <h3>{{ initServ.traductions['scenario'] }} : {{ masterServ.listeScenars[masterServ.IS].nom }}</h3>
+            <h3>{{ initServ.traductions['scenar'] }} : {{ masterServ.listeScenars[masterServ.IS].nom }}</h3>
             <ul>
                 <li *ngFor="let s of masterServ.listeScenars; let i=index " (click)="masterServ.IS = i">{{ s.nom }}</li>
             </ul>
@@ -26,7 +27,8 @@
     </section>
     <section>
         <form (ngSubmit)="masterServ.addRessource(lien.value)" #lien="ngForm">
-            <h3>{{ initServ.traductions['creerRessource'] }}</h3>
+            <h1>{{ initServ.traductions['creerRessource'] }} <button mat-icon-button (click)="masterServ.saveScenards()"><mat-icon>save</mat-icon></button>
+            </h1>
             <mat-form-field>
                 <mat-label>{{ initServ.traductions['wsOptionMsg'] }}</mat-label>
                 <input matInput name="lienMsg" required>

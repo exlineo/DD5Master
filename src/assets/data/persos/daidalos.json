@@ -116,7 +116,7 @@
     },
     "description": {
         "classe": "",
-        "img": ["/assets/images/persos/champion_tieffelin.jpg"],
+        "img": ["assets/images/persos/champion_tieffelin.jpg"],
         "apparence": "Une forme démoniaque qui choque lorsqu'elle n'est pas masquée. A part la queue, les cornes et la peau rouge, tout à l'air normal et plutôt beau gosse.",
         "histoire": "Avorton des rues, des campagnes et de la vie sauvage, sa jeunesse n'a été que chaos, rejet et rapines jusqu'au développement de sa stature qui lui a ouvert les portes d'un organisateur de combats. Il le voyait perdant... il s'est trompé. Le spectacle en valait la peine.",
         "historique": "Champion",

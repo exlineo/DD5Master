@@ -389,7 +389,7 @@
     "description": {
         "classe": "Prêtre",
         "img": [
-            "/assets/images/persos/ryhelm.jpg"
+            "assets/images/persos/ryhelm.jpg"
         ],
         "apparence": "Bonhomme, jovial, ouvert, déterminé. En apparence plus vieux que son âge, l'air sage, attire la sympathie.",
         "histoire": "Prêtre diplomate et aventurier. Est envoyé dans les situations compliquées pour trouver des solutions. Il en trouve...",

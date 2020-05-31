@@ -110,7 +110,7 @@ export class InitService {
    * @param origine Fichier à télécharger
    */
   getID(origine: string = null) {
-    this.http.get<ProfilI>("/assets/data/id/profil_" + this.connexion.id + '@' + this.connexion.mdp + ".json").subscribe(pro => {
+    this.http.get<ProfilI>("assets/data/id/profil_" + this.connexion.id + '@' + this.connexion.mdp + ".json").subscribe(pro => {
       this.setProfil(pro);
     },
       error => {
@@ -121,7 +121,7 @@ export class InitService {
    * Récupérer le profil à partir de PHP pour sécuriser les accès
    */
   getProfil() {
-    this.http.post<ProfilI>("/assets/php/getProfil.php", this.connexion).subscribe(pro => {
+    this.http.post<ProfilI>("assets/php/getProfil.php", this.connexion).subscribe(pro => {
       console.log("PHP Profil", pro);
       this.setProfil(pro);
     },
@@ -131,7 +131,7 @@ export class InitService {
   }
   setProfil(pro:ProfilI){
     this.profil = pro;
-    this.msgServ.message$.next('Bienvenue ' + this.profil.id);
+    this.msgServ.message$.next('Bienvenue ' + this.profil.nom);
     this.router.navigateByUrl('/' + this.profil.statut);
     // Stocker les identifiants
     localStorage.setItem("id", JSON.stringify(this.profil));

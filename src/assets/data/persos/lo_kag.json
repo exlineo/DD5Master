@@ -92,7 +92,7 @@
     },
     "description": {
         "classe": "Barbare",
-        "img": ["/assets/images/persos/goliath.jpg"],
+        "img": ["assets/images/persos/goliath.jpg"],
         "apparence": "Massif, une légère claudication,  renfrogné, moqueur, compétitif, grande gueule ou taciturne selon les moments. Des habits pratiques, fonctionnels dont l'apparence compte peu tant qu'ils sont fonctionnels. Un goût pour les fourrures et habits qui protègent. Toujours prêt, quelque soit le climat.",
         "histoire": "Au bord de la mort, pris par la fièvre, Lo-Kag a quitté son village pour aller mourir et ne pas peser au groupe. Mais son destin fût tout autre. La mort ne vint pas. Il cherche une nouvelle voie, conscient d'être trop âgé pour retourner parmi les siens et sûr de devoir dépasser son destin pour accomplir la gloire et la puissance.",
         "historique": "Berserker",
