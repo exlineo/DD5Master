@@ -24,7 +24,7 @@
         "cannon": "^0.6.2",
         "ngx-socket-io": "^3.0.1",
         "rxjs": "~6.5.4",
-        "three": "^0.90.0",
+        "three": "^0.125.0",
         "three-dragcontrols": "^0.88.2",
         "threejs-dice": "^1.1.0",
         "tslib": "^1.10.0",
